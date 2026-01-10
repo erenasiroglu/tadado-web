@@ -1,0 +1,134 @@
+{
+  "metadata": {
+    "title": "Tadado - Oyna. Kazan.",
+    "description": "Modern, kişiselleştirilmiş kartlar. Oyunlaştırılmış eğlence. Birlikte oynamanın ve kazanmanın yeni yolu."
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "blog": "Blog",
+    "rules": "Nasıl Oynanır"
+  },
+  "hero": {
+    "badge": "En İyi Kelime Oyunu",
+    "title": "Tadado Oyna.",
+    "titleHighlight": "Kazan.",
+    "subtitle": "Modern, kişiselleştirilmiş kartlar. Oyunlaştırılmış eğlence. Birlikte oynamanın ve kazanmanın yeni yolu.",
+    "ctaAppStore": "Çok Yakında",
+    "ctaPlayStore": "Çok Yakında",
+    "ctaWaitlist": "Bekleme Listesine Katıl",
+    "waitlist": {
+      "title": "Bekleme Listesine Katıl",
+      "description": "Tadado'nun çıkışını ilk siz öğrenin!",
+      "emailLabel": "E-posta adresi",
+      "emailPlaceholder": "ornek@email.com",
+      "submit": "Bekleme Listesine Katıl",
+      "success": "Teşekkürler! Tadado çıktığında size haber vereceğiz.",
+      "error": "Bir şeyler yanlış gitti. Lütfen tekrar deneyin."
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Tadado. Tüm hakları saklıdır.",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Koşulları"
+  },
+  "privacy": {
+    "title": "Gizlilik Politikası | Tadado",
+    "description": "Tadado'nun kişisel bilgilerinizi nasıl topladığını, kullandığını ve koruduğunu öğrenin.",
+    "heading": "Gizlilik Politikası",
+    "lastUpdated": "Son Güncelleme",
+    "backHome": "Ana Sayfaya Dön",
+    "sections": {
+      "intro": {
+        "title": "Giriş",
+        "content": "Tadado'ya hoş geldiniz. Gizliliğinize saygı duyuyor ve kişisel verilerinizi korumaya kararlıyız. Bu gizlilik politikası, mobil uygulamamızı kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar."
+      },
+      "dataCollection": {
+        "title": "Topladığımız Bilgiler",
+        "content": "Kullanıcı adınız ve oyun tercihleriniz gibi doğrudan bize sağladığınız bilgileri topluyoruz. Ayrıca uygulamayı kullandığınızda cihaz bilgileri, kullanım verileri ve deneyiminizi iyileştirmek için oyun istatistikleri gibi belirli bilgileri otomatik olarak topluyoruz."
+      },
+      "dataUsage": {
+        "title": "Bilgilerinizi Nasıl Kullanıyoruz",
+        "content": "Topladığımız bilgileri hizmetlerimizi sağlamak ve iyileştirmek, yapay zeka tarafından oluşturulan içeriklerle oyun deneyiminizi kişiselleştirmek, güncellemeler ve özellikler hakkında sizinle iletişim kurmak ve platformumuzun güvenliğini sağlamak için kullanıyoruz."
+      },
+      "dataSharing": {
+        "title": "Bilgi Paylaşımı",
+        "content": "Kişisel bilgilerinizi satmıyoruz. Bilgilerinizi, uygulamamızı işletmemize yardımcı olan hizmet sağlayıcılarla, yasaların gerektirdiği durumlarda veya izninizle paylaşabiliriz. Oyun istatistikleri, skor tabloları ve topluluk özellikleri için anonim olarak paylaşılabilir."
+      },
+      "security": {
+        "title": "Veri Güvenliği",
+        "content": "Kişisel bilgilerinizi yetkisiz erişim, değişiklik, ifşa veya imhaya karşı korumak için uygun teknik ve organizasyonel önlemler uyguluyoruz. Ancak internet üzerinden hiçbir iletim yöntemi %100 güvenli değildir."
+      },
+      "inAppPurchases": {
+        "title": "Uygulama İçi Satın Almalar",
+        "content": "Tadado'da uygulama içi satın alma yaptığınızda, ödeme bilgileri Apple'ın App Store'u aracılığıyla güvenli bir şekilde işlenir. Ödeme detaylarınızı saklamıyoruz veya erişimimiz yoktur. Apple tüm ödeme işlemlerini yönetir ve gizlilik politikalarına uygun olarak belirli bilgileri toplayabilir.",
+        "guidelines": "Apple'ın uygulama içi satın almaları ve ödeme verilerini nasıl işlediği hakkında daha fazla bilgi için lütfen Apple'ın",
+        "linkText": "App Store Uygulama İçi Satın Alma Kuralları"
+      },
+      "contact": {
+        "title": "Bize Ulaşın",
+        "content": "Bu Gizlilik Politikası veya veri uygulamalarımız hakkında sorularınız varsa, lütfen privacy@tadado.app adresinden bize ulaşın. Sorunuza makul bir süre içinde yanıt vereceğiz."
+      }
+    }
+  },
+  "terms": {
+    "title": "Kullanım Koşulları | Tadado",
+    "description": "Tadado uygulamasını kullanmak için şartları ve koşulları okuyun.",
+    "heading": "Kullanım Koşulları",
+    "lastUpdated": "Son Güncelleme",
+    "backHome": "Ana Sayfaya Dön",
+    "sections": {
+      "acceptance": {
+        "title": "Koşulların Kabulü",
+        "content": "Tadado uygulamasını indirerek, yükleyerek veya kullanarak bu Kullanım Koşullarına bağlı olmayı kabul ediyorsunuz. Bu koşulları kabul etmiyorsanız, lütfen uygulamamızı kullanmayın. Bu koşullar uygulamanın tüm kullanıcıları için geçerlidir."
+      },
+      "license": {
+        "title": "Kullanım Lisansı",
+        "content": "Size Tadado uygulamasını kişisel, ticari olmayan amaçlarla kullanmanız için sınırlı, münhasır olmayan, devredilemez, iptal edilebilir bir lisans veriyoruz. Bu lisans, uygulamamızı değiştirme, dağıtma veya türev çalışmalar oluşturma hakkını içermez."
+      },
+      "userConduct": {
+        "title": "Kullanıcı Davranışı",
+        "content": "Tadado'yu sorumlu bir şekilde kullanmayı ve uygulamayı herhangi bir yasadışı amaç için kullanmamayı, diğer kullanıcıları taciz etmemeyi veya onlara zarar vermemeyi, sistemlerimize yetkisiz erişim sağlamaya çalışmamayı veya uygulamayı işlevselliğine zarar verebilecek şekilde kullanmamayı kabul ediyorsunuz."
+      },
+      "intellectual": {
+        "title": "Fikri Mülkiyet",
+        "content": "Tadado'daki metin, grafikler, logolar, simgeler, resimler, ses klipleri ve yazılım dahil ancak bunlarla sınırlı olmamak üzere tüm içerik, Tadado'nun veya içerik sağlayıcılarının mülkiyetindedir ve uluslararası telif hakkı yasalarıyla korunmaktadır."
+      },
+      "disclaimer": {
+        "title": "Garanti Reddi",
+        "content": "Tadado, açık veya zımni herhangi bir garanti olmaksızın \"olduğu gibi\" sağlanmaktadır. Uygulamanın kesintisiz, güvenli veya hatasız olacağını garanti etmiyoruz. Uygulamayı kullanımınız kendi sorumluluğunuzdadır."
+      },
+      "inAppPurchases": {
+        "title": "Uygulama İçi Satın Almalar",
+        "content": "Tadado, ek özellikler, içerik veya premium aboneliklerin kilidini açmanıza olanak tanıyan uygulama içi satın almalar sunar. Tüm satın almalar Apple'ın App Store'u aracılığıyla işlenir ve Apple'ın şartlarına tabidir.",
+        "guidelines": "Uygulama içi satın almalar hakkında daha fazla bilgi için lütfen Apple'ın",
+        "linkText": "App Store Uygulama İçi Satın Alma Kuralları"
+      },
+      "changes": {
+        "title": "Koşullarda Değişiklikler",
+        "content": "Bu koşulları istediğimiz zaman değiştirme hakkını saklı tutuyoruz. Herhangi bir önemli değişikliği uygulama üzerinden veya e-posta yoluyla kullanıcılara bildireceğiz. Bu tür değişikliklerden sonra Tadado'yu kullanmaya devam etmeniz, güncellenmiş koşulları kabul ettiğiniz anlamına gelir."
+      },
+      "contact": {
+        "title": "İletişim Bilgileri",
+        "content": "Bu Kullanım Koşulları ile ilgili sorularınız için lütfen legal@tadado.app adresinden bize ulaşın. Endişelerinizi hızlı bir şekilde ele almaya kararlıyız."
+      }
+    }
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog | Tadado",
+      "description": "Kelime oyunları, AI teknolojisi, mobil oyunlar hakkında makaleler ve Tadado'dan en iyi şekilde yararlanmak için ipuçları keşfedin."
+    },
+    "heading": "Blog",
+    "subtitle": "Tadado ve kelime oyunları hakkında ipuçları, içgörüler ve güncellemeler",
+    "backHome": "Ana Sayfaya Dön",
+    "backToBlog": "Bloğa Dön",
+    "empty": {
+      "title": "Henüz yazı yok",
+      "description": "Oyun ipuçları, güncellemeler ve daha fazlası için takipte kalın!"
+    },
+    "breadcrumb": {
+      "home": "Ana Sayfa",
+      "blog": "Blog"
+    }
+  }
+}

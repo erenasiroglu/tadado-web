@@ -1,0 +1,134 @@
+{
+  "metadata": {
+    "title": "Tadado - Play Word Game",
+    "description": "Modern, personalized cards. Gamified fun. Reimagine how you play and win together."
+  },
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "rules": "How to Play"
+  },
+  "hero": {
+    "badge": "Best Word Game",
+    "title": "Play Tadado.",
+    "titleHighlight": "Win More.",
+    "subtitle": "Modern, personalized cards. Gamified fun. Reimagine how you play and win together.",
+    "ctaAppStore": "Coming Soon",
+    "ctaPlayStore": "Coming Soon",
+    "ctaWaitlist": "Join Waitlist",
+    "waitlist": {
+      "title": "Join the Waitlist",
+      "description": "Be the first to know when Tadado launches!",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "your@email.com",
+      "submit": "Join Waitlist",
+      "success": "Thanks! We'll notify you when Tadado launches.",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Tadado. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "privacy": {
+    "title": "Privacy Policy | Tadado",
+    "description": "Learn how Tadado collects, uses, and protects your personal information.",
+    "heading": "Privacy Policy",
+    "lastUpdated": "Last Updated",
+    "backHome": "Back to Home",
+    "sections": {
+      "intro": {
+        "title": "Introduction",
+        "content": "Welcome to Tadado. We respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you use our mobile application."
+      },
+      "dataCollection": {
+        "title": "Information We Collect",
+        "content": "We collect information you provide directly to us, such as your username and game preferences. We also automatically collect certain information when you use the app, including device information, usage data, and game statistics to improve your experience."
+      },
+      "dataUsage": {
+        "title": "How We Use Your Information",
+        "content": "We use the information we collect to provide and improve our services, personalize your gaming experience with AI-generated content, communicate with you about updates and features, and ensure the security of our platform."
+      },
+      "dataSharing": {
+        "title": "Information Sharing",
+        "content": "We do not sell your personal information. We may share your information with service providers who assist us in operating our app, when required by law, or with your consent. Game statistics may be shared anonymously for leaderboards and community features."
+      },
+      "security": {
+        "title": "Data Security",
+        "content": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure."
+      },
+      "inAppPurchases": {
+        "title": "In-App Purchases",
+        "content": "When you make in-app purchases in Tadado, payment information is processed securely through Apple's App Store. We do not store or have access to your payment details. Apple handles all payment transactions and may collect certain information in accordance with their privacy policy.",
+        "guidelines": "For more information about how Apple handles in-app purchases and payment data, please refer to Apple's",
+        "linkText": "App Store In-App Purchase Guidelines"
+      },
+      "contact": {
+        "title": "Contact Us",
+        "content": "If you have any questions about this Privacy Policy or our data practices, please contact us at privacy@tadado.app. We will respond to your inquiry within a reasonable timeframe."
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms of Use | Tadado",
+    "description": "Read the terms and conditions for using the Tadado application.",
+    "heading": "Terms of Use",
+    "lastUpdated": "Last Updated",
+    "backHome": "Back to Home",
+    "sections": {
+      "acceptance": {
+        "title": "Acceptance of Terms",
+        "content": "By downloading, installing, or using the Tadado application, you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use our app. These terms apply to all users of the application."
+      },
+      "license": {
+        "title": "License to Use",
+        "content": "We grant you a limited, non-exclusive, non-transferable, revocable license to use the Tadado app for personal, non-commercial purposes. This license does not include the right to modify, distribute, or create derivative works from our app."
+      },
+      "userConduct": {
+        "title": "User Conduct",
+        "content": "You agree to use Tadado responsibly and not to use the app for any unlawful purpose, harass or harm other users, attempt to gain unauthorized access to our systems, or use the app in any way that could damage or impair its functionality."
+      },
+      "intellectual": {
+        "title": "Intellectual Property",
+        "content": "All content in Tadado, including but not limited to text, graphics, logos, icons, images, audio clips, and software, is the property of Tadado or its content suppliers and is protected by international copyright laws."
+      },
+      "disclaimer": {
+        "title": "Disclaimer of Warranties",
+        "content": "Tadado is provided \"as is\" without warranties of any kind, either express or implied. We do not guarantee that the app will be uninterrupted, secure, or error-free. Your use of the app is at your own risk."
+      },
+      "inAppPurchases": {
+        "title": "In-App Purchases",
+        "content": "Tadado offers in-app purchases that allow you to unlock additional features, content, or premium subscriptions. All purchases are processed through Apple's App Store and are subject to Apple's terms and conditions.",
+        "guidelines": "For more information about in-app purchases, please refer to Apple's",
+        "linkText": "App Store In-App Purchase Guidelines"
+      },
+      "changes": {
+        "title": "Changes to Terms",
+        "content": "We reserve the right to modify these terms at any time. We will notify users of any material changes through the app or via email. Your continued use of Tadado after such modifications constitutes acceptance of the updated terms."
+      },
+      "contact": {
+        "title": "Contact Information",
+        "content": "For any questions regarding these Terms of Use, please contact us at legal@tadado.app. We are committed to addressing your concerns promptly."
+      }
+    }
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog | Tadado",
+      "description": "Discover articles about word games, AI technology, mobile gaming, and tips for getting the most out of Tadado."
+    },
+    "heading": "Blog",
+    "subtitle": "Tips, insights, and updates about Tadado and word games",
+    "backHome": "Back to Home",
+    "backToBlog": "Back to Blog",
+    "empty": {
+      "title": "No posts yet",
+      "description": "Stay tuned for game tips, updates, and more!"
+    },
+    "breadcrumb": {
+      "home": "Home",
+      "blog": "Blog"
+    }
+  }
+}
