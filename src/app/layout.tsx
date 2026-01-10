@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Roboto, Geist_Mono } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const roboto = Roboto({
@@ -32,13 +33,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html suppressHydrationWarning>
       <body className={`${roboto.variable} ${geistMono.variable} antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   )
