@@ -101,7 +101,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-md shadow-indigo-500/5 border border-indigo-100 text-sm font-medium text-[#6366f1]">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-md shadow-indigo-500/5 border border-indigo-100 text-sm font-medium text-indigo-700">
             {t('badge')}
           </span>
         </motion.div>

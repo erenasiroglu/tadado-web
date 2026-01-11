@@ -30,7 +30,7 @@ export function LanguageSwitcher() {
             px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200
             ${locale === loc 
               ? 'bg-white text-zinc-900 shadow-sm' 
-              : 'text-zinc-500 hover:text-zinc-700'
+              : 'text-zinc-600 hover:text-zinc-700'
             }
           `}
         >
