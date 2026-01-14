@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 
 export function Hero() {
   const t = useTranslations('hero')
@@ -60,39 +61,57 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="absolute top-24 left-[10%] w-16 h-20 bg-white rounded-xl shadow-lg border border-zinc-200 rotate-[-12deg] animate-float"
-          style={{ boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}
-        />
+          className="absolute top-24 left-[10%] w-20 h-28 md:w-28 md:h-36 lg:w-32 lg:h-40 xl:w-36 xl:h-44 rotate-[-12deg] animate-float opacity-20 md:opacity-100"
+        >
+          <Image
+            src="/hero_card_1.png"
+            alt="Taboo Card 1"
+            fill
+            className="object-contain drop-shadow-xl"
+          />
+        </motion.div>
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
-          className="absolute top-32 right-[12%] w-14 h-18 rounded-xl rotate-[8deg] animate-float delay-200"
-          style={{
-            backgroundColor: '#fdc763',
-            boxShadow: '0 10px 25px -5px rgba(253, 199, 99, 0.4), 0 4px 6px -2px rgba(253, 199, 99, 0.2)'
-          }}
-        />
+          className="absolute top-32 right-[12%] w-16 h-24 md:w-24 md:h-32 lg:w-28 lg:h-36 xl:w-32 xl:h-40 rotate-[8deg] animate-float delay-200 opacity-20 md:opacity-100"
+        >
+          <Image
+            src="/hero_card_2.png"
+            alt="Taboo Card 2"
+            fill
+            className="object-contain drop-shadow-xl"
+          />
+        </motion.div>
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-32 left-[15%] w-12 h-16 rounded-xl rotate-[15deg] animate-float delay-300"
-          style={{
-            backgroundColor: '#d4b2f2',
-            boxShadow: '0 10px 25px -5px rgba(212, 178, 242, 0.4), 0 4px 6px -2px rgba(212, 178, 242, 0.2)'
-          }}
-        />
+          className="absolute bottom-32 left-[15%] w-16 h-24 md:w-20 md:h-28 lg:w-24 lg:h-32 xl:w-28 xl:h-36 rotate-[15deg] animate-float delay-300 opacity-20 md:opacity-100"
+        >
+          <Image
+            src="/hero_card_3.png"
+            alt="Taboo Card 3"
+            fill
+            className="object-contain drop-shadow-xl"
+          />
+        </motion.div>
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.4 }}
-          className="absolute bottom-40 right-[8%] w-14 h-18 rounded-xl rotate-[-8deg] animate-float delay-100"
-          style={{
-            backgroundColor: '#4b1a7a',
-            boxShadow: '0 10px 25px -5px rgba(75, 26, 122, 0.4), 0 4px 6px -2px rgba(75, 26, 122, 0.3)'
-          }}
-        />
+          className="absolute bottom-40 right-[8%] w-20 h-28 md:w-24 md:h-32 lg:w-28 lg:h-36 xl:w-32 xl:h-40 rotate-[-8deg] animate-float delay-100 opacity-20 md:opacity-100"
+        >
+          <Image
+            src="/hero_card_4.png"
+            alt="Taboo Card 4"
+            fill
+            className="object-contain drop-shadow-xl"
+          />
+        </motion.div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
@@ -128,7 +147,6 @@ export function Hero() {
           {t('subtitle')}
         </motion.p>
 
-  
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -136,7 +154,6 @@ export function Hero() {
           className="mt-10 space-y-4"
         >
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-
             <a
               href="#"
               className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-zinc-900 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-zinc-900/20"
