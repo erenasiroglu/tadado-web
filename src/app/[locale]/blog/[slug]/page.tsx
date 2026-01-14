@@ -31,13 +31,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const url = `https://tadado.app/${locale}/blog/${slug}`
 
   return {
-    title: `${post.title} | Tadado Blog`,
+    title: `Tadado | ${post.title}`,
     description: post.description,
     alternates: {
       canonical: url
     },
     openGraph: {
-      title: post.title,
+      title: `Tadado | ${post.title}`,
       description: post.description,
       type: 'article',
       publishedTime: post.publishedAt,
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
+      title: `Tadado | ${post.title}`,
       description: post.description
     }
   }
@@ -57,6 +57,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 function createArticleSchema(post: ReturnType<typeof getBlogPost>) {
   if (!post) return null
+
+  const baseKeywords = ['word game', 'mobile game', 'party game', 'Tadado']
+  const allKeywords = [...baseKeywords, ...post.tags].join(', ')
 
   return {
     '@context': 'https://schema.org',
@@ -83,7 +86,12 @@ function createArticleSchema(post: ReturnType<typeof getBlogPost>) {
       '@type': 'WebPage',
       '@id': `https://tadado.app/${post.locale}/blog/${post.slug}`
     },
-    keywords: post.tags.join(', ')
+    keywords: allKeywords,
+    articleSection: 'Word Games',
+    about: {
+      '@type': 'Thing',
+      name: 'Word Games'
+    }
   }
 }
 
