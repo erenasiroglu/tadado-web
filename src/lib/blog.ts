@@ -39,7 +39,7 @@ export type BlogPost = {
   
   const blogPosts: BlogPost[] = [
     {
-      slug: 'taboo-vs-tadado',
+      slug: 'tabuu-vs-tadado',
       locale: 'en' as const, 
       title: 'Taboo vs Tadado: The Evolution of Word Games',
       description: 'Discover how Tadado revolutionizes the classic Taboo game with AI-powered cards, personalized categories, and a modern mobile experience. Learn why Tadado is the future of word games.',
