@@ -23,11 +23,18 @@ function createOrganizationSchema() {
     logo: 'https://tadado.app/logo.png',
     description: 'Tadado is a modern word game mobile app that revolutionizes party games with AI-powered cards, personalized categories, and engaging gameplay.',
     sameAs: [],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      contactType: 'Customer Service',
-      email: 'privacy@tadado.app'
-    },
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        contactType: 'Customer Service',
+        email: 'privacy@tadado.app'
+      },
+      {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        email: 'support@tadado.app'
+      }
+    ],
     keywords: 'word game, mobile game, party game, AI game, word guessing game, mobile word games, party games, interactive word game'
   }
 }

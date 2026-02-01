@@ -29,7 +29,8 @@
   "footer": {
     "copyright": "© 2026 Tadado. Tüm hakları saklıdır.",
     "privacy": "Gizlilik Politikası",
-    "terms": "Kullanım Koşulları"
+    "terms": "Kullanım Koşulları",
+    "support": "Destek"
   },
   "privacy": {
     "title": "Gizlilik Politikası | Tadado",
@@ -111,6 +112,43 @@
         "title": "İletişim Bilgileri",
         "content": "Bu Kullanım Koşulları ile ilgili sorularınız için lütfen legal@tadado.app adresinden bize ulaşın. Endişelerinizi hızlı bir şekilde ele almaya kararlıyız."
       }
+    }
+  },
+  "support": {
+    "title": "Destek | Tadado",
+    "description": "Tadado için yardım alın. Soru sorun, destek talep edin veya e-posta ile bize ulaşın. Size yardımcı olmak için buradayız.",
+    "heading": "Destek",
+    "lastUpdated": "Son Güncelleme",
+    "backHome": "Ana Sayfaya Dön",
+    "sections": {
+      "intro": {
+        "title": "Size Yardımcı Olmak İçin Buradayız",
+        "content": "Bu sayfa Tadado için destek alabileceğiniz yerdir. Soru sorabilir, sorun bildirebilir veya uygulama ile ilgili yardım talep edebilirsiniz. Her mesaja yanıt vermeyi hedefliyoruz."
+      },
+      "getSupport": {
+        "title": "Destek Nasıl Alınır",
+        "content": "Bize ulaşmanın en iyi yolu e-posta göndermektir. Sorunuzu veya destek talebinizi aşağıdaki destek adresine gönderin. Lütfen cihaz türünüzü ve sorununuzun kısa bir açıklamasını ekleyin, böylece size daha hızlı yardımcı olabiliriz."
+      },
+      "contact": {
+        "title": "Bize Ulaşın",
+        "content": "İletişime geçmek için aşağıdaki e-posta adresini kullanın. Her mesajı okuyoruz ve en kısa sürede size dönüş yapacağız.",
+        "emailLabel": "Destek e-posta adresi",
+        "email": "support@tadado.app",
+        "responseTime": "İş günlerinde 24–48 saat içinde yanıt vermeyi hedefliyoruz."
+      }
+    },
+    "form": {
+      "title": "Mesaj gönderin",
+      "description": "Sorunuzu veya talebinizi yazın, size dönüş yapacağız.",
+      "emailLabel": "E-posta adresiniz",
+      "emailPlaceholder": "ornek@email.com",
+      "messageLabel": "Mesajınız",
+      "messagePlaceholder": "Sorunuzu veya destek talebinizi kısaca yazın…",
+      "submit": "Gönder",
+      "sending": "Gönderiliyor…",
+      "successTitle": "Mesaj gönderildi",
+      "success": "Bize ulaştığınız için teşekkürler. İş günlerinde 1-4 saat içinde yanıt vereceğiz.",
+      "error": "Bir şeyler yanlış gitti. Lütfen tekrar deneyin veya doğrudan e-posta gönderin."
     }
   },
   "blog": {

@@ -23,6 +23,12 @@ export function Footer() {
 
           <div className="flex items-center gap-6">
             <Link 
+              href={`/${locale}/support`}
+              className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors"
+            >
+              {t('support')}
+            </Link>
+            <Link 
               href={`/${locale}/privacy`}
               className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors"
             >

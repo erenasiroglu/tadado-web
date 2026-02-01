@@ -29,7 +29,8 @@
   "footer": {
     "copyright": "© 2026 Tadado. All rights reserved.",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Use"
+    "terms": "Terms of Use",
+    "support": "Support"
   },
   "privacy": {
     "title": "Privacy Policy | Tadado",
@@ -111,6 +112,43 @@
         "title": "Contact Information",
         "content": "For any questions regarding these Terms of Use, please contact us at legal@tadado.app. We are committed to addressing your concerns promptly."
       }
+    }
+  },
+  "support": {
+    "title": "Support | Tadado",
+    "description": "Get help with Tadado. Ask questions, request support, or contact us by email. We're here to help.",
+    "heading": "Support",
+    "lastUpdated": "Last Updated",
+    "backHome": "Back to Home",
+    "sections": {
+      "intro": {
+        "title": "We're Here to Help",
+        "content": "This page is your place to get support for Tadado. You can ask questions, report issues, or request help with the app. We aim to respond to every message."
+      },
+      "getSupport": {
+        "title": "How to Get Support",
+        "content": "The best way to reach us is by email. Send your question or support request to our support address below. Please include your device type and a short description of your issue so we can help you faster."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "content": "Use the email address below to get in touch. We read every message and will get back to you as soon as we can.",
+        "emailLabel": "Support email",
+        "email": "support@tadado.app",
+        "responseTime": "We aim to respond within 24–48 hours on business days."
+      }
+    },
+    "form": {
+      "title": "Send a message",
+      "description": "Tell us your question or issue and we'll get back to you.",
+      "emailLabel": "Your email",
+      "emailPlaceholder": "you@example.com",
+      "messageLabel": "Your message",
+      "messagePlaceholder": "Describe your question or support request…",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "successTitle": "Message sent",
+      "success": "Thanks for reaching out. We'll reply within 1-4 hours on business days.",
+      "error": "Something went wrong. Please try again or email us directly."
     }
   },
   "blog": {
