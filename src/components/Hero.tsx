@@ -44,7 +44,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-32 left-[15%] w-16 h-24 md:w-20 md:h-28 lg:w-24 lg:h-32 xl:w-28 xl:h-36 rotate-[15deg] animate-float delay-300 opacity-30 md:opacity-60"
+          className="hidden md:block absolute bottom-32 left-[15%] w-16 h-24 md:w-20 md:h-28 lg:w-24 lg:h-32 xl:w-28 xl:h-36 rotate-[15deg] animate-float delay-300 opacity-30 md:opacity-60"
         >
           <Image src="/hero_card_3.png" alt="" fill className="object-contain drop-shadow-xl" />
         </motion.div>
@@ -52,7 +52,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.4 }}
-          className="absolute bottom-40 right-[8%] w-20 h-28 md:w-24 md:h-32 lg:w-28 lg:h-36 xl:w-32 xl:h-40 rotate-[-8deg] animate-float delay-100 opacity-30 md:opacity-60"
+          className="hidden md:block absolute bottom-40 right-[8%] w-20 h-28 md:w-24 md:h-32 lg:w-28 lg:h-36 xl:w-32 xl:h-40 rotate-[-8deg] animate-float delay-100 opacity-30 md:opacity-60"
         >
           <Image src="/hero_card_4.png" alt="" fill className="object-contain drop-shadow-xl" />
         </motion.div>
