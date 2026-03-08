@@ -397,6 +397,444 @@ export type BlogPost = {
       publishedAt: '2026-01-20T10:00:00Z',
       readingTime: 4,
       tags: ['parti oyunları', 'yapay zeka', 'sosyal oyunlar', 'kelime oyunları', 'mobil oyunlar']
+    },
+    {
+      slug: 'en-iyi-grup-oyunlari',
+      locale: 'tr' as const,
+      title: 'Arkadaşlarla Oynanabilecek En İyi Grup Oyunları',
+      description: 'Taboo, Codenames, Charades, Heads Up ve Tadado dahil arkadaşlarla oynanabilecek en popüler grup oyunları. Kelime oyunları ve parti oyunları ile oyun gecelerinizi unutulmaz kılın.',
+      content: `
+        <p class="lead">Arkadaşlarla geçirilen bir akşamı eğlenceli hale getirmenin en iyi yollarından biri grup oyunlarıdır. Özellikle kelime oyunları ve hızlı parti oyunları, herkesin kolayca katılabildiği eğlenceli bir ortam yaratır.</p>
+
+        <p>İşte arkadaşlarla oynayabileceğiniz en popüler grup oyunlarından bazıları.</p>
+
+        <h2>1. Taboo</h2>
+
+        <p>Taboo, en bilinen kelime tahmin oyunlarından biridir.</p>
+
+        <p>Oyuncular bir kelimeyi takım arkadaşlarına anlatmaya çalışır ancak kart üzerindeki yasaklı kelimeleri kullanamaz.</p>
+
+        <p>Bu kural oyunu oldukça eğlenceli ve bazen kaotik hale getirir.</p>
+
+        <h2>2. Codenames</h2>
+
+        <p>Codenames strateji ve kelime oyunlarını birleştiren popüler bir masa oyunudur.</p>
+
+        <p>Takımlar ipuçları vererek doğru kelimeleri bulmaya çalışır.</p>
+
+        <h2>3. Charades</h2>
+
+        <p>Charades klasik bir tahmin oyunudur.</p>
+
+        <p>Oyuncular kelimeleri konuşmadan sadece mimik ve hareketlerle anlatır.</p>
+
+        <p>Bu da oyunu oldukça komik hale getirir.</p>
+
+        <h2>4. Heads Up</h2>
+
+        <p>Heads Up mobil bir parti oyunudur.</p>
+
+        <p>Telefonu alnınıza tutarsınız ve arkadaşlarınız size kelimeyi anlatır.</p>
+
+        <p>Sosyal ortamlarda oldukça popüler bir oyundur.</p>
+
+        <h2>5. Tadado</h2>
+
+        <p>Tadado modern bir kelime tahmin oyunudur.</p>
+
+        <p>Oyuncular kelimeyi anlatır ve takım arkadaşları tahmin eder. Ancak yasaklı ipuçlarını kullanamazlar.</p>
+
+        <p>Tadado'nun farkı ise oyunculara daha fazla esneklik sunmasıdır.</p>
+
+        <p>Oyuncular:</p>
+
+        <ul>
+          <li>farklı kart temaları seçebilir</li>
+          <li>kendi kartlarını oluşturabilir</li>
+          <li>yapay zeka ile yeni kartlar üretebilir</li>
+        </ul>
+
+        <p>Bu sayede her oyun farklı bir deneyim sunar.</p>
+
+        <h2>Neden Grup Oyunları Bu Kadar Popüler?</h2>
+
+        <p>Grup oyunları popülerdir çünkü:</p>
+
+        <ul>
+          <li>öğrenmesi kolaydır</li>
+          <li>hızlı oynanır</li>
+          <li>herkes katılabilir</li>
+          <li>sosyal etkileşim yaratır</li>
+        </ul>
+
+        <p>Özellikle kelime oyunları hem rekabet hem de eğlence sunar.</p>
+
+        <h2>Bir Sonraki Oyun Gecesi İçin</h2>
+
+        <p>Bir sonraki arkadaş buluşmanızda klasik masa oyunlarını deneyebilir veya mobil alternatiflere göz atabilirsiniz.</p>
+
+        <p>Eğer kelime tahmin oyunlarını seviyorsanız Tadado, modern özellikleri sayesinde oyun geceleri için oldukça eğlenceli bir seçenek olabilir.</p>
+      `,
+      author: {
+        name: 'Tadado Ekibi',
+        role: 'Oyun Geliştiricileri'
+      },
+      publishedAt: '2026-03-08T10:00:00Z',
+      readingTime: 5,
+      tags: ['grup oyunları', 'kelime oyunları', 'parti oyunları', 'Taboo', 'Tadado']
+    },
+    {
+      slug: 'en-iyi-grup-oyunlari',
+      locale: 'en' as const,
+      title: 'Best Group Games to Play with Friends',
+      description: 'The most popular group games to play with friends, including Taboo, Codenames, Charades, Heads Up, and Tadado. Make your game nights unforgettable with word games and party games.',
+      content: `
+        <p class="lead">One of the best ways to make an evening with friends fun is group games. Word games and fast-paced party games in particular create an entertaining atmosphere where everyone can easily join in.</p>
+
+        <p>Here are some of the most popular group games you can play with friends.</p>
+
+        <h2>1. Taboo</h2>
+
+        <p>Taboo is one of the best-known word guessing games.</p>
+
+        <p>Players try to describe a word to their teammates without using the forbidden words on the card.</p>
+
+        <p>This rule makes the game quite fun and sometimes chaotic.</p>
+
+        <h2>2. Codenames</h2>
+
+        <p>Codenames is a popular board game that combines strategy and word games.</p>
+
+        <p>Teams try to find the right words by giving clues.</p>
+
+        <h2>3. Charades</h2>
+
+        <p>Charades is a classic guessing game.</p>
+
+        <p>Players describe words without speaking, using only gestures and movements.</p>
+
+        <p>This makes the game quite hilarious.</p>
+
+        <h2>4. Heads Up</h2>
+
+        <p>Heads Up is a mobile party game.</p>
+
+        <p>You hold the phone to your forehead and your friends describe the word to you.</p>
+
+        <p>It's a very popular game in social settings.</p>
+
+        <h2>5. Tadado</h2>
+
+        <p>Tadado is a modern word guessing game.</p>
+
+        <p>Players describe the word and teammates guess. However, they cannot use the forbidden hints.</p>
+
+        <p>What sets Tadado apart is that it offers players more flexibility.</p>
+
+        <p>Players can:</p>
+
+        <ul>
+          <li>choose from different card themes</li>
+          <li>create their own cards</li>
+          <li>generate new cards with AI</li>
+        </ul>
+
+        <p>This way, every game offers a different experience.</p>
+
+        <h2>Why Are Group Games So Popular?</h2>
+
+        <p>Group games are popular because they:</p>
+
+        <ul>
+          <li>are easy to learn</li>
+          <li>play quickly</li>
+          <li>allow everyone to participate</li>
+          <li>create social interaction</li>
+        </ul>
+
+        <p>Word games in particular offer both competition and fun.</p>
+
+        <h2>For Your Next Game Night</h2>
+
+        <p>At your next friend gathering, you can try classic board games or check out mobile alternatives.</p>
+
+        <p>If you enjoy word guessing games, Tadado can be a great option for game nights thanks to its modern features.</p>
+      `,
+      author: {
+        name: 'Tadado Team',
+        role: 'Game Developers'
+      },
+      publishedAt: '2026-03-08T10:00:00Z',
+      readingTime: 5,
+      tags: ['group games', 'word games', 'party games', 'Taboo', 'Tadado']
+    },
+    {
+      slug: 'games-like-taboo',
+      locale: 'en' as const,
+      title: 'Games Like Taboo You Can Play With Friends',
+      description: 'Taboo is a classic party game, but what if you don\'t have the board game? Discover Tadado, Heads Up, Codenames, Charades and other similar word guessing games you can play with friends.',
+      content: `
+        <p class="lead">Taboo is one of the most popular party games ever created. The challenge is simple: describe a word to your teammates without using certain forbidden clues.</p>
+
+        <p>But what if you don't have the board game with you?</p>
+
+        <p>Fortunately, there are many similar games you can play with friends, both offline and online. Here are some of the best games like Taboo.</p>
+
+        <h2>1. Tadado</h2>
+
+        <p>Tadado is a modern mobile word guessing game inspired by classic party games like Taboo.</p>
+
+        <p>Players describe a word while avoiding forbidden hints, and teammates try to guess it before time runs out.</p>
+
+        <p>What makes Tadado different:</p>
+
+        <ul>
+          <li>custom card packs</li>
+          <li>AI generated cards</li>
+          <li>mobile friendly gameplay</li>
+          <li>perfect for game nights</li>
+        </ul>
+
+        <p>Unlike traditional board games, Tadado can be played anywhere with just a phone.</p>
+
+        <h2>2. Heads Up</h2>
+
+        <p>Heads Up is a popular mobile party game where players hold a phone on their forehead while others give clues.</p>
+
+        <p>It's fast-paced and perfect for group settings.</p>
+
+        <h2>3. Codenames</h2>
+
+        <p>Codenames is a strategy word game where teams guess secret words based on clues given by their spymaster.</p>
+
+        <p>It mixes deduction with word association.</p>
+
+        <h2>4. Charades</h2>
+
+        <p>Charades is a classic guessing game where players act out words without speaking.</p>
+
+        <p>It's simple, fun, and works for any group size.</p>
+
+        <h2>Why Word Guessing Games Are So Popular</h2>
+
+        <p>Word guessing games work well for social gatherings because they are:</p>
+
+        <ul>
+          <li>easy to learn</li>
+          <li>fast to play</li>
+          <li>great for groups</li>
+          <li>funny and chaotic</li>
+        </ul>
+
+        <p>They create natural interaction between players.</p>
+
+        <h2>Try a Modern Word Guessing Game</h2>
+
+        <p>If you enjoy games like Taboo, modern mobile alternatives like Tadado offer the same fun with more flexibility.</p>
+
+        <p>With customizable cards and AI-generated content, every round feels different.</p>
+      `,
+      author: {
+        name: 'Tadado Team',
+        role: 'Game Developers'
+      },
+      publishedAt: '2026-03-08T12:00:00Z',
+      readingTime: 4,
+      tags: ['Taboo', 'word games', 'party games', 'mobile games', 'Tadado']
+    },
+    {
+      slug: 'games-like-taboo',
+      locale: 'tr' as const,
+      title: 'Arkadaşlarla Oynayabileceğiniz Taboo Benzeri Oyunlar',
+      description: 'Taboo klasik bir parti oyunudur, ama masa oyunu yanınızda yoksa? Tadado, Heads Up, Codenames, Charades ve arkadaşlarla oynanabilecek diğer kelime tahmin oyunlarını keşfedin.',
+      content: `
+        <p class="lead">Taboo şimdiye kadar yaratılmış en popüler parti oyunlarından biridir. Meydan okuma basittir: belirli yasaklı ipuçlarını kullanmadan takım arkadaşlarınıza bir kelimeyi anlatın.</p>
+
+        <p>Peki masa oyunu yanınızda yoksa?</p>
+
+        <p>Neyse ki arkadaşlarınızla oynayabileceğiniz, hem çevrimdışı hem çevrimiçi birçok benzer oyun var. İşte Taboo benzeri en iyi oyunlardan bazıları.</p>
+
+        <h2>1. Tadado</h2>
+
+        <p>Tadado, Taboo gibi klasik parti oyunlarından ilham alan modern bir mobil kelime tahmin oyunudur.</p>
+
+        <p>Oyuncular yasaklı ipuçlarından kaçınarak kelimeyi anlatır, takım arkadaşları ise süre dolmadan tahmin etmeye çalışır.</p>
+
+        <p>Tadado'yu farklı kılan özellikler:</p>
+
+        <ul>
+          <li>özel kart paketleri</li>
+          <li>yapay zeka ile üretilen kartlar</li>
+          <li>mobil dostu oyun deneyimi</li>
+          <li>oyun geceleri için ideal</li>
+        </ul>
+
+        <p>Geleneksel masa oyunlarının aksine Tadado sadece telefonla her yerde oynanabilir.</p>
+
+        <h2>2. Heads Up</h2>
+
+        <p>Heads Up, oyuncuların telefonu alnında tuttuğu ve diğerlerinin ipucu verdiği popüler bir mobil parti oyunudur.</p>
+
+        <p>Hızlı tempolu ve grup ortamları için mükemmeldir.</p>
+
+        <h2>3. Codenames</h2>
+
+        <p>Codenames, takımların ajan şeflerinin verdiği ipuçlarına dayanarak gizli kelimeleri tahmin ettiği bir strateji kelime oyunudur.</p>
+
+        <p>Tümdengelim ile kelime çağrışımını birleştirir.</p>
+
+        <h2>4. Charades</h2>
+
+        <p>Charades, oyuncuların konuşmadan kelimeleri canlandırdığı klasik bir tahmin oyunudur.</p>
+
+        <p>Basit, eğlenceli ve her grup büyüklüğü için uygundur.</p>
+
+        <h2>Kelime Tahmin Oyunları Neden Bu Kadar Popüler</h2>
+
+        <p>Kelime tahmin oyunları sosyal buluşmalar için iyi çalışır çünkü:</p>
+
+        <ul>
+          <li>öğrenmesi kolaydır</li>
+          <li>hızlı oynanır</li>
+          <li>gruplar için harikadır</li>
+          <li>komik ve kaotiktir</li>
+        </ul>
+
+        <p>Oyuncular arasında doğal etkileşim yaratırlar.</p>
+
+        <h2>Modern Bir Kelime Tahmin Oyunu Deneyin</h2>
+
+        <p>Taboo gibi oyunlardan hoşlanıyorsanız, Tadado gibi modern mobil alternatifler aynı eğlenceyi daha fazla esneklikle sunar.</p>
+
+        <p>Özelleştirilebilir kartlar ve yapay zeka ile üretilen içerikle her tur farklı hissettirir.</p>
+      `,
+      author: {
+        name: 'Tadado Ekibi',
+        role: 'Oyun Geliştiricileri'
+      },
+      publishedAt: '2026-03-08T12:00:00Z',
+      readingTime: 4,
+      tags: ['Taboo', 'kelime oyunları', 'parti oyunları', 'mobil oyunlar', 'Tadado']
+    },
+    {
+      slug: 'how-ai-is-changing-party-games',
+      locale: 'en' as const,
+      title: 'How AI Is Changing Party Games',
+      description: 'Artificial intelligence is transforming how party games are created and played. Discover AI-generated content, personalized experiences, and the future of social games.',
+      content: `
+        <p class="lead">Artificial intelligence is starting to change the way games are created and played.</p>
+
+        <p>Even party games are beginning to integrate AI to create new experiences.</p>
+
+        <h2>AI Generated Content</h2>
+
+        <p>AI can generate:</p>
+
+        <ul>
+          <li>new words</li>
+          <li>new categories</li>
+          <li>unique game scenarios</li>
+        </ul>
+
+        <p>This allows games to constantly refresh their content.</p>
+
+        <h2>Personalized Game Experiences</h2>
+
+        <p>AI systems can adapt games to player preferences.</p>
+
+        <p>For example, they can generate card packs based on:</p>
+
+        <ul>
+          <li>interests</li>
+          <li>difficulty</li>
+          <li>themes</li>
+        </ul>
+
+        <h2>Tadado and AI Word Cards</h2>
+
+        <p>Some modern word games are experimenting with AI-generated cards.</p>
+
+        <p>This allows players to create unique word packs instead of relying only on fixed decks.</p>
+
+        <h2>Endless Replayability</h2>
+
+        <p>One of the biggest advantages of AI in games is replayability.</p>
+
+        <p>Instead of memorizing cards, players encounter new challenges every time.</p>
+
+        <h2>The Future of Social Games</h2>
+
+        <p>AI will likely play a bigger role in social games in the coming years.</p>
+
+        <p>Games that adapt to players and generate new content will become increasingly popular.</p>
+      `,
+      author: {
+        name: 'Tadado Team',
+        role: 'Game Developers'
+      },
+      publishedAt: '2026-03-08T14:00:00Z',
+      readingTime: 3,
+      tags: ['AI', 'party games', 'word games', 'Tadado', 'social games']
+    },
+    {
+      slug: 'how-ai-is-changing-party-games',
+      locale: 'tr' as const,
+      title: 'Yapay Zeka Parti Oyunlarını Nasıl Değiştiriyor',
+      description: 'Yapay zeka parti oyunlarının nasıl oluşturulduğunu ve oynandığını dönüştürüyor. AI ile üretilen içerik, kişiselleştirilmiş deneyimler ve sosyal oyunların geleceğini keşfedin.',
+      content: `
+        <p class="lead">Yapay zeka oyunların nasıl oluşturulduğunu ve oynandığını değiştirmeye başlıyor.</p>
+
+        <p>Parti oyunları bile yeni deneyimler yaratmak için yapay zekayı entegre etmeye başlıyor.</p>
+
+        <h2>Yapay Zeka ile Üretilen İçerik</h2>
+
+        <p>Yapay zeka şunları üretebilir:</p>
+
+        <ul>
+          <li>yeni kelimeler</li>
+          <li>yeni kategoriler</li>
+          <li>benzersiz oyun senaryoları</li>
+        </ul>
+
+        <p>Bu sayede oyunlar sürekli içeriklerini yenileyebilir.</p>
+
+        <h2>Kişiselleştirilmiş Oyun Deneyimleri</h2>
+
+        <p>Yapay zeka sistemleri oyunları oyuncu tercihlerine uyarlayabilir.</p>
+
+        <p>Örneğin şunlara göre kart paketleri oluşturabilir:</p>
+
+        <ul>
+          <li>ilgi alanları</li>
+          <li>zorluk</li>
+          <li>temalar</li>
+        </ul>
+
+        <h2>Tadado ve Yapay Zeka Kelime Kartları</h2>
+
+        <p>Bazı modern kelime oyunları yapay zeka ile üretilen kartlarla denemeler yapıyor.</p>
+
+        <p>Bu sayede oyuncular sadece sabit destelere güvenmek yerine benzersiz kelime paketleri oluşturabilir.</p>
+
+        <h2>Sonsuz Tekrar Oynanabilirlik</h2>
+
+        <p>Yapay zekanın oyunlardaki en büyük avantajlarından biri tekrar oynanabilirliktir.</p>
+
+        <p>Kartları ezberlemek yerine oyuncular her seferinde yeni zorluklarla karşılaşır.</p>
+
+        <h2>Sosyal Oyunların Geleceği</h2>
+
+        <p>Yapay zeka önümüzdeki yıllarda sosyal oyunlarda daha büyük bir rol oynayacak.</p>
+
+        <p>Oyunculara uyum sağlayan ve yeni içerik üreten oyunlar giderek daha popüler hale gelecek.</p>
+      `,
+      author: {
+        name: 'Tadado Ekibi',
+        role: 'Oyun Geliştiricileri'
+      },
+      publishedAt: '2026-03-08T14:00:00Z',
+      readingTime: 3,
+      tags: ['yapay zeka', 'parti oyunları', 'kelime oyunları', 'Tadado', 'sosyal oyunlar']
     }
   ].map((post) => ({
     ...post,

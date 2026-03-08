@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { Roboto, Geist_Mono } from 'next/font/google'
+import { Plus_Jakarta_Sans, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import './globals.css'
 
-const roboto = Roboto({
-  variable: '--font-roboto',
-  weight: ['300', '400', '500', '700'],
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: '--font-jakarta',
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap'
 })
@@ -39,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${roboto.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${plusJakartaSans.variable} ${geistMono.variable} antialiased`}>
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

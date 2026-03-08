@@ -31,14 +31,14 @@ export function Topbar() {
           flex items-center justify-between gap-8 px-6 py-3
           rounded-full border transition-all duration-300
           ${isScrolled 
-            ? 'bg-white/90 border-zinc-200 shadow-lg shadow-zinc-900/5 backdrop-blur-xl' 
-            : 'bg-white/70 border-zinc-100 backdrop-blur-md'
+            ? 'bg-zinc-900/90 border-zinc-800 shadow-lg shadow-black/20 backdrop-blur-xl' 
+            : 'bg-zinc-900/70 border-zinc-800 backdrop-blur-md'
           }
         `}
       >
         <Link 
           href={`/${locale}`} 
-          className="flex items-center gap-2 font-bold text-lg text-zinc-900 hover:text-indigo-600 transition-colors"
+          className="flex items-center gap-2 font-bold text-lg text-zinc-50 hover:text-indigo-400 transition-colors"
         >
           <span>Tadado</span>
         </Link>
@@ -46,13 +46,13 @@ export function Topbar() {
         <div className="hidden md:flex items-center gap-6">
           <Link 
             href={`/${locale}`}
-            className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
+            className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors"
           >
             {t('home')}
           </Link>
           <Link 
             href={`/${locale}/blog`}
-            className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
+            className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors"
           >
             {t('blog')}
           </Link>
@@ -64,7 +64,7 @@ export function Topbar() {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-zinc-600 hover:text-zinc-900 transition-colors"
+            className="md:hidden p-2 text-zinc-400 hover:text-zinc-50 transition-colors"
             aria-label="Toggle menu"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,20 +85,20 @@ export function Topbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-4 right-4 mt-2 p-4 rounded-2xl bg-white/95 border border-zinc-200 shadow-xl shadow-zinc-900/5 backdrop-blur-xl md:hidden"
+            className="absolute top-full left-4 right-4 mt-2 p-4 rounded-2xl bg-zinc-900/95 border border-zinc-800 shadow-xl shadow-black/20 backdrop-blur-xl md:hidden"
           >
             <div className="flex flex-col gap-2">
               <Link 
                 href={`/${locale}`}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-3 text-sm text-zinc-700 hover:text-zinc-900 hover:bg-zinc-50 rounded-lg transition-colors"
+                className="px-4 py-3 text-sm text-zinc-300 hover:text-zinc-50 hover:bg-zinc-800 rounded-lg transition-colors"
               >
                 {t('home')}
               </Link>
               <Link 
                 href={`/${locale}/blog`}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-3 text-sm text-zinc-700 hover:text-zinc-900 hover:bg-zinc-50 rounded-lg transition-colors"
+                className="px-4 py-3 text-sm text-zinc-300 hover:text-zinc-50 hover:bg-zinc-800 rounded-lg transition-colors"
               >
                 {t('blog')}
               </Link>

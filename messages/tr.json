@@ -9,22 +9,87 @@
     "rules": "Nasıl Oynanır"
   },
   "hero": {
-    "badge": "En İyi Kelime Oyunu",
-    "title": "Tadado Oyna.",
-    "titleHighlight": "Kazan.",
-    "subtitle": "Modern, kişiselleştirilmiş kartlar. Oyunlaştırılmış eğlence. Birlikte oynamanın ve kazanmanın yeni yolu.",
-    "ctaAppStore": "Çok Yakında",
-    "ctaPlayStore": "Çok Yakında",
-    "ctaWaitlist": "Bekleme Listesine Katıl",
-    "waitlist": {
-      "title": "Bekleme Listesine Katıl",
-      "description": "Tadado'nun çıkışını ilk siz öğrenin!",
-      "emailLabel": "E-posta adresi",
-      "emailPlaceholder": "ornek@email.com",
-      "submit": "Bekleme Listesine Katıl",
-      "success": "Teşekkürler! Tadado çıktığında size haber vereceğiz.",
-      "error": "Bir şeyler yanlış gitti. Lütfen tekrar deneyin."
+    "badge": "Lansmana Özel",
+    "badgePrice": "Tadado Ultra — $2.99",
+    "title": "Kelimeyi anlat.",
+    "titleHighlight": "Takımın tahmin etsin.",
+    "subtitle": "Arkadaşlar, çiftler veya gruplarla oynanan hızlı ve eğlenceli bir kelime oyunu.",
+    "cta": "App Store'dan indir",
+    "launchNote": "Lansmanda satın alan oyuncular tüm kartlara ve gelecekte eklenecek kart paketlerine erişim kazanır."
+  },
+  "gameplay": {
+    "headline": "Öğrenmesi kolay. Bırakması zor.",
+    "p1": "Tadado hızlı tempolu bir takım oyunudur.",
+    "p2": "Bir oyuncu ekrandaki kelimeyi anlatır.",
+    "p3": "Ancak ekranda görünen **yasaklı ipuçlarını kullanamaz.**",
+    "p4": "Takım arkadaşları doğru tahmin ederse puan kazanılır.",
+    "p5": "Süre bitmeden mümkün olduğunca fazla kelimeyi tahmin etmek hedeflenir.",
+    "p6": "Her tur hızlı, gürültülü ve beklenmedik anlarla doludur."
+  },
+  "howItWorks": {
+    "headline": "Nasıl oynanır",
+    "step1": {
+      "title": "Sana uygun kart temasını seç.",
+      "desc": "Farklı kart temaları ile oyunun tarzını belirle."
+    },
+    "step2": {
+      "title": "Kelimeyi anlat.",
+      "desc": "Kelimeyi takımına anlat ama yasaklı ipuçlarını kullanma."
+    },
+    "step3": {
+      "title": "Takımın tahmin etsin.",
+      "desc": "Süre bitmeden mümkün olduğunca fazla doğru tahmin yap."
     }
+  },
+  "gameMoments": {
+    "headline": "Her tur farklı bir hikaye.",
+    "p1": "Bazı anlar oyunu unutulmaz yapar.",
+    "moments": [
+      "Yanlışlıkla yasaklı kelimeyi söylemek.",
+      "Son saniyede gelen doğru tahmin.",
+      "Takım arkadaşlarının bağırarak ipucu istemesi."
+    ],
+    "p2": "Hiçbir oyun birbirinin aynısı değildir."
+  },
+  "tadadoUltra": {
+    "headline": "Tadado Ultra ile her şeyin kilidini aç.",
+    "price": "$2.99",
+    "priceNote": "Lansmana özel fiyat.",
+    "benefits": [
+      "Tüm kartlara erişim",
+      "Sınırsız oyun temaları",
+      "Tadado AI ile kendi kartlarını oluştur",
+      "Oyunu tamamen kişiselleştir",
+      "Gelecekte eklenecek kart paketleri"
+    ],
+    "text": "Tek satın alma. Tüm içerik senin.",
+    "cta": "Tadado Ultra'yı aç"
+  },
+  "aiFeature": {
+    "headline": "Kendi kartını oluştur.",
+    "p1": "Tadado AI sayesinde kendi kelime kartlarını oluşturabilirsin.",
+    "points": [
+      "Arkadaş grubuna özel kartlar ekle.",
+      "Yeni temalar yarat.",
+      "Oyunu tamamen kendine göre şekillendir."
+    ],
+    "p2": "Her oyun farklı hale gelir."
+  },
+  "social": {
+    "headline": "Oyun geceleri için tasarlandı.",
+    "p1": "Tadado basit anları unutulmaz hale getirir.",
+    "useCases": [
+      "Arkadaş buluşmaları",
+      "Çiftler için eğlenceli oyunlar",
+      "Partiler",
+      "Gece oyun seansları"
+    ]
+  },
+  "finalCta": {
+    "headline": "Bir sonraki oyun gecesine hazır mısın?",
+    "text": "Tadado'yu indir ve oynamaya hemen başla.",
+    "cta": "App Store'dan indir",
+    "launchReminder": "Lansmana özel Tadado Ultra — $2.99"
   },
   "footer": {
     "copyright": "© 2026 Tadado. Tüm hakları saklıdır.",

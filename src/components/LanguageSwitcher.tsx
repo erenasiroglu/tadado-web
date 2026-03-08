@@ -21,7 +21,7 @@ export function LanguageSwitcher() {
   }
 
   return (
-    <div className="flex items-center gap-1 rounded-full bg-zinc-100 p-1">
+    <div className="flex items-center gap-1 rounded-full bg-zinc-800 p-1">
       {locales.map((loc) => (
         <button
           key={loc}
@@ -29,8 +29,8 @@ export function LanguageSwitcher() {
           className={`
             px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200
             ${locale === loc 
-              ? 'bg-white text-zinc-900 shadow-sm' 
-              : 'text-zinc-600 hover:text-zinc-700'
+              ? 'bg-zinc-600 text-zinc-50 shadow-sm' 
+              : 'text-zinc-400 hover:text-zinc-300'
             }
           `}
         >

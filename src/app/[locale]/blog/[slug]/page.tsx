@@ -121,18 +121,18 @@ export default async function BlogPostPage({ params }: Props) {
         />
       )}
 
-      <main className="relative min-h-screen pt-32 pb-16 px-6">
+      <main className="relative min-h-screen pt-32 pb-16 px-6 bg-zinc-950">
         {/* Background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-indigo-100/30 to-transparent rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-orange-100/30 to-transparent rounded-full blur-3xl" />
+          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-indigo-500/10 to-transparent rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-violet-500/10 to-transparent rounded-full blur-3xl" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <nav className="mb-8" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2 text-sm text-zinc-500">
               <li>
-                <Link href={`/${locale}`} className="hover:text-zinc-900 transition-colors">
+                <Link href={`/${locale}`} className="hover:text-zinc-50 transition-colors">
                   {t('breadcrumb.home')}
                 </Link>
               </li>
@@ -142,7 +142,7 @@ export default async function BlogPostPage({ params }: Props) {
                 </svg>
               </li>
               <li>
-                <Link href={`/${locale}/blog`} className="hover:text-zinc-900 transition-colors">
+                <Link href={`/${locale}/blog`} className="hover:text-zinc-50 transition-colors">
                   {t('breadcrumb.blog')}
                 </Link>
               </li>
@@ -151,7 +151,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </li>
-              <li className="text-zinc-900 truncate" aria-current="page">
+              <li className="text-zinc-50 truncate" aria-current="page">
                 {post.title}
               </li>
             </ol>
@@ -159,10 +159,10 @@ export default async function BlogPostPage({ params }: Props) {
 
           <BlogPostContent post={post} locale={locale} />
 
-          <div className="mt-12 pt-8 border-t border-zinc-200">
+          <div className="mt-12 pt-8 border-t border-zinc-800">
             <Link
               href={`/${locale}/blog`}
-              className="inline-flex items-center gap-2 text-sm text-indigo-600 hover:text-indigo-700 font-medium transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-indigo-400 hover:text-indigo-300 font-medium transition-colors"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

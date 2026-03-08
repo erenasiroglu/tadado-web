@@ -9,22 +9,87 @@
     "rules": "How to Play"
   },
   "hero": {
-    "badge": "Best Word Game",
-    "title": "Play Tadado.",
-    "titleHighlight": "Win More.",
-    "subtitle": "Modern, personalized cards. Gamified fun. Reimagine how you play and win together.",
-    "ctaAppStore": "Coming Soon",
-    "ctaPlayStore": "Coming Soon",
-    "ctaWaitlist": "Join Waitlist",
-    "waitlist": {
-      "title": "Join the Waitlist",
-      "description": "Be the first to know when Tadado launches!",
-      "emailLabel": "Email address",
-      "emailPlaceholder": "your@email.com",
-      "submit": "Join Waitlist",
-      "success": "Thanks! We'll notify you when Tadado launches.",
-      "error": "Something went wrong. Please try again."
+    "badge": "Launch Special",
+    "badgePrice": "Tadado Ultra — $2.99",
+    "title": "Describe the word.",
+    "titleHighlight": "Your team guesses.",
+    "subtitle": "A fast and fun word game played with friends, couples, or groups.",
+    "cta": "Download on App Store",
+    "launchNote": "Players who purchase at launch get access to all cards and future card packs."
+  },
+  "gameplay": {
+    "headline": "Easy to learn. Hard to put down.",
+    "p1": "Tadado is a fast-paced team game.",
+    "p2": "One player describes the word on screen.",
+    "p3": "But they cannot use the **forbidden hints** shown on screen.",
+    "p4": "Teammates score points when they guess correctly.",
+    "p5": "The goal is to guess as many words as possible before time runs out.",
+    "p6": "Every round is full of fast, loud, and unexpected moments."
+  },
+  "howItWorks": {
+    "headline": "How to play",
+    "step1": {
+      "title": "Choose your card theme.",
+      "desc": "Set the tone of the game with different card themes."
+    },
+    "step2": {
+      "title": "Describe the word.",
+      "desc": "Describe the word to your team without using the forbidden hints."
+    },
+    "step3": {
+      "title": "Your team guesses.",
+      "desc": "Make as many correct guesses as possible before time runs out."
     }
+  },
+  "gameMoments": {
+    "headline": "Every round tells a different story.",
+    "p1": "Some moments make the game unforgettable.",
+    "moments": [
+      "Accidentally saying the forbidden word.",
+      "The correct guess in the last second.",
+      "Teammates shouting for hints."
+    ],
+    "p2": "No two games are ever the same."
+  },
+  "tadadoUltra": {
+    "headline": "Unlock everything with Tadado Ultra.",
+    "price": "$2.99",
+    "priceNote": "Launch special price.",
+    "benefits": [
+      "Access to all cards",
+      "Unlimited game themes",
+      "Create your own cards with Tadado AI",
+      "Fully personalize the game",
+      "Future card packs"
+    ],
+    "text": "One-time purchase. All content is yours.",
+    "cta": "Unlock Tadado Ultra"
+  },
+  "aiFeature": {
+    "headline": "Create your own cards.",
+    "p1": "With Tadado AI, you can create your own word cards.",
+    "points": [
+      "Add cards tailored to your friend group.",
+      "Create new themes.",
+      "Shape the game entirely your way."
+    ],
+    "p2": "Every game becomes unique."
+  },
+  "social": {
+    "headline": "Designed for game nights.",
+    "p1": "Tadado turns simple moments into unforgettable ones.",
+    "useCases": [
+      "Friend hangouts",
+      "Fun games for couples",
+      "Parties",
+      "Late-night game sessions"
+    ]
+  },
+  "finalCta": {
+    "headline": "Ready for your next game night?",
+    "text": "Download Tadado and start playing right away.",
+    "cta": "Download on App Store",
+    "launchReminder": "Launch special Tadado Ultra — $2.99"
   },
   "footer": {
     "copyright": "© 2026 Tadado. All rights reserved.",

@@ -22,8 +22,8 @@ export function BlogPostContent({ post, locale }: BlogPostProps) {
 
   return (
     <article className="prose prose-zinc max-w-none">
-      <header className="mb-8 pb-8 border-b border-zinc-200">
-        <h1 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-4">
+      <header className="mb-8 pb-8 border-b border-zinc-800">
+        <h1 className="text-4xl md:text-5xl font-bold text-zinc-50 mb-4">
           {post.title}
         </h1>
 
@@ -42,7 +42,7 @@ export function BlogPostContent({ post, locale }: BlogPostProps) {
         </div>
 
         <div className="mt-4 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
+          <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center flex-shrink-0">
             <svg
               width="24"
               height="24"
@@ -61,7 +61,7 @@ export function BlogPostContent({ post, locale }: BlogPostProps) {
             </svg>
           </div>
           <div>
-            <div className="font-medium text-zinc-900">{post.author.name}</div>
+            <div className="font-medium text-zinc-50">{post.author.name}</div>
             <div className="text-sm text-zinc-500">{post.author.role}</div>
           </div>
         </div>
@@ -73,15 +73,15 @@ export function BlogPostContent({ post, locale }: BlogPostProps) {
       />
 
       {post.tags.length > 0 && (
-        <footer className="mt-12 pt-8 border-t border-zinc-200">
-          <h2 className="text-sm font-semibold text-zinc-900 mb-3 uppercase tracking-wide">
+        <footer className="mt-12 pt-8 border-t border-zinc-800">
+          <h2 className="text-sm font-semibold text-zinc-50 mb-3 uppercase tracking-wide">
             {locale === 'tr' ? 'Etiketler' : 'Tags'}
           </h2>
           <div className="flex flex-wrap gap-2">
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 rounded-full bg-zinc-100 text-zinc-700 text-sm hover:bg-indigo-100 hover:text-indigo-700 transition-colors"
+                className="px-3 py-1 rounded-full bg-zinc-800 text-zinc-300 text-sm hover:bg-indigo-500/20 hover:text-indigo-400 transition-colors"
               >
                 {tag}
               </span>
