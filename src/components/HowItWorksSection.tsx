@@ -1,17 +1,13 @@
 'use client'
 
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState
-} from 'react'
-import { useTranslations } from 'next-intl'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
 import {
   motion,
   useInView,
   useReducedMotion
 } from 'framer-motion'
+import { APP_STORE_URLS } from '@/lib/constants'
 import { landing, landingOrbs } from '@/lib/landing-ui'
 
 type Step1Copy = { title: string; desc: string; tag: string }
@@ -79,17 +75,17 @@ function StepTabooVisual({
 
   return (
     <div
-      className="mx-auto w-full max-w-[15rem] rounded-[2.25rem] p-4 shadow-[0_16px_40px_-12px_rgba(76,29,125,0.55)]"
+      className="mx-auto w-full max-w-[min(100%,15rem)] rounded-[1.75rem] p-3 shadow-[0_16px_40px_-12px_rgba(76,29,125,0.55)] sm:rounded-[2.25rem] sm:p-4"
       style={{ backgroundColor: purple }}
       aria-hidden
     >
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-2 sm:gap-3">
         <div
-          className="flex w-full items-center justify-center rounded-full py-3"
+          className="flex w-full min-w-0 items-center justify-center rounded-full px-2 py-2.5 sm:py-3"
           style={{ backgroundColor: amber }}
         >
           <span
-            className="text-[0.8rem] font-bold uppercase tracking-wide sm:text-[0.85rem]"
+            className="truncate text-[0.75rem] font-bold uppercase tracking-wide sm:text-[0.85rem]"
             style={{ color: purple }}
           >
             {mainWord}
@@ -98,7 +94,7 @@ function StepTabooVisual({
         {forbidden.map((w, i) => (
           <motion.div
             key={w}
-            className="flex w-full items-center justify-center rounded-full py-2.5"
+            className="flex w-full min-w-0 items-center justify-center rounded-full px-2 py-2 sm:py-2.5"
             style={{ backgroundColor: amber }}
             animate={
               reduceMotion
@@ -114,7 +110,7 @@ function StepTabooVisual({
             }}
           >
             <span
-              className="text-[0.7rem] font-bold sm:text-[0.75rem]"
+              className="truncate text-[0.65rem] font-bold sm:text-[0.75rem]"
               style={{ color: purple }}
             >
               {toTitleCaseWord(w)}
@@ -179,11 +175,10 @@ const stepKeys = ['step1', 'step2', 'step3'] as const
 
 export function HowItWorksSection() {
   const t = useTranslations('howItWorks')
+  const locale = useLocale()
   const reduceMotion = useReducedMotion()
-  const sectionRef = useRef<HTMLElement>(null)
-  const sectionInView = useInView(sectionRef, { once: true, margin: '-80px' })
-  const [progressPhase, setProgressPhase] = useState(0)
-  const progressActive = reduceMotion ? 3 : progressPhase
+  const appStoreUrl =
+    APP_STORE_URLS[locale as keyof typeof APP_STORE_URLS] ?? APP_STORE_URLS.en
 
   const s1 = t.raw('step1') as Step1Copy
   const s2 = t.raw('step2') as Step2Copy
@@ -194,18 +189,6 @@ export function HowItWorksSection() {
     step2: s2,
     step3: s3
   }
-
-  useEffect(() => {
-    if (!sectionInView || reduceMotion) return
-    const a = window.setTimeout(() => setProgressPhase(1), 400)
-    const b = window.setTimeout(() => setProgressPhase(2), 900)
-    const c = window.setTimeout(() => setProgressPhase(3), 1350)
-    return () => {
-      window.clearTimeout(a)
-      window.clearTimeout(b)
-      window.clearTimeout(c)
-    }
-  }, [sectionInView, reduceMotion])
 
   const renderVisual = useCallback(
     (key: (typeof stepKeys)[number]) => {
@@ -248,10 +231,7 @@ export function HowItWorksSection() {
   }
 
   return (
-    <section
-      ref={sectionRef}
-      className={`${landing.section} relative overflow-hidden border-t border-zinc-800/70`}
-    >
+    <section className={`${landing.section} relative overflow-x-clip border-t border-zinc-800/70`}>
       <div className="pointer-events-none absolute inset-0 bg-zinc-950">
         <div className={landingOrbs.sectionCenter} />
         <div className={landingOrbs.sectionCorner} />
@@ -262,7 +242,7 @@ export function HowItWorksSection() {
         />
       </div>
 
-      <div className={`${landing.innerWide} relative z-10`}>
+      <div className={`${landing.innerWide} relative z-10 w-full min-w-0 max-w-full`}>
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -275,18 +255,6 @@ export function HowItWorksSection() {
           >
             {t('badge')}
           </span>
-          <div className="flex gap-2" aria-hidden>
-            {[0, 1, 2].map((i) => (
-              <span
-                key={i}
-                className={`h-1.5 w-8 rounded-full transition-all duration-500 ${
-                  progressActive > i
-                    ? 'bg-gradient-to-r from-indigo-400 to-violet-400 shadow-[0_0_12px_rgba(139,92,246,0.5)]'
-                    : 'bg-zinc-800'
-                }`}
-              />
-            ))}
-          </div>
         </motion.div>
 
         <motion.h2
@@ -294,7 +262,7 @@ export function HowItWorksSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.45, delay: 0.04 }}
-          className="text-center text-3xl font-semibold tracking-tight text-zinc-50 sm:text-4xl md:text-[2.35rem] md:leading-tight"
+          className="px-1 text-center text-2xl font-semibold leading-snug tracking-tight text-zinc-50 sm:text-3xl sm:leading-tight md:text-[2.35rem]"
         >
           {t('headline')}
         </motion.h2>
@@ -304,14 +272,13 @@ export function HowItWorksSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-30px' }}
           transition={{ duration: 0.4, delay: 0.08 }}
-          className={`${landing.lead} mb-10 mt-3 sm:mb-12`}
+          className={`${landing.lead} mb-8 mt-3 max-w-[22rem] px-1 text-[15px] sm:mb-12 sm:max-w-lg sm:text-base`}
         >
           {t('subheadline')}
         </motion.p>
 
         <motion.div
-          className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 pl-4 pr-4 pt-1 [scrollbar-width:thin] md:mx-0 md:grid md:snap-none md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0 md:pt-0"
-          style={{ WebkitOverflowScrolling: 'touch' }}
+          className="flex w-full min-w-0 flex-col gap-5 pb-1 pt-0 md:grid md:grid-cols-3 md:gap-5 md:pb-0 md:pt-0 lg:gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -333,21 +300,22 @@ export function HowItWorksSection() {
                           '0 0 48px -12px rgba(129, 140, 248, 0.45), 0 24px 48px -24px rgba(0,0,0,0.5)'
                       }
                 }
+                whileTap={{ scale: 0.99 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 22 }}
-                className={`relative flex min-w-[min(88vw,340px)] shrink-0 snap-center flex-col rounded-2xl border border-indigo-500/20 bg-zinc-900/50 p-6 shadow-[0_16px_48px_-28px_rgba(0,0,0,0.55)] ring-1 ring-inset ring-white/[0.04] backdrop-blur-sm md:min-w-0 ${
+                className={`relative flex w-full min-w-0 max-w-full flex-col rounded-2xl border border-indigo-500/20 bg-zinc-900/50 p-4 shadow-[0_16px_48px_-28px_rgba(0,0,0,0.55)] ring-1 ring-inset ring-white/[0.04] backdrop-blur-sm sm:p-5 md:p-6 ${
                   isCenter
                     ? 'md:scale-[1.06] md:shadow-[0_20px_56px_-20px_rgba(99,102,241,0.35)]'
                     : ''
                 }`}
               >
                 <span
-                  className="mb-4 bg-gradient-to-br from-indigo-200 via-violet-300 to-fuchsia-400 bg-clip-text text-5xl font-bold leading-none tabular-nums text-transparent sm:text-6xl"
+                  className="mb-3 bg-gradient-to-br from-indigo-200 via-violet-300 to-fuchsia-400 bg-clip-text text-4xl font-bold leading-none tabular-nums text-transparent sm:mb-4 sm:text-5xl md:text-6xl"
                   aria-hidden
                 >
                   {i + 1}
                 </span>
 
-                <div className="mb-5 flex min-h-[7.5rem] items-center justify-center">
+                <div className="mb-4 flex min-h-[6.5rem] items-center justify-center sm:mb-5 sm:min-h-[7.5rem]">
                   {renderVisual(key)}
                 </div>
 
@@ -358,10 +326,10 @@ export function HowItWorksSection() {
                   </p>
                 )}
 
-                <h3 className="mb-2 text-center text-lg font-semibold text-zinc-50 md:text-xl">
+                <h3 className="mb-2 text-center text-base font-semibold text-zinc-50 sm:text-lg md:text-xl">
                   {copy.title}
                 </h3>
-                <p className="text-center text-sm leading-relaxed text-zinc-400 md:text-[15px]">
+                <p className="text-pretty text-center text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
                   {copy.desc}
                 </p>
               </motion.article>
@@ -374,11 +342,13 @@ export function HowItWorksSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ delay: 0.2, duration: 0.4 }}
-          className="mt-10 flex justify-center sm:mt-12"
+          className="mt-8 flex justify-center px-1 sm:mt-12"
         >
           <a
-            href="#deck-studio"
-            className="inline-flex items-center gap-2 rounded-xl border border-indigo-500/35 bg-indigo-500/[0.12] px-6 py-3 text-sm font-semibold text-indigo-100 shadow-[0_0_28px_-8px_rgba(99,102,241,0.4)] transition hover:border-indigo-400/50 hover:bg-indigo-500/[0.18] hover:shadow-[0_0_36px_-6px_rgba(139,92,246,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+            href={appStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-12 w-full max-w-md items-center justify-center gap-2 rounded-xl border border-indigo-500/35 bg-indigo-500/[0.12] px-5 py-3.5 text-sm font-semibold text-indigo-100 shadow-[0_0_28px_-8px_rgba(99,102,241,0.4)] transition active:scale-[0.99] hover:border-indigo-400/50 hover:bg-indigo-500/[0.18] hover:shadow-[0_0_36px_-6px_rgba(139,92,246,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 sm:w-auto sm:max-w-none sm:px-6"
           >
             {t('cta')}
             <span aria-hidden className="text-indigo-300">
