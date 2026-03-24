@@ -3,7 +3,6 @@ import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
 import { Hero } from '@/components/Hero'
 import { HowItWorksSection } from '@/components/HowItWorksSection'
-import { TadadoUltraSection } from '@/components/TadadoUltraSection'
 import { AIFeatureSection } from '@/components/AIFeatureSection'
 import { HomeJsonLd } from '@/components/HomeJsonLd'
 
@@ -75,7 +74,6 @@ export default async function HomePage({ params }: Props) {
       <Hero />
       <AIFeatureSection />
       <HowItWorksSection />
-      <TadadoUltraSection />
     </main>
   )
 }

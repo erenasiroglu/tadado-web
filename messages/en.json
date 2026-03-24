@@ -54,23 +54,6 @@
     ],
     "p2": "No two games are ever the same."
   },
-  "tadadoUltra": {
-    "badge": "Tadado Ultra",
-    "headline": "Unlock every deck.",
-    "subheadline": "One payment: every card, every theme, and Tado AI. No subscription.",
-    "price": "$2.99",
-    "priceNote": "One-time purchase",
-    "benefits": [
-      "Every built-in deck and theme",
-      "Endless ways to run game night",
-      "Unlimited custom decks with Tado AI",
-      "Tune the game to your group",
-      "Future card packs included at no extra cost"
-    ],
-    "text": "Get the app from the App Store first. Unlock Ultra inside the app in one tap.",
-    "cta": "Download on the App Store",
-    "ctaHint": "Download, open the app, choose Ultra. You can be playing in minutes."
-  },
   "aiFeature": {
     "badge": "Tado AI",
     "headline": "Create your own card deck.",
