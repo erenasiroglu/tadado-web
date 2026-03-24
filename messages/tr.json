@@ -34,19 +34,24 @@
   },
   "howItWorks": {
     "badge": "30 saniyede öğren",
-    "headline": "Nasıl oynanır ?",
-    "subheadline": "Üç adımda partiye dönüşür.",
+    "headline": "3 adımda parti başlasın! 🔥",
+    "subheadline": "Üç adımda eğlenceye dönüşür. Hazır mısın?",
+    "cta": "Şimdi kendi desteni oluştur",
     "step1": {
       "title": "Deste seç",
-      "desc": "Oyun gecene uygun temalı desteyi seç; istersen Tado AI ile sadece grubuna özel bir deste üret."
+      "desc": "Oyun gecene uygun temalı desteyi seç; istersen Tado AI ile sadece grubuna özel bir deste üret.",
+      "tag": "AI ile özel deste"
     },
     "step2": {
       "title": "Kelimeyi anlat",
-      "desc": "Karttaki kelimeyi takımına anlat ve ekrandaki yasaklı kelimeleri kullanma. Hızlı düşün, yaratıcı ol."
+      "desc": "Karttaki kelimeyi takımına anlat; ekrandaki yasaklı ipuçlarına dokunma. Hızlı düşün, yaratıcı ol.",
+      "sampleWord": "FUTBOL",
+      "forbidden": ["Top", "Saha", "Gol", "Takım"]
     },
     "step3": {
       "title": "Tahmin et, kazan",
-      "desc": "Süre dolmadan takımın ile ne kadar çok kelime tahmin ederseniz o kadar puan kazanırsınız."
+      "desc": "Süre dolmadan ne kadar çok kelime tahmin ederseniz o kadar puan kazanırsınız.",
+      "pointsLabel": "puan"
     }
   },
   "gameMoments": {
@@ -60,14 +65,131 @@
     "p2": "Hiçbir oyun birbirinin aynısı değildir."
   },
   "aiFeature": {
-    "badge": "AI deste",
+    "badge": "TADO AI LAB",
     "headline": "Kendi desteni oluştur.",
-    "subheadline": "Kelimelerini belirle, Tado AI senin için kart desteni oluştursun.",
+    "headlineAccent": "desteni",
+    "subheadline": "Birkaç kelime yaz; Tado AI sana özel desteni oluştursun.",
     "inputLabel": "Deste teması",
-    "promptPlaceholder": "Bir şeyler yaz...",
-    "generateCta": "Deste oluştur",
+    "tryExamplesTitle": "İstediğin kelimeyi seç",
+    "generateCta": "Desteni Oluştur",
+    "loadingCta": "AI desteni karıştırıyor…",
     "appStoreUrl": "https://apps.apple.com/tr/app/tadado/id6753135485?l=tr",
-    "demoCards": ["Dizi replikleri", "90'lar", "Futbol", "Basketbol", "Yemek"]
+    "howItWorksBadge": "Nasıl çalışır · 3 adım",
+    "howItWorksTitle": "Vibetan karta saniyeler içinde",
+    "howItWorksClose": "Kapat",
+    "howItWorksSteps": [
+      {
+        "title": "Temalarını bırak",
+        "desc": "Bir vibe yaz veya çiplere dokun: dizi, caps, yemek, korku, o geceye ne yakışıyorsa."
+      },
+      {
+        "title": "Tado AI kartları hazırlar",
+        "desc": "Fikirlerine göre kelimeler ve yasaklı ipuçları; her şey uygulamada seni bekliyor."
+      },
+      {
+        "title": "Tadado’yu aç ve oyna",
+        "desc": "Butona bas, uygulamayı aç, desteni seç ve takımınla sesini yükselt."
+      }
+    ],
+    "previewTitle": "Canlı önizleme",
+    "previewHint": "Örnek görünüm. Uygulamada desten temana göre şekillenir.",
+    "placeholders": [
+      "Örn: kuşak dizileri, ünlü replikler, unutulmaz karakterler…",
+      "Örn: şampiyonluk, yaz akşamları, yolculuk, festival…",
+      "Örn: lezzet, tatil, korku filmi, iç şakalar…"
+    ],
+    "tryExamples": [
+      {
+        "label": "Dizi",
+        "icon": "📺",
+        "text": "kuşak dizileri, karakterler, unutulmaz bölümler, final",
+        "previewKey": "tv"
+      },
+      {
+        "label": "Replik",
+        "icon": "💬",
+        "text": "filmden diziden ünlü sözler, afiş cümleler, sahne replikleri",
+        "previewKey": "tv"
+      },
+      {
+        "label": "Komedi",
+        "icon": "🤪",
+        "text": "stand-up, kelime oyunu, absürt şaka, güldür güldür",
+        "previewKey": "absurd"
+      }
+    ],
+    "chipGroups": [
+      {
+        "title": "Popüler",
+        "chips": [
+          { "label": "Caps", "icon": "😂", "previewKey": "memes" },
+          { "label": "90'lar", "icon": "📼", "previewKey": "retro" },
+          { "label": "Dizi", "icon": "📺", "previewKey": "tv" }
+        ]
+      },
+      {
+        "title": "Kategoriler",
+        "chips": [
+          { "label": "Futbol", "icon": "⚽", "previewKey": "sport" },
+          { "label": "Yemek", "icon": "🍔", "previewKey": "food" },
+          { "label": "Absürt", "icon": "🤪", "previewKey": "absurd" },
+          { "label": "Romantik", "icon": "💕", "previewKey": "romance" },
+          { "label": "Korku", "icon": "👻", "previewKey": "horror" }
+        ]
+      }
+    ],
+    "previewSets": {
+      "fallback": [
+        { "word": "Lazer", "taboo": ["Işın", "Pointer", "Işık", "Bilim kurgu"] },
+        { "word": "Plot twist", "taboo": ["Sürpriz", "Hikâye", "İfşa", "Şok"] },
+        { "word": "İç şaka", "taboo": ["Arkadaş", "Sır", "Komik", "Grup"] }
+      ],
+      "memes": [
+        { "word": "Viral", "taboo": ["Paylaşım", "İzlenme", "Akım", "İnternet"] },
+        { "word": "Caps", "taboo": ["Görsel", "Şaka", "Ekran", "Gülmek"] },
+        { "word": "Trend", "taboo": ["Meşhur", "Moda", "Sosyal", "Konu"] }
+      ],
+      "retro": [
+        { "word": "Tamagotchi", "taboo": ["Sanal evcil", "90’lar", "Dijital", "Oyuncak"] },
+        { "word": "Çevirmeli internet", "taboo": ["Modem", "Yavaş", "Bağlantı", "E-posta"] },
+        { "word": "Kiralık kaset gecesi", "taboo": ["VHS", "Cuma", "Film", "Dükkan"] }
+      ],
+      "office": [
+        { "word": "Terfi", "taboo": ["Maaş", "Patron", "Kariyer", "Yükselmek"] },
+        { "word": "Mesai", "taboo": ["Saat", "Fazla", "Çıkış", "Hafta sonu"] },
+        { "word": "Toplantı", "taboo": ["Sunum", "Gündem", "Katılmak", "Zoom"] }
+      ],
+      "tv": [
+        { "word": "Final bölümü", "taboo": ["Dizi", "Sezon", "Spoiler", "Son"] },
+        { "word": "Kırmızı düğün", "taboo": ["GOT", "Şok", "Sahne", "Stark"] },
+        { "word": "Replik", "taboo": ["Sahne", "Oyuncu", "Film", "Söz"] }
+      ],
+      "sport": [
+        { "word": "Hat-trick", "taboo": ["Üç", "Gol", "Futbol", "Maç"] },
+        { "word": "Hail Mary", "taboo": ["Amerikan futbolu", "Umut", "Son saniye", "Pas"] },
+        { "word": "GOAT", "taboo": ["Efsane", "Tartışma", "Spor", "En iyi"] }
+      ],
+      "food": [
+        { "word": "Umami", "taboo": ["Tat", "Gurme", "Et suyu", "Lezzet"] },
+        { "word": "Comfort food", "taboo": ["Ev", "Sıcak", "Nostalji", "Makarna"] },
+        { "word": "Brunch", "taboo": ["Hafta sonu", "Yumurta", "Geç", "Kahvaltı"] }
+      ],
+      "absurd": [
+        { "word": "Kauçuk tavuk", "taboo": ["Komedi", "Gıcırtı", "Sahne", "Şaka"] },
+        { "word": "Simli patlama", "taboo": ["Dağınık", "Parıltı", "Parti", "Temizlik"] },
+        { "word": "Duyarlı tost makinesi", "taboo": ["Yapay zeka", "Mutfak", "Ekmek", "Garip"] }
+      ],
+      "romance": [
+        { "word": "Meet-cute", "taboo": ["Romkom", "Tesadüf", "Aşk", "Kafe"] },
+        { "word": "Slow burn", "taboo": ["Gerilim", "Bakışma", "Dizi", "Yavaş"] },
+        { "word": "Jest", "taboo": ["Havalimanı", "Özür", "Çiçek", "Konuşma"] }
+      ],
+      "horror": [
+        { "word": "Jump scare", "taboo": ["Ses", "Korku", "Gerilim", "Canavar"] },
+        { "word": "Ayrılmayalım", "taboo": ["Bodrum", "Kötü fikir", "Grup", "Klişe"] },
+        { "word": "Son kız", "taboo": ["Hayatta kalan", "Slasher", "Korku", "Final"] }
+      ]
+    }
   },
   "social": {
     "headline": "Oyun geceleri için tasarlandı.",
