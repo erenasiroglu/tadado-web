@@ -1,0 +1,38 @@
+---
+description: Tadado landing page design system - premium, modern, playful but not childish
+globs: src/components/**/*.tsx, src/app/[locale]/page.tsx, src/app/globals.css
+alwaysApply: false
+---
+
+# Tadado Design System
+
+## Brand
+Modern, premium, playful but not childish. Inspiration: Apple, Linear, Notion, Superhuman. Avoid cartoonish UI.
+
+## Typography
+- Font: Plus Jakarta Sans (or Inter, General Sans)
+- Hero headline: Large, bold, high impact
+- Section headlines: Medium weight
+- Body: Clean, readable
+- Avoid playful/cartoon fonts
+
+## Colors
+- Dark neutral backgrounds (zinc-950, zinc-900)
+- Vibrant accent colors from game UI (indigo, violet)
+- Soft gradients, intentional use
+- Avoid rainbow palettes, childish colors
+
+## Icons
+Use Lucide, Phosphor, Heroicons, or Radix. Minimal, thin stroke, geometric, consistent. No emoji or cartoon icons.
+
+## Layout
+- Large padding between sections
+- Centered content blocks
+- Grid layouts for features
+- Spacious, breathable sections
+
+## Animation
+Subtle: fade-ins, card hovers, gentle transitions. Avoid bouncy cartoon animations.
+
+## Section Order
+Hero → Gameplay → How it works → Product differentiation → Vibe → Cards → Premium → Founder offer → Social → Trust → Final CTA

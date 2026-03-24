@@ -17,18 +17,25 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Tadado - Play AI. Win More.',
-  description: 'Modern, personalized cards. Gamified fun. Reimagine how you play and win together.',
+  title: {
+    default: 'Tadado: AI Party Guessing Game',
+    template: '%s | Tadado'
+  },
+  description:
+    'AI word guessing party game for iPhone. Describe without forbidden words, play themed decks with friends. Free on the App Store.',
   metadataBase: new URL('https://tadado.app'),
   openGraph: {
-    title: 'Tadado - Play AI. Win More.',
-    description: 'Modern, personalized cards. Gamified fun. Reimagine how you play and win together.',
-    type: 'website'
+    title: 'Tadado: AI Party Guessing Game',
+    description:
+      'AI word guessing party game for iPhone. Describe without forbidden words, play themed decks with friends.',
+    type: 'website',
+    siteName: 'Tadado'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tadado - Play AI. Win More.',
-    description: 'Modern, personalized cards. Gamified fun. Reimagine how you play and win together.'
+    title: 'Tadado: AI Party Guessing Game',
+    description:
+      'AI word guessing party game for iPhone. Describe without forbidden words, play themed decks with friends.'
   }
 }
 

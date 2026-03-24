@@ -1,90 +1,105 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { motion } from 'framer-motion'
-import { APP_STORE_URL } from '@/lib/constants'
+import { APP_STORE_URLS } from '@/lib/constants'
+import { landing, landingOrbs } from '@/lib/landing-ui'
 
 export function TadadoUltraSection() {
   const t = useTranslations('tadadoUltra')
+  const locale = useLocale()
+
+  const appStoreUrl = APP_STORE_URLS[locale as keyof typeof APP_STORE_URLS] ?? APP_STORE_URLS.en
   const benefits = t.raw('benefits') as string[]
 
   return (
-    <section className="relative py-24 md:py-32 px-6 overflow-hidden bg-zinc-950">
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-gradient-to-br from-indigo-500/20 via-violet-500/10 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-violet-500/20 via-indigo-500/10 to-transparent rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-indigo-500/15 via-violet-500/10 to-transparent rounded-full blur-3xl" />
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: 'radial-gradient(circle at 1px 1px, #a78bfa 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}
-        />
+    <section className={`${landing.section} border-t border-zinc-800/70 overflow-hidden pb-24 md:pb-32`}>
+      <div className="absolute inset-0 bg-zinc-950">
+        <div className={landingOrbs.sectionCenter} />
+        <div className={landingOrbs.sectionCorner} />
+        <div className={landing.subtleGrid} />
       </div>
 
-      <div className="relative z-10 max-w-3xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+      <div className={landing.inner}>
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-bold text-zinc-50 text-center mb-12"
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.4 }}
+          className="mb-6 flex justify-center"
+        >
+          <span className={landing.badge}>{t('badge')}</span>
+        </motion.div>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.45, delay: 0.04 }}
+          className={`${landing.title} drop-shadow-[0_0_28px_rgba(99,102,241,0.12)]`}
         >
           {t('headline')}
         </motion.h2>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-30px' }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="rounded-2xl border border-indigo-500/20 bg-zinc-900/80 backdrop-blur-sm p-8 md:p-12 shadow-xl shadow-indigo-500/5"
+          transition={{ duration: 0.4, delay: 0.08 }}
+          className={landing.lead}
         >
-          <div className="text-center mb-8">
-            <div className="text-4xl md:text-5xl font-bold text-indigo-400">{t('price')}</div>
-            <div className="text-sm text-zinc-500 mt-1">{t('priceNote')}</div>
+          {t('subheadline')}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.45, delay: 0.1 }}
+          className={`${landing.card} mt-12 overflow-hidden`}
+        >
+          <div className="border-b border-indigo-500/15 bg-indigo-500/[0.06] px-6 py-8 text-center sm:px-8">
+            <p className={`text-4xl font-semibold tracking-tight sm:text-5xl ${landing.titleGradient}`}>{t('price')}</p>
+            <p className="mt-2 text-sm text-zinc-500">{t('priceNote')}</p>
           </div>
 
-          <ul className="space-y-4 mb-8">
+          <ul className="divide-y divide-zinc-800/90">
             {benefits.map((benefit, i) => (
               <motion.li
                 key={i}
-                initial={{ opacity: 0, x: -12 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-20px' }}
-                transition={{ duration: 0.3, delay: 0.15 + i * 0.05 }}
-                className="flex items-center gap-3 text-zinc-300"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: '-15px' }}
+                transition={{ duration: 0.25, delay: 0.05 + i * 0.03 }}
+                className="flex gap-3 px-5 py-3.5 sm:px-6 sm:py-4"
               >
-                <svg className="w-5 h-5 flex-shrink-0 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                {benefit}
+                <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-indigo-500/35 bg-indigo-500/10 shadow-[0_0_12px_-4px_rgba(99,102,241,0.4)]">
+                  <svg className="h-2.5 w-2.5 text-indigo-400" viewBox="0 0 12 12" fill="none" aria-hidden>
+                    <path d="M2.5 6l2.5 2.5L9.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+                <span className="text-left text-[15px] leading-snug text-zinc-300 sm:text-base">{benefit}</span>
               </motion.li>
             ))}
           </ul>
 
-          <p className="text-center text-zinc-400 mb-8">{t('text')}</p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-            className="text-center"
-          >
-            <a
-              href={APP_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-indigo-500 text-white font-semibold transition-all duration-300 hover:bg-indigo-600 hover:scale-[1.02]"
-            >
-              {t('cta')}
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </a>
-          </motion.div>
+          <div className="border-t border-indigo-500/15 px-5 py-8 sm:px-8">
+            <p className="mb-6 text-center text-sm leading-relaxed text-zinc-500 sm:text-[15px]">{t('text')}</p>
+            <div className="flex flex-col items-center gap-3">
+              <a
+                href={appStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full max-w-sm items-center justify-center gap-3 rounded-xl bg-white px-8 py-3.5 text-[15px] font-semibold text-zinc-950 shadow-lg shadow-indigo-500/25 transition hover:bg-zinc-100 hover:shadow-xl hover:shadow-violet-500/30 sm:w-auto"
+              >
+                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                </svg>
+                {t('cta')}
+              </a>
+              <p className="max-w-xs text-center text-xs leading-relaxed text-zinc-600">{t('ctaHint')}</p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

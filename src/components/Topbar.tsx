@@ -45,12 +45,6 @@ export function Topbar() {
 
         <div className="hidden md:flex items-center gap-6">
           <Link 
-            href={`/${locale}`}
-            className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors"
-          >
-            {t('home')}
-          </Link>
-          <Link 
             href={`/${locale}/blog`}
             className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors"
           >

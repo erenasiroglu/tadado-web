@@ -1,7 +1,8 @@
 {
   "metadata": {
-    "title": "Tadado - Oyna. Kazan.",
-    "description": "Tadado: Parti oyunlarını devrim niteliğinde değiştiren modern kelime oyunu uygulaması. AI destekli kartlar, kişiselleştirilmiş kategoriler ve etkileyici mobil oyun deneyimi. Kelime oyunları ve parti eğlencesinin geleceğini keşfedin."
+    "title": "Tadado | AI Kelime Tahmin ve Parti Oyunu (Yasaklı Kelime)",
+    "description": "Tadado ile anı partiye çevir. AI destekli yasaklı kelime tahmin oyunu: yasaklı ipuçlarına takılmadan anlat, takımın hızlı tahmin etsin. Temalı desteler, iPhone’da ücretsiz. App Store’dan indir.",
+    "keywords": "Tadado, yasaklı kelime oyunu, kelime tahmin oyunu, parti oyunu, AI kart oyunu, oyun gecesi uygulaması, iPhone kelime oyunu, grup oyunu, tabu tarzı oyun"
   },
   "nav": {
     "home": "Ana Sayfa",
@@ -9,11 +10,11 @@
     "rules": "Nasıl Oynanır"
   },
   "hero": {
-    "badge": "Lansmana Özel",
-    "badgePrice": "Tadado Ultra — $2.99",
+    "badge": "Lansmana özel",
+    "badgePrice": "Tadado Ultra · $2.99",
     "title": "Kelimeyi anlat.",
     "titleHighlight": "Takımın tahmin etsin.",
-    "subtitle": "Arkadaşlar, çiftler veya gruplarla oynanan hızlı ve eğlenceli bir kelime oyunu.",
+    "subtitle": "Arkadaşlar ve gruplar için AI destekli kelime tahmin parti oyunu.",
     "cta": "App Store'dan indir",
     "launchNote": "Lansmanda satın alan oyuncular tüm kartlara ve gelecekte eklenecek kart paketlerine erişim kazanır."
   },
@@ -27,18 +28,20 @@
     "p6": "Her tur hızlı, gürültülü ve beklenmedik anlarla doludur."
   },
   "howItWorks": {
+    "badge": "30 saniyede öğren",
     "headline": "Nasıl oynanır",
+    "subheadline": "Üç adımda partiye dönüşür.",
     "step1": {
-      "title": "Sana uygun kart temasını seç.",
-      "desc": "Farklı kart temaları ile oyunun tarzını belirle."
+      "title": "Deste seç",
+      "desc": "Oyun gecene uygun temalı desteyi seç; istersen Tado AI ile sadece grubuna özel bir deste üret."
     },
     "step2": {
-      "title": "Kelimeyi anlat.",
-      "desc": "Kelimeyi takımına anlat ama yasaklı ipuçlarını kullanma."
+      "title": "Kelimeyi anlat",
+      "desc": "Karttaki kelimeyi takımına anlat; ekrandaki yasaklı ipuçlarına dokunma. Hızlı düşün, yaratıcı ol."
     },
     "step3": {
-      "title": "Takımın tahmin etsin.",
-      "desc": "Süre bitmeden mümkün olduğunca fazla doğru tahmin yap."
+      "title": "Tahmin et, kazan",
+      "desc": "Süre dolmadan ne kadar çok kelime tahmin ederseniz o kadar puan. Tur biter, eğlence devam eder."
     }
   },
   "gameMoments": {
@@ -52,28 +55,34 @@
     "p2": "Hiçbir oyun birbirinin aynısı değildir."
   },
   "tadadoUltra": {
-    "headline": "Tadado Ultra ile her şeyin kilidini aç.",
+    "badge": "Tadado Ultra",
+    "headline": "Tüm destelerin kilidini aç.",
+    "subheadline": "Tek ödeme: bütün kartlar, temalar ve Tado AI. Abonelik yok.",
     "price": "$2.99",
-    "priceNote": "Lansmana özel fiyat.",
+    "priceNote": "Tek seferlik ödeme",
     "benefits": [
-      "Tüm kartlara erişim",
-      "Sınırsız oyun temaları",
-      "Tadado AI ile kendi kartlarını oluştur",
-      "Oyunu tamamen kişiselleştir",
-      "Gelecekte eklenecek kart paketleri"
+      "Tüm hazır desteler ve temalar",
+      "İstediğin kadar farklı oyun akışı",
+      "Tado AI ile sınırsız özel deste",
+      "Grubuna göre oyunu özelleştir",
+      "Sonradan eklenecek paketler dahil"
     ],
-    "text": "Tek satın alma. Tüm içerik senin.",
-    "cta": "Tadado Ultra'yı aç"
+    "text": "Önce uygulamayı App Store’dan indir. Ultra’yı uygulama içinden tek dokunuşla al.",
+    "cta": "App Store'dan indir",
+    "ctaHint": "İndir, uygulamayı aç, Ultra’yı seç. Birkaç dakikada oynamaya başlarsın."
   },
   "aiFeature": {
-    "headline": "Kendi kartını oluştur.",
-    "p1": "Tadado AI sayesinde kendi kelime kartlarını oluşturabilirsin.",
-    "points": [
-      "Arkadaş grubuna özel kartlar ekle.",
-      "Yeni temalar yarat.",
-      "Oyunu tamamen kendine göre şekillendir."
-    ],
-    "p2": "Her oyun farklı hale gelir."
+    "badge": "Tado AI",
+    "headline": "Kendi kart desteni oluştur.",
+    "subheadline": "Temayı yaz; Tado AI kelimeleri ve yasaklı ipuçlarını senin için üretsin.",
+    "promptPlaceholder": "Örn: dizi replikleri, 90'lar, futbol, ofis hayatı, aile içi şakalar...",
+    "flow": {
+      "step1": "Kelimelerini yaz",
+      "step2": "Seçtiğin kelimelerden Tado AI desteni oluşturur",
+      "step3": "Arkadaşlarınla oyna"
+    },
+    "demoCards": ["Dizi replikleri", "90'lar", "Futbol", "Basketbol", "Yemek"],
+    "tadoHint": "Yaz, ben yaparım!"
   },
   "social": {
     "headline": "Oyun geceleri için tasarlandı.",

@@ -1,35 +1,60 @@
+import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
 import { Hero } from '@/components/Hero'
-import { GameplaySection } from '@/components/GameplaySection'
 import { HowItWorksSection } from '@/components/HowItWorksSection'
-import { GameMomentsSection } from '@/components/GameMomentsSection'
 import { TadadoUltraSection } from '@/components/TadadoUltraSection'
 import { AIFeatureSection } from '@/components/AIFeatureSection'
-import { SocialSection } from '@/components/SocialSection'
-import { FinalCTASection } from '@/components/FinalCTASection'
+import { HomeJsonLd } from '@/components/HomeJsonLd'
 
 type Props = {
   params: Promise<{ locale: string }>
 }
 
-export async function generateMetadata({ params }: Props) {
+const baseUrl = 'https://tadado.app'
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'metadata' })
 
+  const title = t('title')
+  const description = t('description')
+  const keywordsRaw = t('keywords')
+  const keywords = keywordsRaw
+    .split(',')
+    .map((k) => k.trim())
+    .filter(Boolean)
+
   return {
-    title: t('title'),
-    description: t('description'),
+    title: {
+      absolute: title
+    },
+    description,
+    keywords,
+    alternates: {
+      canonical: `${baseUrl}/${locale}`,
+      languages: {
+        en: `${baseUrl}/en`,
+        tr: `${baseUrl}/tr`,
+        'x-default': `${baseUrl}/en`
+      }
+    },
     openGraph: {
-      title: t('title'),
-      description: t('description'),
+      title,
+      description,
+      url: `${baseUrl}/${locale}`,
+      siteName: 'Tadado',
       locale,
       type: 'website'
     },
     twitter: {
       card: 'summary_large_image',
-      title: t('title'),
-      description: t('description')
+      title,
+      description
+    },
+    robots: {
+      index: true,
+      follow: true
     }
   }
 }
@@ -38,16 +63,19 @@ export default async function HomePage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
 
+  const tMeta = await getTranslations({ locale, namespace: 'metadata' })
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-zinc-950">
+      <HomeJsonLd
+        locale={locale}
+        name="Tadado: AI Party Guessing Game"
+        description={tMeta('description')}
+      />
       <Hero />
-      <GameplaySection />
-      <HowItWorksSection />
-      <GameMomentsSection />
-      <TadadoUltraSection />
       <AIFeatureSection />
-      <SocialSection />
-      <FinalCTASection />
+      <HowItWorksSection />
+      <TadadoUltraSection />
     </main>
   )
 }

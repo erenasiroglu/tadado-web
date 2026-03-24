@@ -1,6 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
+import { APP_STORE_URLS } from '@/lib/constants'
 import { locales, type Locale } from '@/i18n/config'
 import { Topbar } from '@/components/Topbar'
 import { Footer } from '@/components/Footer'
@@ -21,8 +22,9 @@ function createOrganizationSchema() {
     name: 'Tadado',
     url: 'https://tadado.app',
     logo: 'https://tadado.app/logo.png',
-    description: 'Tadado is a modern word game mobile app that revolutionizes party games with AI-powered cards, personalized categories, and engaging gameplay.',
-    sameAs: [],
+    description:
+      'Tadado is an AI party guessing game for iPhone: describe words without forbidden hints, play themed decks with friends, and keep game night fresh with AI-generated cards.',
+    sameAs: [APP_STORE_URLS.en, APP_STORE_URLS.tr],
     contactPoint: [
       {
         '@type': 'ContactPoint',

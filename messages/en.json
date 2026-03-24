@@ -1,7 +1,8 @@
 {
   "metadata": {
-    "title": "Tadado - Play Word Game",
-    "description": "Tadado: The modern word game app that revolutionizes party games. AI-powered cards, personalized categories, and engaging mobile gameplay. Discover the future of word games and party entertainment."
+    "title": "Tadado: AI Party Guessing Game | Word & Card Party App",
+    "description": "Turn any moment into a party with Tadado. AI word guessing for friends: describe without forbidden words, guess fast, themed decks, endless cards. Free on iPhone. Download on the App Store.",
+    "keywords": "Tadado, AI party game, word guessing game, forbidden words game, party card game, game night app, iPhone word game, taboo style game, AI card game, group word game"
   },
   "nav": {
     "home": "Home",
@@ -9,12 +10,12 @@
     "rules": "How to Play"
   },
   "hero": {
-    "badge": "Launch Special",
-    "badgePrice": "Tadado Ultra — $2.99",
+    "badge": "Launch special",
+    "badgePrice": "Tadado Ultra · $2.99",
     "title": "Describe the word.",
     "titleHighlight": "Your team guesses.",
-    "subtitle": "A fast and fun word game played with friends, couples, or groups.",
-    "cta": "Download on App Store",
+    "subtitle": "AI word guessing party game for friends and groups. Free on iPhone—pick a deck, dodge forbidden words, and laugh through fast rounds.",
+    "cta": "Download on the App Store",
     "launchNote": "Players who purchase at launch get access to all cards and future card packs."
   },
   "gameplay": {
@@ -27,18 +28,20 @@
     "p6": "Every round is full of fast, loud, and unexpected moments."
   },
   "howItWorks": {
+    "badge": "Learn in 30 seconds",
     "headline": "How to play",
+    "subheadline": "Three steps to party mode.",
     "step1": {
-      "title": "Choose your card theme.",
-      "desc": "Set the tone of the game with different card themes."
+      "title": "Pick a deck",
+      "desc": "Choose a themed deck for your night—or generate a custom one with Tado AI when you want something only your group would get."
     },
     "step2": {
-      "title": "Describe the word.",
-      "desc": "Describe the word to your team without using the forbidden hints."
+      "title": "Describe the word",
+      "desc": "Explain the word on the card without using the forbidden hints on screen. Think fast, get creative."
     },
     "step3": {
-      "title": "Your team guesses.",
-      "desc": "Make as many correct guesses as possible before time runs out."
+      "title": "Guess and score",
+      "desc": "The more words you guess before time runs out, the more points. Round ends, fun continues."
     }
   },
   "gameMoments": {
@@ -52,28 +55,34 @@
     "p2": "No two games are ever the same."
   },
   "tadadoUltra": {
-    "headline": "Unlock everything with Tadado Ultra.",
+    "badge": "Tadado Ultra",
+    "headline": "Unlock every deck.",
+    "subheadline": "One payment: every card, every theme, and Tado AI. No subscription.",
     "price": "$2.99",
-    "priceNote": "Launch special price.",
+    "priceNote": "One-time purchase",
     "benefits": [
-      "Access to all cards",
-      "Unlimited game themes",
-      "Create your own cards with Tadado AI",
-      "Fully personalize the game",
-      "Future card packs"
+      "Every built-in deck and theme",
+      "Endless ways to run game night",
+      "Unlimited custom decks with Tado AI",
+      "Tune the game to your group",
+      "Future card packs included at no extra cost"
     ],
-    "text": "One-time purchase. All content is yours.",
-    "cta": "Unlock Tadado Ultra"
+    "text": "Get the app from the App Store first. Unlock Ultra inside the app in one tap.",
+    "cta": "Download on the App Store",
+    "ctaHint": "Download, open the app, choose Ultra. You can be playing in minutes."
   },
   "aiFeature": {
-    "headline": "Create your own cards.",
-    "p1": "With Tadado AI, you can create your own word cards.",
-    "points": [
-      "Add cards tailored to your friend group.",
-      "Create new themes.",
-      "Shape the game entirely your way."
-    ],
-    "p2": "Every game becomes unique."
+    "badge": "Tado AI",
+    "headline": "Create your own card deck.",
+    "subheadline": "Describe your theme. Tado AI builds words and forbidden hints for you.",
+    "promptPlaceholder": "e.g. memes, 90s movies, office jargon, reality TV, inside jokes...",
+    "flow": {
+      "step1": "Type your theme",
+      "step2": "AI creates the cards",
+      "step3": "Play with friends"
+    },
+    "demoCards": ["Memes", "90's", "Office", "Reality TV", "Sports"],
+    "tadoHint": "You type, I create!"
   },
   "social": {
     "headline": "Designed for game nights.",
