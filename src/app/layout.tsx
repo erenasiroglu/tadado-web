@@ -17,6 +17,10 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico'
+  },
   title: {
     default: 'Tadado: AI Party Guessing Game',
     template: '%s | Tadado'

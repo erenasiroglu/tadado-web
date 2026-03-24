@@ -2,12 +2,17 @@
   "metadata": {
     "title": "Tadado | AI Kelime Tahmin ve Parti Oyunu (Yasaklı Kelime)",
     "description": "Tadado ile anı partiye çevir. AI destekli yasaklı kelime tahmin oyunu: yasaklı ipuçlarına takılmadan anlat, takımın hızlı tahmin etsin. Temalı desteler, iPhone’da ücretsiz. App Store’dan indir.",
-    "keywords": "Tadado, yasaklı kelime oyunu, kelime tahmin oyunu, parti oyunu, AI kart oyunu, oyun gecesi uygulaması, iPhone kelime oyunu, grup oyunu, tabu tarzı oyun"
+    "keywords": "Tadado, yasaklı kelime oyunu, kelime tahmin oyunu, parti oyunu, AI kart oyunu, oyun gecesi uygulaması, iPhone kelime oyunu, grup oyunu, tabu tarzı oyun",
+    "jsonLdApplicationName": "Tadado: AI Parti Kelime Tahmin Oyunu",
+    "jsonLdFeatures": [
+      "Arkadaşlarınla hızlı partilerde yasaklı ipuçları olmadan kelime anlat.",
+      "Kendi temaların ve anahtar kelimelerinle AI ile özelleştirilmiş Tabu tarzı deste oluştur."
+    ]
   },
   "nav": {
     "home": "Ana Sayfa",
     "blog": "Blog",
-    "rules": "Nasıl Oynanır"
+    "rules": "Nasıl Oynanır ?"
   },
   "hero": {
     "badge": "Lansmana özel",
@@ -29,7 +34,7 @@
   },
   "howItWorks": {
     "badge": "30 saniyede öğren",
-    "headline": "Nasıl oynanır",
+    "headline": "Nasıl oynanır ?",
     "subheadline": "Üç adımda partiye dönüşür.",
     "step1": {
       "title": "Deste seç",
@@ -37,11 +42,11 @@
     },
     "step2": {
       "title": "Kelimeyi anlat",
-      "desc": "Karttaki kelimeyi takımına anlat; ekrandaki yasaklı ipuçlarına dokunma. Hızlı düşün, yaratıcı ol."
+      "desc": "Karttaki kelimeyi takımına anlat ve ekrandaki yasaklı kelimeleri kullanma. Hızlı düşün, yaratıcı ol."
     },
     "step3": {
       "title": "Tahmin et, kazan",
-      "desc": "Süre dolmadan ne kadar çok kelime tahmin ederseniz o kadar puan. Tur biter, eğlence devam eder."
+      "desc": "Süre dolmadan takımın ile ne kadar çok kelime tahmin ederseniz o kadar puan kazanırsınız."
     }
   },
   "gameMoments": {
@@ -55,17 +60,14 @@
     "p2": "Hiçbir oyun birbirinin aynısı değildir."
   },
   "aiFeature": {
-    "badge": "Tado AI",
-    "headline": "Kendi kart desteni oluştur.",
-    "subheadline": "Temayı yaz; Tado AI kelimeleri ve yasaklı ipuçlarını senin için üretsin.",
-    "promptPlaceholder": "Örn: dizi replikleri, 90'lar, futbol, ofis hayatı, aile içi şakalar...",
-    "flow": {
-      "step1": "Kelimelerini yaz",
-      "step2": "Seçtiğin kelimelerden Tado AI desteni oluşturur",
-      "step3": "Arkadaşlarınla oyna"
-    },
-    "demoCards": ["Dizi replikleri", "90'lar", "Futbol", "Basketbol", "Yemek"],
-    "tadoHint": "Yaz, ben yaparım!"
+    "badge": "AI deste",
+    "headline": "Kendi desteni oluştur.",
+    "subheadline": "Kelimelerini belirle, Tado AI senin için kart desteni oluştursun.",
+    "inputLabel": "Deste teması",
+    "promptPlaceholder": "Bir şeyler yaz...",
+    "generateCta": "Deste oluştur",
+    "appStoreUrl": "https://apps.apple.com/tr/app/tadado/id6753135485?l=tr",
+    "demoCards": ["Dizi replikleri", "90'lar", "Futbol", "Basketbol", "Yemek"]
   },
   "social": {
     "headline": "Oyun geceleri için tasarlandı.",

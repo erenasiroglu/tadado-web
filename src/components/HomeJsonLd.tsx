@@ -4,17 +4,22 @@ type Props = {
   locale: string
   name: string
   description: string
+  featureList: string[]
 }
 
-export function HomeJsonLd({ locale, name, description }: Props) {
+export function HomeJsonLd({ locale, name, description, featureList }: Props) {
   const appStoreUrl = APP_STORE_URLS[locale as keyof typeof APP_STORE_URLS] ?? APP_STORE_URLS.en
   const pageUrl = `https://tadado.app/${locale}`
+  const features = Array.isArray(featureList)
+    ? featureList.filter((item) => typeof item === 'string' && item.trim().length > 0)
+    : []
 
   const mobileApp = {
     '@context': 'https://schema.org',
     '@type': 'MobileApplication',
     name,
     description,
+    ...(features.length > 0 ? { featureList: features } : {}),
     url: pageUrl,
     applicationCategory: 'GameApplication',
     operatingSystem: 'iOS',

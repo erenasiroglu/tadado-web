@@ -2,7 +2,12 @@
   "metadata": {
     "title": "Tadado: AI Party Guessing Game | Word & Card Party App",
     "description": "Turn any moment into a party with Tadado. AI word guessing for friends: describe without forbidden words, guess fast, themed decks, endless cards. Free on iPhone. Download on the App Store.",
-    "keywords": "Tadado, AI party game, word guessing game, forbidden words game, party card game, game night app, iPhone word game, taboo style game, AI card game, group word game"
+    "keywords": "Tadado, AI party game, word guessing game, forbidden words game, party card game, game night app, iPhone word game, taboo style game, AI card game, group word game",
+    "jsonLdApplicationName": "Tadado: AI Party Guessing Game",
+    "jsonLdFeatures": [
+      "Describe words without forbidden hints in fast party rounds with friends.",
+      "Generate a custom Taboo-style deck with AI from your own themes and keywords."
+    ]
   },
   "nav": {
     "home": "Home",
@@ -55,17 +60,14 @@
     "p2": "No two games are ever the same."
   },
   "aiFeature": {
-    "badge": "Tado AI",
-    "headline": "Create your own card deck.",
-    "subheadline": "Describe your theme. Tado AI builds words and forbidden hints for you.",
-    "promptPlaceholder": "e.g. memes, 90s movies, office jargon, reality TV, inside jokes...",
-    "flow": {
-      "step1": "Type your theme",
-      "step2": "AI creates the cards",
-      "step3": "Play with friends"
-    },
-    "demoCards": ["Memes", "90's", "Office", "Reality TV", "Sports"],
-    "tadoHint": "You type, I create!"
+    "badge": "AI deck",
+    "headline": "Your deck, your theme.",
+    "subheadline": "Add ideas below or tap a tag — then open the app to generate.",
+    "inputLabel": "Deck theme",
+    "promptPlaceholder": "Themes, topics, inside jokes…",
+    "generateCta": "Generate Deck",
+    "appStoreUrl": "https://apps.apple.com/app/tadado/id6753135485",
+    "demoCards": ["Memes", "90's", "Office", "Reality TV", "Sports"]
   },
   "social": {
     "headline": "Designed for game nights.",

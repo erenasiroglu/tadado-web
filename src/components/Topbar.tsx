@@ -31,7 +31,7 @@ export function Topbar() {
           flex items-center justify-between gap-8 px-6 py-3
           rounded-full border transition-all duration-300
           ${isScrolled 
-            ? 'bg-zinc-900/90 border-zinc-800 shadow-lg shadow-black/20 backdrop-blur-xl' 
+            ? 'bg-zinc-900/70 border-zinc-800 shadow-lg shadow-black/20 backdrop-blur-xl' 
             : 'bg-zinc-900/70 border-zinc-800 backdrop-blur-md'
           }
         `}

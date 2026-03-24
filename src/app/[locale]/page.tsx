@@ -68,8 +68,9 @@ export default async function HomePage({ params }: Props) {
     <main className="relative min-h-screen overflow-hidden bg-zinc-950">
       <HomeJsonLd
         locale={locale}
-        name="Tadado: AI Party Guessing Game"
+        name={tMeta('jsonLdApplicationName')}
         description={tMeta('description')}
+        featureList={tMeta.raw('jsonLdFeatures') as string[]}
       />
       <Hero />
       <AIFeatureSection />

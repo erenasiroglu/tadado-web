@@ -1,15 +1,33 @@
 'use client'
 
+import { useCallback, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { landing, landingOrbs } from '@/lib/landing-ui'
 
-const flowSteps = ['step1', 'step2', 'step3'] as const
+function appendThemeWord(current: string, word: string) {
+  const w = word.trim()
+  if (!w) return current
+  const base = current.trim()
+  if (!base) return w
+  const parts = base.split(/\s*,\s*/).filter(Boolean)
+  if (parts.some((p) => p.toLowerCase() === w.toLowerCase())) return base
+  return `${base}, ${w}`
+}
 
 export function AIFeatureSection() {
   const t = useTranslations('aiFeature')
   const demoCards = t.raw('demoCards') as string[]
+  const [prompt, setPrompt] = useState('')
+  const [chipTapped, setChipTapped] = useState(false)
+
+  const canGenerate = prompt.trim().length > 0 || chipTapped
+  const appStoreUrl = t('appStoreUrl')
+
+  const onChipClick = useCallback((word: string) => {
+    setChipTapped(true)
+    setPrompt((prev) => appendThemeWord(prev, word))
+  }, [])
 
   return (
     <section className={`${landing.section} border-t border-zinc-800/70 overflow-x-clip overflow-y-visible`}>
@@ -25,7 +43,7 @@ export function AIFeatureSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.4 }}
-          className="mb-6 flex justify-center"
+          className="mb-3 flex justify-center"
         >
           <span className={landing.badge}>{t('badge')}</span>
         </motion.div>
@@ -45,7 +63,7 @@ export function AIFeatureSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-30px' }}
           transition={{ duration: 0.4, delay: 0.08 }}
-          className={landing.lead}
+          className={`${landing.lead} mt-2`}
         >
           {t('subheadline')}
         </motion.p>
@@ -55,96 +73,67 @@ export function AIFeatureSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.45, delay: 0.1 }}
-          className="relative mx-auto mt-14 max-w-2xl pt-10 sm:pt-8"
+          className="relative mx-auto mt-8 max-w-2xl"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ type: 'spring', stiffness: 220, damping: 22, delay: 0.2 }}
-            className="pointer-events-none absolute right-2 top-0 z-20 flex max-w-[calc(100vw-2rem)] -translate-y-1/2 flex-col items-end gap-2 animate-float sm:right-4 sm:flex-row sm:items-center sm:gap-3 md:right-5"
-          >
-            {/* Balon maskot kutusunun dışında: dar parent yüzünden metin kesilmiyor */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.92 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.45 }}
-              className="relative order-1 max-w-[min(100%,18rem)] rounded-lg border border-zinc-200 bg-white px-3 py-2 text-left text-xs font-semibold leading-snug text-zinc-900 shadow-md sm:order-none sm:max-w-[14rem] sm:text-sm"
-            >
-              {t('tadoHint')}
-              <span
-                className="absolute left-1/2 top-full -mt-px -translate-x-1/2 border-x-[6px] border-t-[6px] border-x-transparent border-t-white sm:hidden"
-                aria-hidden
-              />
-              <span
-                className="absolute left-full top-1/2 hidden h-0 w-0 -translate-y-1/2 border-y-[6px] border-l-[6px] border-y-transparent border-l-white sm:block"
-                aria-hidden
-              />
-            </motion.div>
-            <div className="relative order-2 h-[6.5rem] w-[5.25rem] shrink-0 sm:order-none md:h-28 md:w-28">
-              <Image
-                src="/tado.png"
-                alt="Tado"
-                fill
-                className="object-contain object-bottom drop-shadow-[0_12px_28px_rgba(99,102,241,0.35)]"
-                priority
-              />
-            </div>
-          </motion.div>
-
-          <div className={`${landing.card} px-5 pb-6 pt-12 sm:px-6 sm:pb-8 sm:pt-14 md:px-8`}>
+          <div className={`${landing.card} px-5 pb-6 pt-6 sm:px-6 sm:pb-8 sm:pt-7 md:px-8`}>
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
-              className="mb-6"
+              transition={{ delay: 0.1 }}
+              className="mb-5"
             >
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-indigo-400/90">Tado AI</p>
-              <div className="flex rounded-xl border border-indigo-500/25 bg-zinc-950/80 px-4 py-3.5 shadow-inner shadow-black/20 ring-1 ring-indigo-500/10 sm:py-4">
-                <span className="mr-2 text-indigo-400/70">›</span>
-                <span className="text-left font-mono text-sm text-zinc-400 sm:text-[15px]">{t('promptPlaceholder')}</span>
-                <motion.span
-                  animate={{ opacity: [1, 0] }}
-                  transition={{ duration: 0.75, repeat: Infinity }}
-                  className="ml-1 mt-0.5 h-4 w-px bg-indigo-400"
-                />
-              </div>
+              <label htmlFor="ai-deck-theme" className="sr-only">
+                {t('inputLabel')}
+              </label>
+              <textarea
+                id="ai-deck-theme"
+                name="theme"
+                value={prompt}
+                onChange={(e) => setPrompt(e.target.value)}
+                placeholder={t('promptPlaceholder')}
+                rows={3}
+                className="min-h-[5.5rem] w-full resize-y rounded-xl border border-indigo-500/25 bg-zinc-950/80 px-4 py-3.5 font-mono text-sm text-zinc-100 shadow-inner shadow-black/20 ring-1 ring-indigo-500/10 placeholder:text-zinc-500 focus:border-indigo-400/50 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 sm:min-h-[6rem] sm:text-[15px]"
+              />
             </motion.div>
 
             <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5">
               {demoCards.map((card, i) => (
-                <motion.span
+                <motion.button
                   key={card}
+                  type="button"
                   initial={{ opacity: 0, y: 6 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-10px' }}
-                  transition={{ duration: 0.3, delay: 0.2 + i * 0.05 }}
-                  className="rounded-lg border border-indigo-500/20 bg-indigo-500/[0.06] px-3 py-2 text-sm font-medium text-zinc-200 shadow-sm shadow-indigo-500/5"
+                  transition={{ duration: 0.3, delay: 0.12 + i * 0.04 }}
+                  onClick={() => onChipClick(card)}
+                  className="rounded-lg border border-indigo-500/20 bg-indigo-500/[0.06] px-3 py-2 text-sm font-medium text-zinc-200 shadow-sm shadow-indigo-500/5 transition-colors hover:border-indigo-400/35 hover:bg-indigo-500/[0.1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/40"
                 >
                   {card}
-                </motion.span>
+                </motion.button>
               ))}
             </div>
           </div>
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-30px' }}
-          transition={{ duration: 0.45, delay: 0.12 }}
-          className="mt-14 grid grid-cols-3 gap-3 sm:gap-8"
-        >
-          {flowSteps.map((step, i) => (
-            <div key={step} className="flex flex-col items-center text-center">
-              <span className="mb-2 flex h-8 w-8 items-center justify-center rounded-full border border-indigo-500/35 bg-indigo-500/10 text-xs font-semibold text-indigo-300 shadow-[0_0_16px_-4px_rgba(99,102,241,0.5)]">
-                {i + 1}
+          <div className="mt-6 flex justify-center">
+            {canGenerate ? (
+              <a
+                href={appStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-xl bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:bg-indigo-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+              >
+                {t('generateCta')}
+              </a>
+            ) : (
+              <span
+                aria-disabled
+                className="inline-flex cursor-not-allowed items-center justify-center rounded-xl border border-zinc-700/80 bg-zinc-900/60 px-6 py-3 text-sm font-semibold text-zinc-500"
+              >
+                {t('generateCta')}
               </span>
-              <p className="text-xs font-medium text-zinc-300 sm:text-sm">{t(`flow.${step}`)}</p>
-            </div>
-          ))}
+            )}
+          </div>
         </motion.div>
       </div>
     </section>
