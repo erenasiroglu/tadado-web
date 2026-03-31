@@ -73,8 +73,8 @@ export default async function HomePage({ params }: Props) {
         featureList={tMeta.raw('jsonLdFeatures') as string[]}
       />
       <Hero />
-      <AIFeatureSection />
-      <HowItWorksSection />
+      {/* <AIFeatureSection />
+      <HowItWorksSection /> */}
     </main>
   )
 }
