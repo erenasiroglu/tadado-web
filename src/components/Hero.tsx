@@ -1,14 +1,11 @@
-'use client'
-
-import { useTranslations, useLocale } from 'next-intl'
-import { motion } from 'framer-motion'
+import { getTranslations, getLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { APP_STORE_URLS } from '@/lib/constants'
 import { landing, landingOrbs } from '@/lib/landing-ui'
 
-export function Hero() {
-  const t = useTranslations('hero')
-  const locale = useLocale()
+export async function Hero() {
+  const t = await getTranslations('hero')
+  const locale = await getLocale()
 
   const appStoreUrl = APP_STORE_URLS[locale as keyof typeof APP_STORE_URLS] ?? APP_STORE_URLS.en
 
@@ -21,83 +18,67 @@ export function Hero() {
       </div>
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
+        <div
           className="absolute left-[10%] top-24 h-28 w-20 rotate-[-12deg] animate-float opacity-30 md:h-36 md:w-28 md:opacity-50 lg:h-40 lg:w-32"
+          style={{ animationDelay: '0.8s' }}
         >
           <div className="relative h-full w-full">
             <Image src="/hero_card_1.png" alt="" fill className="object-contain drop-shadow-xl" />
           </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="absolute right-[12%] top-32 h-24 w-16 rotate-[8deg] animate-float delay-200 opacity-30 md:h-32 md:w-24 md:opacity-50 lg:h-36 lg:w-28"
+        </div>
+        <div
+          className="absolute right-[12%] top-32 h-24 w-16 rotate-[8deg] animate-float opacity-30 md:h-32 md:w-24 md:opacity-50 lg:h-36 lg:w-28"
+          style={{ animationDelay: '1s' }}
         >
           <div className="relative h-full w-full">
             <Image src="/hero_card_2.png" alt="" fill className="object-contain drop-shadow-xl" />
           </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-32 left-[15%] hidden h-28 w-20 rotate-[15deg] animate-float delay-300 opacity-30 md:block md:h-32 md:w-24 md:opacity-50 lg:h-36 lg:w-28"
+        </div>
+        <div
+          className="absolute bottom-32 left-[15%] hidden h-28 w-20 rotate-[15deg] animate-float opacity-30 md:block md:h-32 md:w-24 md:opacity-50 lg:h-36 lg:w-28"
+          style={{ animationDelay: '1.2s' }}
         >
           <div className="relative h-full w-full">
             <Image src="/hero_card_3.png" alt="" fill className="object-contain drop-shadow-xl" />
           </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.4 }}
-          className="absolute bottom-40 right-[8%] hidden h-32 w-24 rotate-[-8deg] animate-float delay-100 opacity-30 md:block md:h-36 md:w-28 md:opacity-50 lg:h-40 lg:w-32"
+        </div>
+        <div
+          className="absolute bottom-40 right-[8%] hidden h-32 w-24 rotate-[-8deg] animate-float opacity-30 md:block md:h-36 md:w-28 md:opacity-50 lg:h-40 lg:w-32"
+          style={{ animationDelay: '1.4s' }}
         >
           <div className="relative h-full w-full">
             <Image src="/hero_card_4.png" alt="" fill className="object-contain drop-shadow-xl" />
           </div>
-        </motion.div>
+        </div>
       </div>
 
       <div className="relative z-10 mx-auto max-w-4xl text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.1 }}
-          className="flex flex-col items-center gap-2"
+        <div
+          className="flex flex-col items-center gap-2 animate-in fade-in slide-in-from-bottom-4 duration-500"
+          style={{ animationDelay: '100ms', animationFillMode: 'both' }}
         >
           <span className={landing.badge}>{t('badge')}</span>
           <span className="text-sm text-zinc-500">{t('badgePrice')}</span>
-        </motion.div>
+        </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.18 }}
-          className="mt-8 text-5xl font-semibold tracking-tight text-zinc-50 md:text-7xl lg:text-8xl"
+        <h1
+          className="mt-8 text-5xl font-semibold tracking-tight text-zinc-50 md:text-7xl lg:text-8xl animate-in fade-in slide-in-from-bottom-5 duration-700"
+          style={{ animationDelay: '180ms', animationFillMode: 'both' }}
         >
           <span className="block">{t('title')}</span>
           <span className={`mt-1 block ${landing.titleGradient}`}>{t('titleHighlight')}</span>
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.28 }}
-          className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-zinc-400 md:text-xl"
+        <p
+          className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-zinc-400 md:text-xl animate-in fade-in slide-in-from-bottom-4 duration-500"
+          style={{ animationDelay: '280ms', animationFillMode: 'both' }}
         >
           {t('subtitle')}
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.36 }}
-          className="mt-10"
+        <div
+          className="mt-10 animate-in fade-in slide-in-from-bottom-4 duration-500"
+          style={{ animationDelay: '360ms', animationFillMode: 'both' }}
         >
           <a
             href={appStoreUrl}
@@ -110,7 +91,7 @@ export function Hero() {
             </svg>
             {t('cta')}
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
