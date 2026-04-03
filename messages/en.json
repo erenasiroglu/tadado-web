@@ -11,7 +11,10 @@
   },
   "nav": {
     "home": "Home",
-    "blog": "Blog"
+    "blog": "Blog",
+    "languageEn": "English",
+    "languageTr": "Turkish",
+    "languageGroup": "Choose language"
   },
   "hero": {
     "badge": "Coming at launch",

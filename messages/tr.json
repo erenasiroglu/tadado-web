@@ -11,7 +11,10 @@
   },
   "nav": {
     "home": "Ana Sayfa",
-    "blog": "Blog"
+    "blog": "Blog",
+    "languageEn": "İngilizce",
+    "languageTr": "Türkçe",
+    "languageGroup": "Dil seçin"
   },
   "hero": {
     "badge": "Yakında lansmanda",
