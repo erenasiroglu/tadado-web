@@ -1,7 +1,7 @@
 import { getTranslations, getLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { APP_STORE_URLS } from '@/lib/constants'
-import { landing, landingOrbs } from '@/lib/landing-ui'
+import { heroRhythm, landing, landingOrbs } from '@/lib/landing-ui'
 
 export async function Hero() {
   const t = await getTranslations('hero')
@@ -52,17 +52,26 @@ export async function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-4xl text-center">
+      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-4 text-center sm:px-6">
         <div
-          className="flex flex-col items-center gap-2 animate-in fade-in slide-in-from-bottom-4 duration-500"
+          className={`flex w-full flex-col items-center ${heroRhythm.badgeToMascot} animate-in fade-in slide-in-from-bottom-4 duration-500`}
           style={{ animationDelay: '100ms', animationFillMode: 'both' }}
         >
-          <span className={landing.badge}>{t('badge')}</span>
-          <span className="text-sm text-zinc-500">{t('badgePrice')}</span>
+          <span className={`${landing.badge} normal-case tracking-wide`}>{t('badge')}</span>
+          <div className="relative mx-auto h-48 w-48 shrink-0 sm:h-52 sm:w-52 md:h-60 md:w-60 lg:h-72 lg:w-72">
+            <Image
+              src="/tadado_launch.png"
+              alt=""
+              fill
+              className="object-contain object-bottom drop-shadow-lg"
+              sizes="(max-width: 768px) 192px, (max-width: 1024px) 240px, 288px"
+              priority
+            />
+          </div>
         </div>
 
         <h1
-          className="mt-8 text-5xl font-semibold tracking-tight text-zinc-50 md:text-7xl lg:text-8xl animate-in fade-in slide-in-from-bottom-5 duration-700"
+          className={`${heroRhythm.mascotToTitle} w-full text-5xl font-semibold tracking-tight text-zinc-50 md:text-7xl lg:text-8xl animate-in fade-in slide-in-from-bottom-5 duration-700`}
           style={{ animationDelay: '180ms', animationFillMode: 'both' }}
         >
           <span className="block">{t('title')}</span>
@@ -70,14 +79,14 @@ export async function Hero() {
         </h1>
 
         <p
-          className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-zinc-400 md:text-xl animate-in fade-in slide-in-from-bottom-4 duration-500"
+          className={`mx-auto ${heroRhythm.titleToLead} w-full max-w-xl text-balance text-lg leading-relaxed text-zinc-400 md:text-xl animate-in fade-in slide-in-from-bottom-4 duration-500`}
           style={{ animationDelay: '280ms', animationFillMode: 'both' }}
         >
           {t('subtitle')}
         </p>
 
         <div
-          className="mt-10 animate-in fade-in slide-in-from-bottom-4 duration-500"
+          className={`${heroRhythm.leadToCta} flex w-full justify-center animate-in fade-in slide-in-from-bottom-4 duration-500`}
           style={{ animationDelay: '360ms', animationFillMode: 'both' }}
         >
           <a

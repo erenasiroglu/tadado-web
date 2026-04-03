@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Tadado: AI Party Guessing Game | Word & Card Party App",
-    "description": "Turn any moment into a party with Tadado. AI word guessing for friends: describe without forbidden words, guess fast, themed decks, endless cards. Free on iPhone. Download on the App Store.",
+    "description": "Tadado: AI taboo-style party game with unlimited cards and themed decks. Describe without forbidden words, guess fast with friends. Download on the App Store.",
     "keywords": "Tadado, AI party game, word guessing game, forbidden words game, party card game, game night app, iPhone word game, taboo style game, AI card game, group word game",
     "jsonLdApplicationName": "Tadado: AI Party Guessing Game",
     "jsonLdFeatures": [
@@ -11,201 +11,14 @@
   },
   "nav": {
     "home": "Home",
-    "blog": "Blog",
-    "rules": "How to Play"
+    "blog": "Blog"
   },
   "hero": {
-    "badge": "Launch special",
-    "badgePrice": "Tadado Ultra · $2.99",
+    "badge": "Coming at launch",
     "title": "Describe the word.",
     "titleHighlight": "Your team guesses.",
-    "subtitle": "AI word guessing party game for friends and groups. Free on iPhone—pick a deck, dodge forbidden words, and laugh through fast rounds.",
-    "cta": "Download on the App Store",
-    "launchNote": "Players who purchase at launch get access to all cards and future card packs."
-  },
-  "gameplay": {
-    "headline": "Easy to learn. Hard to put down.",
-    "p1": "Tadado is a fast-paced team game.",
-    "p2": "One player describes the word on screen.",
-    "p3": "But they cannot use the **forbidden hints** shown on screen.",
-    "p4": "Teammates score points when they guess correctly.",
-    "p5": "The goal is to guess as many words as possible before time runs out.",
-    "p6": "Every round is full of fast, loud, and unexpected moments."
-  },
-  "howItWorks": {
-    "badge": "Learn in 30 seconds",
-    "headline": "Party mode in 3 steps! 🔥",
-    "subheadline": "Three quick steps to pure chaos. Ready?",
-    "cta": "Build your deck now",
-    "step1": {
-      "title": "Pick a deck",
-      "desc": "Choose a themed deck for your night—or generate a custom one with Tado AI when you want something only your group would get.",
-      "tag": "Custom deck with AI"
-    },
-    "step2": {
-      "title": "Describe the word",
-      "desc": "Explain the word on the card without using the forbidden hints on screen. Think fast, get creative.",
-      "sampleWord": "SOCCER",
-      "forbidden": ["Ball", "Field", "Goal", "Team"]
-    },
-    "step3": {
-      "title": "Guess and score",
-      "desc": "The more words you guess before time runs out, the more points. Round ends, fun continues.",
-      "pointsLabel": "pts"
-    }
-  },
-  "gameMoments": {
-    "headline": "Every round tells a different story.",
-    "p1": "Some moments make the game unforgettable.",
-    "moments": [
-      "Accidentally saying the forbidden word.",
-      "The correct guess in the last second.",
-      "Teammates shouting for hints."
-    ],
-    "p2": "No two games are ever the same."
-  },
-  "aiFeature": {
-    "badge": "AI deck studio",
-    "headline": "Create your own deck.",
-    "headlineAccent": "deck",
-    "subheadline": "Write a few words; Tado AI builds a custom deck for you.",
-    "inputLabel": "Deck theme",
-    "tryExamplesTitle": "Pick a word",
-    "generateCta": "Generate Deck",
-    "loadingCta": "Mixing your AI deck…",
-    "appStoreUrl": "https://apps.apple.com/app/tadado/id6753135485",
-    "howItWorksBadge": "How it works · 3 steps",
-    "howItWorksTitle": "From vibe to cards in seconds",
-    "howItWorksClose": "Close",
-    "howItWorksSteps": [
-      {
-        "title": "Drop your themes",
-        "desc": "Type a vibe or tap chips: memes, food, horror, whatever fits your night."
-      },
-      {
-        "title": "Tado AI drafts the cards",
-        "desc": "Words and forbidden hints shaped around your ideas, ready inside the app."
-      },
-      {
-        "title": "Open Tadado & play",
-        "desc": "Launch the app, pick your deck, and go loud with your crew."
-      }
-    ],
-    "previewTitle": "Live preview",
-    "previewHint": "Sample preview. In the app, your deck shapes around your theme.",
-    "placeholders": [
-      "e.g. binge-worthy shows, famous one-liners, iconic characters…",
-      "e.g. match day, summer nights, road trip, festival…",
-      "e.g. comfort food, travel, horror night, inside jokes…"
-    ],
-    "tryExamples": [
-      {
-        "label": "TV shows",
-        "icon": "📺",
-        "text": "sitcoms, plot twists, season finales, fan theories",
-        "previewKey": "tv"
-      },
-      {
-        "label": "One-liners",
-        "icon": "💬",
-        "text": "movie quotes, catchphrases, iconic scenes",
-        "previewKey": "tv"
-      },
-      {
-        "label": "Comedy",
-        "icon": "🤪",
-        "text": "puns, improv, roast, wordplay",
-        "previewKey": "absurd"
-      }
-    ],
-    "chipGroups": [
-      {
-        "title": "Popular",
-        "chips": [
-          { "label": "Memes", "icon": "😂", "previewKey": "memes" },
-          { "label": "90's", "icon": "📼", "previewKey": "retro" },
-          { "label": "TV shows", "icon": "📺", "previewKey": "tv" }
-        ]
-      },
-      {
-        "title": "Categories",
-        "chips": [
-          { "label": "Sports", "icon": "⚽", "previewKey": "sport" },
-          { "label": "Food", "icon": "🍔", "previewKey": "food" },
-          { "label": "Absurd", "icon": "🤪", "previewKey": "absurd" },
-          { "label": "Romance", "icon": "💕", "previewKey": "romance" },
-          { "label": "Horror", "icon": "👻", "previewKey": "horror" }
-        ]
-      }
-    ],
-    "previewSets": {
-      "fallback": [
-        { "word": "Laser", "taboo": ["Beam", "Pointer", "Light", "Sci-fi"] },
-        { "word": "Plot twist", "taboo": ["Surprise", "Story", "Reveal", "Shock"] },
-        { "word": "Inside joke", "taboo": ["Friends", "Secret", "Funny", "Group"] }
-      ],
-      "memes": [
-        { "word": "Distracted boyfriend", "taboo": ["Meme", "Stock photo", "Jealous", "Turning head"] },
-        { "word": "This is fine", "taboo": ["Dog", "Fire", "Coffee", "Chaos"] },
-        { "word": "Doge", "taboo": ["Shiba", "Wow", "Crypto", "Internet"] }
-      ],
-      "retro": [
-        { "word": "Tamagotchi", "taboo": ["Pet", "90s", "Digital", "Toy"] },
-        { "word": "Dial-up", "taboo": ["Internet", "Modem", "Slow", "AOL"] },
-        { "word": "Blockbuster night", "taboo": ["VHS", "Rentals", "Friday", "Movies"] }
-      ],
-      "office": [
-        { "word": "Promotion", "taboo": ["Boss", "Raise", "Title", "Career"] },
-        { "word": "Overtime", "taboo": ["Hours", "Clock", "Shift", "Weekend"] },
-        { "word": "Stand-up", "taboo": ["Meeting", "Daily", "Team", "Update"] }
-      ],
-      "tv": [
-        { "word": "Season finale", "taboo": ["Episode", "Cliffhanger", "Spoiler", "Last"] },
-        { "word": "Red Wedding", "taboo": ["GOT", "Shocking", "Scene", "Stark"] },
-        { "word": "Catchphrase", "taboo": ["Quote", "Line", "Character", "Show"] }
-      ],
-      "sport": [
-        { "word": "Hat-trick", "taboo": ["Three", "Goals", "Football", "Match"] },
-        { "word": "Hail Mary", "taboo": ["Football", "Desperate", "Pass", "Last second"] },
-        { "word": "GOAT", "taboo": ["Greatest", "Debate", "Sports", "Legend"] }
-      ],
-      "food": [
-        { "word": "Umami", "taboo": ["Savory", "Taste", "Japanese", "Flavor"] },
-        { "word": "Comfort food", "taboo": ["Home", "Warm", "Nostalgia", "Mac and cheese"] },
-        { "word": "Brunch", "taboo": ["Weekend", "Eggs", "Mimosas", "Late"] }
-      ],
-      "absurd": [
-        { "word": "Rubber chicken", "taboo": ["Comedy", "Squeak", "Prop", "Joke"] },
-        { "word": "Glitter explosion", "taboo": ["Messy", "Sparkle", "Party", "Cleanup"] },
-        { "word": "Sentient toaster", "taboo": ["AI", "Kitchen", "Bread", "Weird"] }
-      ],
-      "romance": [
-        { "word": "Meet-cute", "taboo": ["Romcom", "Serendipity", "Love", "Coffee shop"] },
-        { "word": "Slow burn", "taboo": ["Tension", "Will-they", "Series", "Stare"] },
-        { "word": "Grand gesture", "taboo": ["Airport", "Apology", "Flowers", "Speech"] }
-      ],
-      "horror": [
-        { "word": "Jump scare", "taboo": ["Loud", "Horror", "Tension", "Monster"] },
-        { "word": "Don't split up", "taboo": ["Basement", "Bad idea", "Group", "Classic"] },
-        { "word": "Final girl", "taboo": ["Survivor", "Slasher", "Horror", "Last"] }
-      ]
-    }
-  },
-  "social": {
-    "headline": "Designed for game nights.",
-    "p1": "Tadado turns simple moments into unforgettable ones.",
-    "useCases": [
-      "Friend hangouts",
-      "Fun games for couples",
-      "Parties",
-      "Late-night game sessions"
-    ]
-  },
-  "finalCta": {
-    "headline": "Ready for your next game night?",
-    "text": "Download Tadado and start playing right away.",
-    "cta": "Download on App Store",
-    "launchReminder": "Launch special Tadado Ultra — $2.99"
+    "subtitle": "Unlimited AI taboo-style cards and themed decks. Describe without forbidden words. Push your team to guess fast. The next round is ready when you are.",
+    "cta": "Download on the App Store"
   },
   "footer": {
     "copyright": "© 2026 Tadado. All rights reserved.",
@@ -348,6 +161,11 @@
     "breadcrumb": {
       "home": "Home",
       "blog": "Blog"
+    },
+    "card": {
+      "readArticle": "Read more",
+      "minRead": "{count} min read",
+      "teamName": "Tadado Game Development Team"
     }
   }
 }

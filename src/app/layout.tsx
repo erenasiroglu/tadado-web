@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Plus_Jakarta_Sans, Geist_Mono } from 'next/font/google'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import './globals.css'
@@ -9,11 +9,6 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap'
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin']
 })
 
 export const metadata: Metadata = {
@@ -26,12 +21,12 @@ export const metadata: Metadata = {
     template: '%s | Tadado'
   },
   description:
-    'AI word guessing party game for iPhone. Describe without forbidden words, play themed decks with friends. Free on the App Store.',
+    'AI taboo-style party game with unlimited cards and themed decks. Describe without forbidden words, guess fast with friends.',
   metadataBase: new URL('https://tadado.app'),
   openGraph: {
     title: 'Tadado: AI Party Guessing Game',
     description:
-      'AI word guessing party game for iPhone. Describe without forbidden words, play themed decks with friends.',
+      'AI taboo-style party game with unlimited cards and themed decks. Describe without forbidden words, guess fast with friends.',
     type: 'website',
     siteName: 'Tadado'
   },
@@ -39,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Tadado: AI Party Guessing Game',
     description:
-      'AI word guessing party game for iPhone. Describe without forbidden words, play themed decks with friends.'
+      'AI taboo-style party game with unlimited cards and themed decks. Describe without forbidden words, guess fast with friends.'
   }
 }
 
@@ -50,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${plusJakartaSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${plusJakartaSans.variable} antialiased`}>
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

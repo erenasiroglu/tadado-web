@@ -2,8 +2,9 @@ import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { getBlogPost, getAllBlogSlugs } from '@/lib/blog'
+import { getBlogPost, getBlogPosts } from '@/lib/blog'
 import { BlogPostContent } from '@/components/BlogPost'
+import { BlogCard } from '@/components/BlogCard'
 import type { Metadata } from 'next'
 import type { Locale } from '@/i18n/config'
 
@@ -11,9 +12,7 @@ type Props = {
   params: Promise<{ locale: string; slug: string }>
 }
 
-export function generateStaticParams() {
-  return getAllBlogSlugs()
-}
+export const dynamic = 'force-dynamic'
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params
@@ -58,7 +57,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 function createArticleSchema(post: ReturnType<typeof getBlogPost>) {
   if (!post) return null
 
-  const baseKeywords = ['word game', 'mobile game', 'party game', 'Tadado']
+  const baseKeywords =
+    post.locale === 'tr'
+      ? ['tabu oyunu', 'kelime oyunu', 'kart oyunu', 'parti oyunu', 'Tadado']
+      : ['taboo game', 'word game', 'card game', 'party game', 'Tadado']
   const allKeywords = [...baseKeywords, ...post.tags].join(', ')
 
   return {
@@ -66,7 +68,7 @@ function createArticleSchema(post: ReturnType<typeof getBlogPost>) {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
-    image: `https://tadado.app/og-image.jpg`,
+    image: `https://tadado.app/tadado_launch.png`,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt || post.publishedAt,
     author: {
@@ -79,7 +81,7 @@ function createArticleSchema(post: ReturnType<typeof getBlogPost>) {
       name: 'Tadado',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://tadado.app/logo.png'
+        url: 'https://tadado.app/tadado_launch.png'
       }
     },
     mainEntityOfPage: {
@@ -95,6 +97,76 @@ function createArticleSchema(post: ReturnType<typeof getBlogPost>) {
   }
 }
 
+function getFaqItems(locale: Locale) {
+  if (locale === 'tr') {
+    return [
+      {
+        q: 'Tadado bir tabu oyunu mu?',
+        a: 'Tadado, Tabu/Taboo mantığını modernleştiren bir kelime ve kart oyunu deneyimidir. Yasaklı kelimeleri kullanmadan anlatır, takımınla hızlı tahmin yaparsın.'
+      },
+      {
+        q: 'Tadado hangi kategoriye giriyor?',
+        a: 'Tadado hem kelime bilme oyunu hem de kart oyunu kategorilerinde güçlü bir deneyim sunar. Grup oyunları ve parti oyunları için uygundur.'
+      },
+      {
+        q: 'Tadado nasıl indirilir?',
+        a: 'Tadado iPhone için App Store’da yer alır. Blog içindeki indirme bağlantısından doğrudan uygulama sayfasına gidebilirsin.'
+      }
+    ]
+  }
+
+  return [
+    {
+      q: 'Is Tadado a Taboo-style game?',
+      a: 'Yes. Tadado modernizes the Taboo format with AI-generated cards and fast team rounds where you describe words without forbidden terms.'
+    },
+    {
+      q: 'What category does Tadado belong to?',
+      a: 'Tadado fits both word guessing game and card party game categories, making it a strong option for friend groups and game nights.'
+    },
+    {
+      q: 'Where can I download Tadado?',
+      a: 'Tadado is available on the App Store for iPhone. Use the links in this article to open the download page directly.'
+    }
+  ]
+}
+
+function createFaqSchema(items: Array<{ q: string; a: string }>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a
+      }
+    }))
+  }
+}
+
+function rankRelatedPosts(currentSlug: string, currentTags: string[], posts: ReturnType<typeof getBlogPosts>) {
+  const currentSet = new Set(currentTags.map((tag) => tag.toLocaleLowerCase()))
+
+  return posts
+    .filter((post) => post.slug !== currentSlug)
+    .map((post) => {
+      const overlap = post.tags.reduce((score, tag) => {
+        return score + (currentSet.has(tag.toLocaleLowerCase()) ? 1 : 0)
+      }, 0)
+      return { post, overlap }
+    })
+    .sort((a, b) => {
+      if (b.overlap !== a.overlap) return b.overlap - a.overlap
+      const aTs = new Date(a.post.publishedAt).getTime()
+      const bTs = new Date(b.post.publishedAt).getTime()
+      return bTs - aTs
+    })
+    .slice(0, 2)
+    .map((item) => item.post)
+}
+
 export default async function BlogPostPage({ params }: Props) {
   const { locale, slug } = await params
 
@@ -102,15 +174,19 @@ export default async function BlogPostPage({ params }: Props) {
     notFound()
   }
 
+  const typedLocale = locale as Locale
   setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'blog' })
-  const post = getBlogPost(slug, locale as Locale)
+  const post = getBlogPost(slug, typedLocale)
 
   if (!post) {
     notFound()
   }
 
   const schema = createArticleSchema(post)
+  const faqItems = getFaqItems(typedLocale)
+  const faqSchema = createFaqSchema(faqItems)
+  const relatedPosts = rankRelatedPosts(post.slug, post.tags, getBlogPosts(typedLocale))
 
   return (
     <>
@@ -120,6 +196,10 @@ export default async function BlogPostPage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       <main className="relative min-h-screen pt-32 pb-16 px-6 bg-zinc-950">
         {/* Background */}
@@ -158,6 +238,40 @@ export default async function BlogPostPage({ params }: Props) {
           </nav>
 
           <BlogPostContent post={post} locale={locale} />
+
+          <section className="mt-12 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
+            <h2 className="text-2xl font-semibold text-zinc-50 mb-4">
+              {typedLocale === 'tr' ? 'Sık Sorulan Sorular' : 'Frequently Asked Questions'}
+            </h2>
+            <div className="space-y-4">
+              {faqItems.map((item) => (
+                <div key={item.q} className="rounded-xl border border-zinc-800 bg-zinc-950/40 p-4">
+                  <h3 className="text-base font-semibold text-zinc-100">{item.q}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-400">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {relatedPosts.length > 0 && (
+            <section className="mt-12">
+              <h2 className="text-2xl font-semibold text-zinc-50 mb-6">
+                {typedLocale === 'tr' ? 'Benzer Yazılar' : 'Related Posts'}
+              </h2>
+              <div className="grid auto-rows-fr gap-5 sm:gap-6 md:grid-cols-2">
+                {relatedPosts.map((related) => (
+                  <BlogCard
+                    key={`${related.slug}-${related.locale}`}
+                    post={related}
+                    locale={locale}
+                    readArticleLabel={t('card.readArticle')}
+                    minReadBadge={t('card.minRead', { count: related.readingTime })}
+                    teamName={t('card.teamName')}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
 
           <div className="mt-12 pt-8 border-t border-zinc-800">
             <Link

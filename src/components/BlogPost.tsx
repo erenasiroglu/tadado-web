@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { BlogPost } from '@/lib/blog'
 
 type BlogPostProps = {
@@ -41,24 +42,16 @@ export function BlogPostContent({ post, locale }: BlogPostProps) {
           <span>{post.readingTime} {locale === 'tr' ? 'dakika okuma' : 'min read'}</span>
         </div>
 
-        <div className="mt-4 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center flex-shrink-0">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="12" cy="8" r="4" fill="#6366f1" />
-              <path
-                d="M5 20c0-4.418 3.582-8 8-8s8 3.582 8 8"
-                stroke="#6366f1"
-                strokeWidth="2"
-                strokeLinecap="round"
-                fill="none"
-              />
-            </svg>
+        <div className="mt-4 flex items-center gap-4">
+          <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
+            <Image
+              src="/tadado_team.png"
+              alt={post.author.name}
+              fill
+              sizes="(max-width: 640px) 56px, 64px"
+              quality={92}
+              className="object-contain object-left"
+            />
           </div>
           <div>
             <div className="font-medium text-zinc-50">{post.author.name}</div>

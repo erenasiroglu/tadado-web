@@ -1,4 +1,20 @@
 /** Landing tokens: düzenli layout + mor/indigo oyun enerjisi + yumuşak gölgeler */
+
+/**
+ * Hero dikey ritim: Fibonacci ölçeği (8, 21, 34 px ≈ φ zinciri; maskot–başlık 8px bilinçli sıkı).
+ * Üstten: 21 (rozet–maskot) → 8 (maskot–h1) → 21 (h1–lead) → 34 (lead–CTA).
+ */
+export const heroRhythm = {
+  /** rozet ↔ maskot (21px) */
+  badgeToMascot: 'gap-[1.3125rem]',
+  /** maskot ↔ başlık: sıkı köprü (8px) */
+  mascotToTitle: 'mt-[0.5rem]',
+  /** başlık ↔ lead: okunabilirlik (21px) */
+  titleToLead: 'mt-[1.3125rem]',
+  /** lead ↔ CTA (34px) */
+  leadToCta: 'mt-[2.125rem]'
+} as const
+
 export const landing = {
   section: 'relative py-20 md:py-28 px-5 sm:px-6',
   band: 'border-t border-zinc-800/80 bg-zinc-900/25',

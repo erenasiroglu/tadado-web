@@ -10,6 +10,8 @@ type Props = {
   params: Promise<{ locale: string }>
 }
 
+export const dynamic = 'force-dynamic'
+
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'blog' })
@@ -88,9 +90,16 @@ export default async function BlogPage({ params }: Props) {
             </p>
           </div>
         ) : (
-          <section className="grid gap-6 md:grid-cols-2">
+          <section className="grid auto-rows-fr gap-5 sm:gap-6 md:grid-cols-2">
             {posts.map((post) => (
-              <BlogCard key={`${post.slug}-${post.locale}`} post={post} locale={locale} />
+              <BlogCard
+                key={`${post.slug}-${post.locale}`}
+                post={post}
+                locale={locale}
+                readArticleLabel={t('card.readArticle')}
+                minReadBadge={t('card.minRead', { count: post.readingTime })}
+                teamName={t('card.teamName')}
+              />
             ))}
           </section>
         )}

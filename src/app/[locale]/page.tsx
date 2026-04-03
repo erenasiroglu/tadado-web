@@ -2,8 +2,6 @@ import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
 import { Hero } from '@/components/Hero'
-import { HowItWorksSection } from '@/components/HowItWorksSection'
-import { AIFeatureSection } from '@/components/AIFeatureSection'
 import { HomeJsonLd } from '@/components/HomeJsonLd'
 
 type Props = {
@@ -73,8 +71,6 @@ export default async function HomePage({ params }: Props) {
         featureList={tMeta.raw('jsonLdFeatures') as string[]}
       />
       <Hero />
-      {/* <AIFeatureSection />
-      <HowItWorksSection /> */}
     </main>
   )
 }

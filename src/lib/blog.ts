@@ -1,3 +1,5 @@
+import { APP_STORE_URLS } from '@/lib/constants'
+
 export type BlogPost = {
     slug: string
     title: string
@@ -22,13 +24,453 @@ export type BlogPost = {
     return Math.max(1, minutes)
   }
   
-  export function getBlogPosts(locale: 'en' | 'tr'): BlogPost[] {
-    return blogPosts.filter((post) => post.locale === locale)
+type BlogSeoOverride = Partial<Pick<BlogPost, 'title' | 'description' | 'content' | 'tags' | 'updatedAt' | 'readingTime'>>
+
+const SEO_POST_OVERRIDES: Record<string, BlogSeoOverride> = {
+  'en:tabuu-vs-tadado': {
+    title: 'Taboo vs Tadado: Which Word Game Wins Game Night?',
+    description:
+      'Comparing Taboo and Tadado for game night. See how AI cards, category depth, and fast rounds make Tadado a stronger word and card party game.',
+    content: `
+      <p class="lead">If you searched for <strong>Taboo game</strong>, you are likely planning a fun night with friends. Taboo is still iconic, but most groups now want faster setup, fresher cards, and more replay value. That is where Tadado stands out as a modern <strong>word game</strong> and <strong>card game</strong> experience.</p>
+
+      <h2>Why people look for Taboo alternatives</h2>
+      <p>Classic Taboo is fun, but fixed decks get repetitive. After a few sessions, players remember answers and the challenge drops. Modern groups usually want a party game that keeps producing new prompts without extra setup.</p>
+      <p>Tadado solves that with AI-powered card generation, themed decks, and quick rounds that start in seconds. If you want the same social energy as Taboo with less friction, Tadado is built for that.</p>
+
+      <h2>Taboo vs Tadado in one view</h2>
+      <ul>
+        <li><strong>Content freshness:</strong> Taboo uses fixed cards, Tadado keeps generating new combinations.</li>
+        <li><strong>Setup speed:</strong> Tadado starts instantly on iPhone, no physical deck needed.</li>
+        <li><strong>Replay value:</strong> AI + deck variety keep each session different.</li>
+        <li><strong>Group fit:</strong> Works for friends, couples, and larger game-night groups.</li>
+      </ul>
+
+      <h2>How Tadado keeps rounds addictive</h2>
+      <p>The rules stay simple: describe the target word, avoid forbidden words, help your team guess quickly. The app handles timing and flow, so players stay focused on laughs and momentum.</p>
+      <p>Because Tadado sits between a <strong>word guessing game</strong> and a <strong>card party game</strong>, it works both for casual hangouts and competitive rounds.</p>
+      <p>Want to test it right away? <a href="${APP_STORE_URLS.en}" target="_blank" rel="noopener noreferrer">Download Tadado on the App Store</a>.</p>
+
+      <h2>Final take</h2>
+      <p>If your group enjoys Taboo, Tadado gives you the same core fun with modern replay value. Fewer repeated cards, faster starts, and better long-term engagement make it a strong pick for every game night.</p>
+      <p><a href="${APP_STORE_URLS.en}" target="_blank" rel="noopener noreferrer">Get Tadado on the App Store</a> and run your first round in minutes.</p>
+    `,
+    tags: ['taboo game', 'word game', 'card game', 'party game', 'game night app']
+  },
+  'tr:tabuu-vs-tadado': {
+    title: 'Tabu mu Tadado mu? Oyun Gecesi İçin Net Karşılaştırma',
+    description:
+      'Tabu ve Tadado karşılaştırması: AI destekli kartlar, temalı desteler ve hızlı turlarla Tadado’nun kelime ve kart oyunu deneyiminde nasıl öne çıktığını görün.',
+    content: `
+      <p class="lead"><strong>Tabu oyunu</strong> arıyorsan büyük ihtimalle arkadaş grubunla eğlenceli bir akşam planlıyorsun. Tabu klasik bir oyun, ama birçok grup artık daha hızlı kurulum, daha taze içerik ve tekrar oynandıkça sıkmayan bir deneyim istiyor. Tadado tam bu noktada öne çıkıyor.</p>
+
+      <h2>Neden insanlar Tabu benzeri oyun arıyor?</h2>
+      <p>Klasik Tabu’da kartlar sabit olduğu için bir süre sonra cevaplar ezberleniyor. Bu da oyunun heyecanını azaltıyor. Bugünün oyun gecelerinde ise herkes daha akıcı, tekrar değeri yüksek bir deneyim bekliyor.</p>
+      <p>Tadado, AI destekli kart üretimi ve temalı destelerle her oturumu farklı hissettiriyor. Yani Tabu (yurt dışında <em>Taboo</em>) mantığını seviyorsan, Tadado daha güncel bir alternatif sunuyor.</p>
+
+      <h2>Tabu ve Tadado farkları</h2>
+      <ul>
+        <li><strong>İçerik:</strong> Tabu sabit kartlarla gelir, Tadado yeni kartlar üretir.</li>
+        <li><strong>Başlangıç:</strong> Tadado’da iPhone’dan saniyeler içinde tur başlatırsın.</li>
+        <li><strong>Tekrar oynanabilirlik:</strong> AI + farklı deste yapısı oyunu canlı tutar.</li>
+        <li><strong>Grup uyumu:</strong> Arkadaş buluşması, çift oyunu veya kalabalık ekip için uygundur.</li>
+      </ul>
+
+      <h2>Tadado neden daha çok oynatır?</h2>
+      <p>Kural basit: kelimeyi anlat, yasaklı kelimeleri kullanma, takımın hızlı tahmin etsin. Uygulama süre ve akışı yönettiği için oyun temposu düşmez.</p>
+      <p>Böylece Tadado hem bir <strong>kelime oyunu</strong> hem de güçlü bir <strong>kart oyunu</strong> deneyimi sunar.</p>
+      <p>Hemen denemek istersen: <a href="${APP_STORE_URLS.tr}" target="_blank" rel="noopener noreferrer">Tadado’yu App Store’dan indir</a>.</p>
+
+      <h2>Sonuç</h2>
+      <p>Tabu’yu seviyorsan Tadado sana aynı sosyal eğlenceyi daha güncel bir yapıda verir. Daha az tekrar, daha hızlı başlangıç ve daha yüksek tekrar oynama isteği sunar.</p>
+      <p><a href="${APP_STORE_URLS.tr}" target="_blank" rel="noopener noreferrer">App Store’da Tadado’yu aç</a> ve ilk turu hemen başlat.</p>
+    `,
+    tags: ['tabu oyunu', 'kelime oyunu', 'kart oyunu', 'parti oyunu', 'oyun gecesi']
+  },
+  'en:games-like-taboo': {
+    title: 'Games Like Taboo: Best Word and Card Party Picks',
+    description:
+      'Looking for games like Taboo? Discover the best word and card party options, why Tadado is a top choice, and how to start a round instantly.',
+    content: `
+      <p class="lead">Searching for <strong>games like Taboo</strong> usually means one thing: your group wants fast laughs and easy rules. The best picks keep rounds short, language-driven, and social. Tadado is built exactly for that format.</p>
+
+      <h2>What makes a good Taboo-style party game?</h2>
+      <p>A strong Taboo-style game should be easy to learn, quick to restart, and hard to get bored of. It should reward communication and pressure without long setup time.</p>
+      <p>Tadado combines those elements with AI-generated prompts, so your team gets fresh words instead of repeated cards.</p>
+
+      <h2>Why Tadado belongs on this list</h2>
+      <ul>
+        <li><strong>Unlimited cards:</strong> AI keeps adding variety for repeat sessions.</li>
+        <li><strong>Theme control:</strong> Choose decks that match your group’s vibe.</li>
+        <li><strong>Fast sessions:</strong> Great for short breaks or full game nights.</li>
+        <li><strong>Mobile-first flow:</strong> No physical deck to carry or sort.</li>
+      </ul>
+
+      <h2>Word game + card game in one</h2>
+      <p>Tadado works as both a word guessing game and a card-driven party game. You explain the target word, avoid forbidden terms, and push your team to guess quickly before the timer runs out.</p>
+      <p>If your group enjoys the social tension of Taboo, Tadado delivers that same energy with higher replay value.</p>
+
+      <h2>Try it now</h2>
+      <p><a href="${APP_STORE_URLS.en}" target="_blank" rel="noopener noreferrer">Download Tadado on the App Store</a> and run your first Taboo-style round today.</p>
+    `,
+    tags: ['games like taboo', 'taboo alternatives', 'word guessing game', 'card party game', 'tadado']
+  },
+  'tr:games-like-taboo': {
+    title: 'Tabu Benzeri Oyunlar: En İyi Kelime ve Kart Oyunu Önerileri',
+    description:
+      'Tabu benzeri oyunlar arıyorsan doğru yerdesin. Tadado dahil en iyi kelime ve kart oyunu alternatiflerini, farklarını ve hızlı başlama avantajını keşfet.',
+    content: `
+      <p class="lead"><strong>Tabu benzeri oyunlar</strong> arayan gruplar genelde hızlı, bol kahkahalı ve öğrenmesi kolay bir oyun ister. Doğru seçenek; tempoyu düşürmeyen, tekrar oynandığında sıkmayan ve herkesin katılabildiği oyundur. Tadado bu ihtiyaçlara direkt cevap verir.</p>
+
+      <h2>Tabu tarzı oyunda ne aranmalı?</h2>
+      <p>İyi bir Tabu/Taboo tarzı oyunda kurallar net olmalı, tur geçişleri hızlı olmalı ve kartlar kısa sürede tükenmemeli. Ayrıca farklı arkadaş grupları için esnek olmalı.</p>
+      <p>Tadado, AI destekli kart üretimi sayesinde sürekli yeni içerik üreterek bu noktada fark yaratır.</p>
+
+      <h2>Neden Tadado güçlü bir alternatif?</h2>
+      <ul>
+        <li><strong>Sınırsız kart:</strong> Tekrara düşme ihtimali azalır.</li>
+        <li><strong>Temalı desteler:</strong> Grubun ilgisine göre oyun seçebilirsin.</li>
+        <li><strong>Hızlı turlar:</strong> Kısa zamanda çok tur oynanır.</li>
+        <li><strong>Mobil deneyim:</strong> Fiziksel kart taşıma derdi yoktur.</li>
+      </ul>
+
+      <h2>Kelime oyunu ve kart oyunu dengesi</h2>
+      <p>Tadado’da amaç kelimeyi anlatmak, yasaklı kelimeleri kullanmamak ve takımınla hızlı tahmin üretmektir. Bu yapı, hem klasik kelime oyunu sevenlere hem de kart oyunu temposu isteyenlere hitap eder.</p>
+      <p>Hemen denemek için <a href="${APP_STORE_URLS.tr}" target="_blank" rel="noopener noreferrer">Tadado’yu App Store’dan indir</a> ve ilk turu başlat.</p>
+    `,
+    tags: ['tabu benzeri oyunlar', 'tabu oyunu', 'kelime oyunu', 'kart oyunu', 'tadado']
+  },
+  'tr:en-iyi-grup-oyunlari': {
+    title: 'En İyi Grup Oyunları: Tabu Sevenler İçin Tadado Rehberi',
+    description:
+      'Arkadaşlarla oynanacak en iyi grup oyunlarını arıyorsan, Tabu tarzı kelime-kart oyunu deneyiminde Tadado neden öne çıkıyor adım adım öğren.',
+    content: `
+      <p class="lead">En iyi <strong>grup oyunları</strong> listelerinde bir oyunun uzun süre kalması için tek şart eğlence değildir; hız, tekrar oynanabilirlik ve herkesin oyuna katılması da gerekir. Tabu mantığını seviyorsan Tadado bu üç alanda çok güçlü bir seçenek sunar.</p>
+
+      <h2>Arkadaş grubuyla oyun seçerken nelere bakmalı?</h2>
+      <p>Kalabalık gruplarda oyun ne kadar hızlı başlarsa eğlence o kadar erken yükselir. Ayrıca kuralları anlatması kolay olmalı ve herkesin konuşarak katkı verebileceği bir yapı sunmalıdır.</p>
+      <p>Tadado bu yüzden güçlüdür: kurallar sade, tur akışı hızlı, içerik sürekli yenilenir.</p>
+
+      <h2>Tabu tarzı grup oyununda Tadado’nun avantajları</h2>
+      <ul>
+        <li><strong>Hızlı başlangıç:</strong> Uygulamayı aç ve turu başlat.</li>
+        <li><strong>Sonsuz içerik:</strong> AI ile yeni kartlar üretildiği için oyun bayatlamaz.</li>
+        <li><strong>Yüksek etkileşim:</strong> Tahmin baskısı herkesin oyunda kalmasını sağlar.</li>
+        <li><strong>Taşınabilirlik:</strong> Tek cihazla her yerde oynanabilir.</li>
+      </ul>
+
+      <h2>Nasıl oynanır?</h2>
+      <p>Bir deste seç, hedef kelimeyi yasaklı kelimeleri söylemeden anlat, takımın süre bitmeden tahmin etsin. Basit yapı sayesinde oyun gecesi boyunca tempoyu korursun.</p>
+
+      <h2>Hemen başlamak için</h2>
+      <p><a href="${APP_STORE_URLS.tr}" target="_blank" rel="noopener noreferrer">Tadado’yu App Store’dan indir</a> ve arkadaş grubunla ilk oyunu bugün oyna.</p>
+    `,
+    tags: ['en iyi grup oyunları', 'tabu oyunu', 'kelime kart oyunu', 'arkadaşlarla oyun', 'tadado']
+  },
+  'en:en-iyi-grup-oyunlari': {
+    title: 'Best Group Games: A Taboo-Style Pick That Keeps People Playing',
+    description:
+      'Looking for the best group games for friends? See why Tadado stands out in the taboo-style word and card game category with high replay value.',
+    content: `
+      <p class="lead">When people search for the <strong>best group games</strong>, they usually want one game that works for many moods: quick laughs, competitive rounds, and easy replay. Tadado fits that need with a Taboo-style format built for modern game nights.</p>
+
+      <h2>What group games must do well</h2>
+      <p>Great group games need low friction and high interaction. If setup takes too long, energy drops. If cards repeat too quickly, people stop asking for “one more round.”</p>
+      <p>Tadado keeps that momentum with AI-generated prompts and deck variety.</p>
+
+      <h2>Why Tadado works for friend groups</h2>
+      <ul>
+        <li><strong>Easy to run:</strong> Open the app and jump straight into a round.</li>
+        <li><strong>Replay value:</strong> New combinations keep sessions fresh.</li>
+        <li><strong>Team tension:</strong> Explain fast, avoid forbidden words, score quickly.</li>
+        <li><strong>Category fit:</strong> Different decks for different group styles.</li>
+      </ul>
+
+      <h2>Where it sits in the genre</h2>
+      <p>Tadado combines a <strong>word guessing game</strong> structure with the pacing of a <strong>card party game</strong>. If your group likes Taboo, this is an easy upgrade path.</p>
+
+      <h2>Start your first round</h2>
+      <p><a href="${APP_STORE_URLS.en}" target="_blank" rel="noopener noreferrer">Download Tadado on the App Store</a> and test it at your next game night.</p>
+    `,
+    tags: ['best group games', 'taboo style game', 'word game app', 'card game for friends', 'tadado']
+  },
+  'en:tadado-future-of-word-games': {
+    title: 'The Future of Word Games: Why Tadado Fits Modern Play',
+    description:
+      'See where word games are heading and why Tadado leads with AI cards, fast rounds, and high replay value in the word and card game category.',
+    content: `
+      <p class="lead">The future of the <strong>word game</strong> category is not just about new visuals. It is about retention: fast starts, new content every session, and social rounds that keep players saying “one more game.” Tadado is built around exactly that loop.</p>
+
+      <h2>What changed in word and card games</h2>
+      <p>Classic formats still work, but player expectations are different now. People want minimal setup, short rounds, and game flow that does not break group energy.</p>
+      <p>Tadado combines the communication pressure of a taboo-style challenge with mobile convenience and AI-generated variety.</p>
+
+      <h2>Why Tadado is future-ready</h2>
+      <ul>
+        <li><strong>Dynamic content:</strong> AI creates fresh cards and keeps sessions from repeating.</li>
+        <li><strong>Fast social loop:</strong> Describe, guess, score, restart in seconds.</li>
+        <li><strong>Category flexibility:</strong> Themed decks fit different group moods.</li>
+        <li><strong>Mobile accessibility:</strong> No physical deck required for a full game night.</li>
+      </ul>
+
+      <h2>From party game to retention engine</h2>
+      <p>Tadado sits at the intersection of <strong>word guessing game</strong> and <strong>card party game</strong>. That mix is what keeps replay high: familiar rules with continuously refreshed prompts.</p>
+      <p>For players who enjoy Taboo-style tension, Tadado offers that same core excitement with better long-term freshness.</p>
+
+      <h2>Try the next generation now</h2>
+      <p><a href="${APP_STORE_URLS.en}" target="_blank" rel="noopener noreferrer">Download Tadado on the App Store</a> and see how quickly your group gets hooked.</p>
+    `,
+    tags: ['future of word games', 'word game app', 'card game app', 'taboo style game', 'tadado']
+  },
+  'tr:tadado-future-of-word-games': {
+    title: 'Kelime Oyunlarının Geleceği: Tadado Neden Öne Çıkıyor?',
+    description:
+      'Kelime ve kart oyunu kategorisinin nereye gittiğini keşfet. AI destekli kartlar, hızlı turlar ve yüksek tekrar oynanabilirlikle Tadado’nun farkını gör.',
+    content: `
+      <p class="lead"><strong>Kelime oyunu</strong> kategorisinin geleceği sadece yeni tasarım değil; hızlı başlangıç, sürekli yeni içerik ve arkadaş grubunu oyunda tutan güçlü bir tempo. Tadado bu üç ihtiyacı aynı anda karşılamak için tasarlandı.</p>
+
+      <h2>Kelime ve kart oyunlarında ne değişti?</h2>
+      <p>Klasik oyunlar hâlâ seviliyor, ancak beklenti yükseldi. Oyuncular kurulumla vakit kaybetmek istemiyor; hızlı başlayıp tekrar tekrar oynanabilen bir deneyim arıyor.</p>
+      <p>Tadado, Tabu/Taboo tarzı anlatma-gerilim yapısını mobil kolaylık ve AI içerik üretimiyle birleştiriyor.</p>
+
+      <h2>Tadado’yu geleceğe hazır yapan özellikler</h2>
+      <ul>
+        <li><strong>Dinamik içerik:</strong> AI yeni kartlar üreterek tekrar hissini azaltır.</li>
+        <li><strong>Hızlı döngü:</strong> Anlat, tahmin et, puanla, hemen yeni tura geç.</li>
+        <li><strong>Temalı desteler:</strong> Farklı arkadaş gruplarına uyum sağlar.</li>
+        <li><strong>Mobil erişim:</strong> Fiziksel deste olmadan her yerde oynanır.</li>
+      </ul>
+
+      <h2>Neden daha çok tekrar oynanıyor?</h2>
+      <p>Tadado hem bir <strong>kelime bilme oyunu</strong> hem de güçlü bir <strong>kart oyunu</strong> ritmi sunar. Kural tanıdık, içerik sürekli yenilenir; bu da uzun vadede oyunu canlı tutar.</p>
+      <p>Tabu seven oyuncular için tanıdık heyecan korunur, ama tekrar değeri belirgin şekilde artar.</p>
+
+      <h2>Hemen dene</h2>
+      <p><a href="${APP_STORE_URLS.tr}" target="_blank" rel="noopener noreferrer">Tadado’yu App Store’dan indir</a> ve ilk oyunu dakikalar içinde başlat.</p>
+    `,
+    tags: ['kelime oyunu', 'kart oyunu', 'tabu oyunu', 'kelime bilme oyunu', 'tadado']
+  },
+  'en:tadado-revolutionizing-party-games': {
+    title: 'How Tadado Is Revolutionizing Party Games',
+    description:
+      'Tadado modernizes party games with AI-generated cards, taboo-style gameplay, and fast social rounds that improve replay and engagement.',
+    content: `
+      <p class="lead">Party games succeed when they create instant interaction. Tadado modernizes that formula with AI-generated cards and taboo-style pressure, making every round social, loud, and highly replayable.</p>
+
+      <h2>What a modern party game needs</h2>
+      <p>Today’s players want short setup, clear rules, and immediate momentum. If the flow stalls, people switch activities quickly.</p>
+      <p>Tadado is designed for momentum: target word, forbidden words, quick guesses, and continuous rounds.</p>
+
+      <h2>Where Tadado changes the game</h2>
+      <ul>
+        <li><strong>AI card pipeline:</strong> New prompts keep content from feeling stale.</li>
+        <li><strong>Taboo-style tension:</strong> Communication under pressure drives fun.</li>
+        <li><strong>Group versatility:</strong> Works for friends, couples, and mixed skill groups.</li>
+        <li><strong>Mobile delivery:</strong> Start anywhere without physical components.</li>
+      </ul>
+
+      <h2>Built for game-night retention</h2>
+      <p>The best party games create repeat sessions. Tadado does that by balancing familiar rules with fresh content, so players stay engaged longer across multiple rounds.</p>
+      <p>That is why it performs strongly in both the <strong>word game</strong> and <strong>card game</strong> categories.</p>
+
+      <h2>Start your party round</h2>
+      <p><a href="${APP_STORE_URLS.en}" target="_blank" rel="noopener noreferrer">Download Tadado on the App Store</a> and launch your next party game instantly.</p>
+    `,
+    tags: ['party game app', 'word game', 'card game', 'taboo style', 'tadado']
+  },
+  'tr:tadado-revolutionizing-party-games': {
+    title: 'Tadado Parti Oyunlarını Nasıl Dönüştürüyor?',
+    description:
+      'Tadado, AI kart üretimi ve Tabu tarzı oyun yapısıyla parti oyunlarını daha hızlı, daha akıcı ve daha tekrar oynanabilir hale getiriyor.',
+    content: `
+      <p class="lead">İyi bir parti oyunu, insanları saniyeler içinde oyuna sokar. Tadado bunu AI destekli kart üretimi ve Tabu tarzı anlatma-tahmin baskısıyla yapar. Sonuç: daha yüksek tempo, daha çok kahkaha, daha fazla tekrar oynama.</p>
+
+      <h2>Modern parti oyununda olmazsa olmazlar</h2>
+      <p>Oyuncular artık uzun kurulum istemiyor. Net kurallar, hızlı tur geçişi ve kesintisiz akış bekliyor.</p>
+      <p>Tadado’da yapı net: hedef kelime, yasaklı kelimeler, hızlı tahmin ve peş peşe turlar.</p>
+
+      <h2>Tadado’nun fark yarattığı noktalar</h2>
+      <ul>
+        <li><strong>AI kart akışı:</strong> İçerik sürekli yenilenir, oyun bayatlamaz.</li>
+        <li><strong>Tabu/Taboo gerilimi:</strong> Baskı altında anlatım eğlenceyi yükseltir.</li>
+        <li><strong>Grup esnekliği:</strong> Arkadaş grubu, çiftler veya kalabalık ekipte çalışır.</li>
+        <li><strong>Mobil kolaylık:</strong> Fiziksel kart olmadan her yerde oyun başlar.</li>
+      </ul>
+
+      <h2>Neden daha uzun oynatıyor?</h2>
+      <p>Tadado, tanıdık kuralları yeni içerikle birleştirerek oyunun tekrar değerini artırır. Bu nedenle hem <strong>kelime oyunu</strong> hem de <strong>kart oyunu</strong> kategorisinde güçlü bir konum alır.</p>
+
+      <h2>Şimdi başlat</h2>
+      <p><a href="${APP_STORE_URLS.tr}" target="_blank" rel="noopener noreferrer">Tadado’yu App Store’dan indir</a> ve parti turunu hemen başlat.</p>
+    `,
+    tags: ['parti oyunu', 'tabu oyunu', 'kelime oyunu', 'kart oyunu', 'tadado']
+  },
+  'en:how-ai-is-changing-party-games': {
+    title: 'How AI Is Changing Party Games (And Why It Matters)',
+    description:
+      'AI is reshaping party games through dynamic card generation and better replay loops. Learn how Tadado uses AI for stronger word and card game sessions.',
+    content: `
+      <p class="lead">AI is not a gimmick in party games anymore. It directly impacts replay value, content freshness, and session quality. In Tadado, AI helps turn a simple taboo-style concept into a long-term <strong>word game</strong> and <strong>card game</strong> habit.</p>
+
+      <h2>What AI changes in practical terms</h2>
+      <p>Without AI, many party games rely on finite decks. Eventually, players memorize answers and difficulty drops.</p>
+      <p>With AI-driven card generation, each session can introduce new combinations, better pacing, and stronger challenge variety.</p>
+
+      <h2>How Tadado applies AI to gameplay</h2>
+      <ul>
+        <li><strong>Fresh card supply:</strong> More unique prompts over time.</li>
+        <li><strong>Balanced challenge:</strong> Rounds stay exciting for mixed groups.</li>
+        <li><strong>Faster retention loop:</strong> Better variety leads to more repeat sessions.</li>
+        <li><strong>Genre fit:</strong> Works naturally in taboo-style social play.</li>
+      </ul>
+
+      <h2>Why this matters for game nights</h2>
+      <p>Game-night success depends on keeping everyone engaged, not just starting one good round. Tadado’s AI layer keeps the energy high across multiple rounds and multiple nights.</p>
+      <p><a href="${APP_STORE_URLS.en}" target="_blank" rel="noopener noreferrer">Download Tadado on the App Store</a> and experience AI-powered party rounds yourself.</p>
+    `,
+    tags: ['ai party games', 'taboo game', 'word game', 'card game', 'tadado']
+  },
+  'tr:how-ai-is-changing-party-games': {
+    title: 'Yapay Zeka Parti Oyunlarını Nasıl Değiştiriyor?',
+    description:
+      'Yapay zeka, parti oyunlarında içerik tazeliği ve tekrar oynanabilirliği güçlendiriyor. Tadado’nun bunu Tabu tarzı kelime-kart oyununa nasıl taşıdığını keşfet.',
+    content: `
+      <p class="lead">Yapay zeka artık parti oyunlarında yalnızca bir “özellik” değil; doğrudan oyunun ömrünü uzatan bir güç. Tadado’da AI, Tabu tarzı yapıyı sürekli taze içerikle destekleyerek güçlü bir <strong>kelime oyunu</strong> ve <strong>kart oyunu</strong> deneyimi oluşturur.</p>
+
+      <h2>Yapay zeka oyunda neyi değiştirir?</h2>
+      <p>Sabit kart destelerinde bir süre sonra cevaplar ezberlenir. Zorluk düşer, heyecan azalır.</p>
+      <p>AI destekli kart üretimi sayesinde her oturumda yeni kombinasyonlar gelir; tur temposu ve rekabet canlı kalır.</p>
+
+      <h2>Tadado’nun AI yaklaşımı</h2>
+      <ul>
+        <li><strong>Taze kart akışı:</strong> Uzun vadede tekrar hissini azaltır.</li>
+        <li><strong>Dengeli zorluk:</strong> Farklı seviyedeki oyuncular birlikte eğlenir.</li>
+        <li><strong>Yüksek tekrar oynama:</strong> İçerik çeşitliliği “bir tur daha” etkisi yaratır.</li>
+        <li><strong>Tabu/Taboo uyumu:</strong> Sosyal anlatma-tahmin yapısını güçlendirir.</li>
+      </ul>
+
+      <h2>Oyun gecesi için neden önemli?</h2>
+      <p>Önemli olan tek bir iyi tur değil, tüm gece boyunca akışı korumaktır. Tadado’nun AI katmanı bu sürekliliği sağlar ve oyunu daha uzun süre canlı tutar.</p>
+      <p><a href="${APP_STORE_URLS.tr}" target="_blank" rel="noopener noreferrer">Tadado’yu App Store’dan indir</a> ve AI destekli turları hemen dene.</p>
+    `,
+    tags: ['yapay zeka oyunları', 'tabu oyunu', 'kelime oyunu', 'kart oyunu', 'tadado']
+  },
+  'en:tadado-card-decks-guide': {
+    title: 'Tadado Card Decks Explained: Which Category Fits Your Group?',
+    description:
+      'Explore all Tadado deck categories (Classic, Cinema, Travel, Sport, Midnight Fun, Marvel) and choose the best word-card experience for your next game night.',
+    content: `
+      <p class="lead">A great <strong>word game</strong> is not only about rules, it is about choosing the right content for your group. Tadado gives you 6 distinct card deck categories so every round feels relevant, social, and highly replayable.</p>
+
+      <h2>Why deck choice matters in a taboo-style game</h2>
+      <p>In taboo-style gameplay, category fit directly impacts pace and fun. If players connect with the topic, clues come faster and guess quality improves.</p>
+      <p>That is why Tadado’s deck system is designed as a retention engine, not just a menu.</p>
+
+      <h2>All 6 Tadado deck categories</h2>
+      <h3>Classic</h3>
+      <p>Broad, general-culture words that work for almost any group. Best starting point for mixed friend circles and first-time players.</p>
+
+      <h3>Cinema</h3>
+      <p>Movies, series, actors, and iconic references. Perfect for groups that love film culture and fast pop-culture clues.</p>
+
+      <h3>Travel</h3>
+      <p>Countries, cities, landmarks, and geography terms. A strong pick for globally curious teams and conversation-heavy rounds.</p>
+
+      <h3>Sport</h3>
+      <p>Sports branches, athletes, and game-day terms. Ideal for competitive groups who enjoy high-tempo clue pressure.</p>
+
+      <h3>Midnight Fun (+18)</h3>
+      <p>Adult-oriented, playful content for mature groups. Great for late-night sessions where humor and bold clues shine.</p>
+
+      <h3>Marvel</h3>
+      <p>Superheroes, villains, and universe references. Built for fandom-heavy rounds where shared knowledge creates instant momentum.</p>
+
+      <h2>How to pick the best deck for retention</h2>
+      <ul>
+        <li><strong>Mixed group:</strong> start with Classic.</li>
+        <li><strong>Fandom crowd:</strong> choose Marvel or Cinema.</li>
+        <li><strong>Competitive mood:</strong> go with Sport.</li>
+        <li><strong>Late-night energy:</strong> use Midnight Fun (+18).</li>
+      </ul>
+
+      <h2>Start with the right deck</h2>
+      <p><a href="${APP_STORE_URLS.en}" target="_blank" rel="noopener noreferrer">Download Tadado on the App Store</a>, pick your deck, and launch your next Taboo-style round in seconds.</p>
+    `,
+    tags: ['card decks', 'taboo game categories', 'word game categories', 'party card game', 'tadado']
+  },
+  'tr:tadado-kart-desteleri-rehberi': {
+    title: 'Tadado Kart Desteleri Rehberi: Hangi Kategori Sizin Gruba Uygun?',
+    description:
+      'Tadado’nun 6 kart destesi kategorisini (Klasik, Sinema, Travel, Sport, Gece eğlencesi (Midnight Fun), Marvel) keşfet. Tabu tarzı kelime-kart oyununda en doğru desteyi seç.',
+    content: `
+      <p class="lead">İyi bir <strong>kelime oyunu</strong> deneyiminde içerik seçimi kritik rol oynar. Tadado, farklı arkadaş gruplarına uygun 6 farklı kart destesi sunar. Doğru deste seçimi, tur temposunu ve eğlenceyi doğrudan artırır.</p>
+
+      <h2>Tabu tarzı oyunda kategori neden önemli?</h2>
+      <p>Tabu/Taboo tarzı oyunlarda oyuncular konuya ne kadar yakınsa, anlatım ve tahmin o kadar akıcı olur. Bu da daha uzun oyun süresi ve daha yüksek tekrar oynama isteği anlamına gelir.</p>
+      <p>Tadado’nun deste yapısı bu yüzden sadece “tema” değil, doğrudan oyun performansı aracıdır.</p>
+
+      <h2>Tadado’daki 6 kart destesi</h2>
+      <h3>Klasik</h3>
+      <p>Genel kültürden geniş kelime havuzu. Karma gruplar ve ilk kez oynayanlar için en güvenli başlangıç.</p>
+
+      <h3>Sinema</h3>
+      <p>Film, dizi, oyuncu ve popüler sahne referansları. Sinema kültürünü seven ekipler için çok akıcı bir deneyim sunar.</p>
+
+      <h3>Travel</h3>
+      <p>Ülke, şehir ve coğrafi terimler odaklı içerik. Gezi seven veya kültür odaklı sohbeti seven gruplarda iyi çalışır.</p>
+
+      <h3>Sport</h3>
+      <p>Spor dalları, sporcular ve maç dili. Rekabetçi ekiplerde tempoyu yükselten güçlü bir kategoridir.</p>
+
+      <h3>Gece eğlencesi (+18)</h3>
+      <p>Yetişkinlere yönelik eğlenceli içerikler. Uygulamada bu kategori <em>Midnight Fun</em> adıyla listelenir. Gece oyunlarında mizahı ve cesur ipuçlarını artırmak için idealdir.</p>
+
+      <h3>Marvel</h3>
+      <p>Süper kahramanlar, kötü karakterler ve Marvel evreni referansları. Fandom gruplarında çok hızlı etkileşim üretir.</p>
+
+      <h2>Doğru desteyi nasıl seçersin?</h2>
+      <ul>
+        <li><strong>Karma arkadaş grubu:</strong> Klasik ile başla.</li>
+        <li><strong>Film/dizi ekibi:</strong> Sinema veya Marvel seç.</li>
+        <li><strong>Rekabet isteyen grup:</strong> Sport ile tempoyu yükselt.</li>
+        <li><strong>Gece modu:</strong> Gece eğlencesi (+18) ile eğlenceyi artır.</li>
+      </ul>
+
+      <h2>Hemen dene</h2>
+      <p><a href="${APP_STORE_URLS.tr}" target="_blank" rel="noopener noreferrer">Tadado’yu App Store’dan indir</a>, desteni seç ve ilk turu saniyeler içinde başlat.</p>
+    `,
+    tags: ['kart destesi', 'tabu oyunu kategorileri', 'kelime oyunu', 'kart oyunu', 'tadado']
   }
-  
-  export function getBlogPost(slug: string, locale: 'en' | 'tr'): BlogPost | undefined {
-    return blogPosts.find((post) => post.slug === slug && post.locale === locale)
+}
+
+function withSeoOverride(post: BlogPost): BlogPost {
+  const override = SEO_POST_OVERRIDES[`${post.locale}:${post.slug}`]
+  if (!override) return post
+
+  const nextPost: BlogPost = { ...post, ...override }
+  if (override.content && !override.readingTime) {
+    nextPost.readingTime = calculateReadingTime(nextPost.content)
   }
+  return nextPost
+}
+
+function sortByPublishedDesc(posts: BlogPost[]): BlogPost[] {
+  return [...posts].sort((a, b) => {
+    const aTs = new Date(a.publishedAt).getTime()
+    const bTs = new Date(b.publishedAt).getTime()
+    return bTs - aTs
+  })
+}
+
+export function getBlogPosts(locale: 'en' | 'tr'): BlogPost[] {
+  const localized = blogPosts.filter((post) => post.locale === locale).map(withSeoOverride)
+  return sortByPublishedDesc(localized)
+}
+
+export function getBlogPost(slug: string, locale: 'en' | 'tr'): BlogPost | undefined {
+  const post = blogPosts.find((item) => item.slug === slug && item.locale === locale)
+  return post ? withSeoOverride(post) : undefined
+}
   
   export function getAllBlogSlugs(): Array<{ slug: string; locale: 'en' | 'tr' }> {
     return blogPosts.map((post) => ({
@@ -835,6 +1277,232 @@ export type BlogPost = {
       publishedAt: '2026-03-08T14:00:00Z',
       readingTime: 3,
       tags: ['yapay zeka', 'parti oyunları', 'kelime oyunları', 'Tadado', 'sosyal oyunlar']
+    },
+    {
+      slug: 'how-to-play-tadado',
+      locale: 'en' as const,
+      title: 'How to Play Tadado: Rules, Setup, and Winning Tips',
+      description:
+        'Learn how to play Tadado, the taboo-style word and card party game. Explore setup, scoring, pass limits, AI custom decks, and App Store download steps.',
+      content: `
+        <p class="lead">If you are searching for a <strong>Taboo game</strong> you can launch in seconds, Tadado is built for you. It is a fast team-based <strong>word guessing game</strong> and <strong>card game</strong> where communication, speed, and smart clues decide the winner.</p>
+
+        <h2>What is Tadado?</h2>
+        <p>Tadado is a modern taboo-style party game played in teams. Your goal is simple: help teammates guess the target word without saying forbidden words shown on the card.</p>
+        <p>Every correct guess gives your team points, and every forbidden-word mistake can cost points. That pressure is what makes rounds exciting and replayable.</p>
+
+        <h2>Game setup before the first round</h2>
+        <p>Before you start, you can customize your match in a few seconds:</p>
+        <ul>
+          <li><strong>Deck category:</strong> Classic, Cinema, Travel, Sport, Midnight Fun (+18), Marvel</li>
+          <li><strong>Language:</strong> Turkish or English (more languages planned)</li>
+          <li><strong>Match settings:</strong> game time, round count, and pass limit</li>
+        </ul>
+
+        <h2>How scoring works</h2>
+        <ul>
+          <li><strong>Correct guess:</strong> +1 point</li>
+          <li><strong>Forbidden word used:</strong> -1 point (Tado penalty)</li>
+          <li><strong>Pass:</strong> available only within your configured pass limit</li>
+        </ul>
+        <p>Teams play in turns. At the end of all rounds, the highest score wins.</p>
+
+        <h2>How to play better and win more rounds</h2>
+        <p>Use short, clear clues. Avoid long explanations that eat the timer. Focus on category context and shared references your team understands quickly.</p>
+        <p>Tadado rewards rhythm: fast clueing, instant guessing, and clean handoffs between teammates.</p>
+
+        <h2>AI custom deck feature</h2>
+        <p>One of Tadado’s strongest features is AI-powered custom cards. You can play with default decks or create your own deck around your group’s interests.</p>
+        <p>This keeps content fresh and increases long-term retention compared to fixed decks in traditional party games.</p>
+
+        <h2>Why Tadado stands out in word and card games</h2>
+        <p>Tadado combines the social tension of a Taboo-style game with mobile speed and AI personalization. That combination makes it ideal for friend groups, couples, and game-night sessions.</p>
+
+        <h2>Download and start playing</h2>
+        <p>Ready to run your first round? <a href="${APP_STORE_URLS.en}" target="_blank" rel="noopener noreferrer">Download Tadado on the App Store</a> and start your game in minutes.</p>
+      `,
+      author: {
+        name: 'Tadado Team',
+        role: 'Game Developers'
+      },
+      publishedAt: '2026-04-04T18:00:00Z',
+      readingTime: 5,
+      tags: ['how to play taboo game', 'word guessing game', 'card party game', 'taboo style app', 'Tadado']
+    },
+    {
+      slug: 'tadado-nasil-oynanir',
+      locale: 'tr' as const,
+      title: 'Tadado Nasıl Oynanır? Kurallar, Ayarlar ve Kazanma Taktikleri',
+      description:
+        'Tadado nasıl oynanır adım adım öğrenin. Tabu tarzı kelime ve kart oyunu için kurulum, puanlama, pas limiti, AI özel deste ve indirme rehberi.',
+      content: `
+        <p class="lead"><strong>Tabu oyunu</strong> arıyorsan ve hızlı başlayan modern bir deneyim istiyorsan, Tadado tam sana göre. Tadado; ekipler halinde oynanan, hızlı düşünme ve iletişim becerisi isteyen bir <strong>kelime oyunu</strong> ve <strong>kart oyunu</strong> formatıdır.</p>
+
+        <h2>Tadado’nun oyun amacı</h2>
+        <p>Ana hedef, takım arkadaşına hedef kelimeyi doğru anlatarak en yüksek puanı toplamaktır. Ancak karttaki yasaklı kelimeleri kullanmak yasaktır.</p>
+        <p>Doğru anlatım + hızlı tahmin = puan. Yanlış kelime seçimi veya yasaklı kelime kullanımı = puan kaybı.</p>
+
+        <h2>Oyun başlamadan önce kurulum</h2>
+        <p>Tadado’da oyunu kendi grubuna göre özelleştirebilirsin:</p>
+        <ul>
+          <li><strong>Kategori seçimi:</strong> Klasik, Sinema, Travel, Sport, Gece eğlencesi (+18), Marvel</li>
+          <li><strong>Dil seçimi:</strong> Türkçe veya İngilizce</li>
+          <li><strong>Oyun ayarı:</strong> süre, tur sayısı, pas hakkı limiti</li>
+        </ul>
+        <p><em>Gece eğlencesi</em> kart destesi uygulamada <em>Midnight Fun</em> adıyla listelenir.</p>
+
+        <h2>Puanlama ve tur kuralları</h2>
+        <ul>
+          <li><strong>Doğru tahmin:</strong> +1 puan</li>
+          <li><strong>Yasaklı kelime kullanımı:</strong> -1 puan (Tado cezası)</li>
+          <li><strong>Pas:</strong> sadece belirlediğin pas limiti dahilinde</li>
+        </ul>
+        <p>Oyun iki takım arasında sırayla oynanır. Toplam tur sonunda en yüksek puanı alan takım kazanır.</p>
+
+        <h2>Daha iyi oynamak için kısa taktikler</h2>
+        <p>Uzun cümleler yerine kısa ve net ipuçları kullan. Takımının hızlı anlayacağı ortak referanslara odaklan. Süreyi iyi yönetmek, çoğu zaman en kritik farkı yaratır.</p>
+
+        <h2>AI ile özel kart destesi oluşturma</h2>
+        <p>Tadado’nun en güçlü taraflarından biri AI destekli özel deste üretimidir. İstersen hazır destelerden oynarsın, istersen kendi konularına göre tamamen kişisel kartlar oluşturursun.</p>
+        <p>Bu özellik, oyunu klasik sabit destelerden ayırır ve her oturumu daha taze kılar.</p>
+
+        <h2>Neden Tadado?</h2>
+        <p>Tadado, Tabu (yurt dışında <em>Taboo</em>) mantığını modernleştirir. Hızlı tur yapısı, özelleştirilebilir ayarlar ve AI destekli kartlarla hem eğlenceyi hem tekrar oynanabilirliği artırır.</p>
+
+        <h2>Hemen indir ve başla</h2>
+        <p>Arkadaşlarınla ilk turu hemen başlatmak için <a href="${APP_STORE_URLS.tr}" target="_blank" rel="noopener noreferrer">Tadado’yu App Store’dan indir</a>.</p>
+      `,
+      author: {
+        name: 'Tadado Ekibi',
+        role: 'Oyun Geliştiricileri'
+      },
+      publishedAt: '2026-04-04T18:00:00Z',
+      readingTime: 5,
+      tags: ['tadado nasıl oynanır', 'tabu oyunu', 'kelime oyunu', 'kart oyunu', 'yapay zeka']
+    },
+    {
+      slug: 'tadado-card-decks-guide',
+      locale: 'en' as const,
+      title: 'Tadado Card Decks Explained: Which Category Fits Your Group?',
+      description:
+        'Explore all Tadado deck categories (Classic, Cinema, Travel, Sport, Midnight Fun, Marvel) and choose the best word-card experience for your next game night.',
+      content: `
+        <p class="lead">Choosing the right card deck can completely change your game night in Tadado.</p>
+        <p>Different categories create different pace, humor level, and team chemistry.</p>
+      `,
+      author: {
+        name: 'Tadado Team',
+        role: 'Game Developers'
+      },
+      publishedAt: '2026-04-05T12:00:00Z',
+      readingTime: 4,
+      tags: ['card decks', 'word game', 'taboo game', 'party cards', 'Tadado']
+    },
+    {
+      slug: 'tadado-kart-desteleri-rehberi',
+      locale: 'tr' as const,
+      title: 'Tadado Kart Desteleri Rehberi: Hangi Kategori Sizin Gruba Uygun?',
+      description:
+        'Tadado’nun 6 kart destesi kategorisini (Klasik, Sinema, Travel, Sport, Gece eğlencesi (Midnight Fun), Marvel) keşfet. Tabu tarzı kelime-kart oyununda en doğru desteyi seç.',
+      content: `
+        <p class="lead">Tadado’da doğru kart destesini seçmek, oyun gecesinin kalitesini doğrudan etkiler.</p>
+        <p>Kategori seçimi; tempo, mizah seviyesi ve takım uyumunu belirler.</p>
+      `,
+      author: {
+        name: 'Tadado Ekibi',
+        role: 'Oyun Geliştiricileri'
+      },
+      publishedAt: '2026-04-05T12:00:00Z',
+      readingTime: 4,
+      tags: ['kart destesi', 'tabu oyunu', 'kelime oyunu', 'parti oyunu', 'Tadado']
+    },
+    {
+      slug: 'tadado-nedir',
+      locale: 'tr' as const,
+      title: 'Tadado Nedir? Tabu Tarzı Modern Kelime ve Kart Oyunu',
+      description:
+        'Tadado nedir, nasıl oynanır ve neden bu kadar eğlenceli? Tabu tarzı kelime oyunu deneyimini AI destekli kartlarla birleştiren Tadado rehberi.',
+      content: `
+        <p class="lead"><strong>Tadado</strong>, arkadaş grupları için tasarlanmış, Tabu (yurt dışında Taboo) tarzında modern bir <strong>kelime oyunu</strong> ve <strong>kart oyunu</strong> deneyimidir. Hızlı turlar, yasaklı kelime baskısı ve takım içi iletişimle her oyunda yüksek tempo sunar.</p>
+
+        <h2>Tadado ne tür bir oyundur?</h2>
+        <p>Tadado, ekipler halinde oynanan bir kelime anlatma oyunudur. Oyuncular hedef kelimeyi anlatırken kartta yer alan yasaklı kelimeleri kullanmadan takım arkadaşına doğru tahmin yaptırmaya çalışır.</p>
+        <p>Bu yapı sayesinde oyun hem rekabetçi hem de çok eğlenceli bir sosyal deneyime dönüşür.</p>
+
+        <h2>Neden Tadado farklı?</h2>
+        <ul>
+          <li><strong>Hızlı başlangıç:</strong> Kurulum kısa, tur akışı akıcıdır.</li>
+          <li><strong>Yüksek tekrar oynanabilirlik:</strong> AI destekli içerik yapısı oyunu canlı tutar.</li>
+          <li><strong>Farklı kategoriler:</strong> Klasik, Sinema, Travel, Sport, Gece eğlencesi (+18), Marvel.</li>
+          <li><strong>Takım odaklı eğlence:</strong> İletişim ve hızlı düşünme ön plandadır.</li>
+        </ul>
+        <p><em>Gece eğlencesi</em> destesi uygulamada <em>Midnight Fun</em> adıyla görünür.</p>
+
+        <h2>Tadado nasıl oynanır?</h2>
+        <p>Kurallar basit: hedef kelimeyi anlat, yasaklı kelimeleri kullanma, takımın süre bitmeden tahmin etsin. Doğru tahmin +1 puan, yasaklı kelime hatası -1 puan olarak işler.</p>
+        <p>Oyun sonunda en yüksek puanı toplayan takım kazanır.</p>
+
+        <h2>Kimler için uygun?</h2>
+        <p>Tadado; arkadaş buluşmalarında, çift oyunlarında, oyun gecelerinde ve küçük etkinliklerde çok iyi çalışır. Hem eğlence hem rekabet isteyen gruplar için ideal bir seçenektir.</p>
+
+        <h2>Sonuç: Tadado neden denemeye değer?</h2>
+        <p>Tabu tarzı oyunların en sevilen tarafını modern mobil deneyimle birleştiren Tadado, kısa sürede tekrar oynamak isteyeceğin bir oyun döngüsü kurar.</p>
+        <p><a href="${APP_STORE_URLS.tr}" target="_blank" rel="noopener noreferrer">Tadado’yu App Store’dan indir</a> ve ilk turunu hemen başlat.</p>
+      `,
+      author: {
+        name: 'Tadado Ekibi',
+        role: 'Oyun Geliştiricileri'
+      },
+      publishedAt: '2026-04-05T18:00:00Z',
+      readingTime: 4,
+      tags: ['tadado nedir', 'tabu oyunu', 'kelime oyunu', 'kart oyunu', 'parti oyunu']
+    },
+    {
+      slug: 'ciftler-icin-eglenceli-oyunlar',
+      locale: 'tr' as const,
+      title: 'Çiftler İçin Eğlenceli Oyunlar: Geceye Ritim Katan Tadado Rehberi',
+      description:
+        'Çiftler için eğlenceli oyunlar arıyorsanız Tadado ile hızlı, komik ve rekabetli bir deneyim kurun. Gece eğlencesi (Midnight Fun) destesiyle gece modunu açın, App Store’dan hemen başlayın.',
+      content: `
+        <p class="lead"><strong>Çiftler için eğlenceli oyunlar</strong> arıyorsanız, hem sohbeti akıtan hem de rekabet dozunu doğru ayarlayan bir oyun bulmak zor olabilir. Tadado, tabu tarzı anlatma oyunu yapısını modernleştirerek çiftler için hızlı, komik ve tekrar oynanabilir bir deneyim sunar.</p>
+
+        <h2>Neden çiftler için Tadado iyi bir seçim?</h2>
+        <p>İki kişi oyunlarında en kritik şey tempo ve etkileşimdir. Oyun çok yavaşsa sıkıcı olur, çok karmaşıksa akış bozulur. Tadado’da kurallar net, turlar kısa ve her turda yeni bir iletişim dinamiği oluşur.</p>
+        <ul>
+          <li><strong>Kısa tur yapısı:</strong> Uzun hazırlık olmadan hemen başlayabilirsiniz.</li>
+          <li><strong>Yüksek etkileşim:</strong> Biriniz anlatır, diğeriniz hızlı tahmin eder.</li>
+          <li><strong>Tekrar değeri:</strong> Aynı gece içinde farklı kategorilerle oyunu yenileyebilirsiniz.</li>
+          <li><strong>Mobil kolaylık:</strong> Her yerde, tek telefondan oyun akışı.</li>
+        </ul>
+
+        <h2>Gece eğlencesi destesi ne zaman tercih edilmeli?</h2>
+        <p>Gece saatlerinde daha rahat ve eğlenceli bir mod arıyorsanız <strong>Gece eğlencesi</strong> destesi doğru tercih olur. Uygulamada bu kategori <em>Midnight Fun</em> adıyla yer alır. Bu deste, çiftlerin kendi mizah diliyle daha serbest oynayabildiği bir atmosfer kurar.</p>
+        <p>Önemli olan, oyunu kendi sınırlarınız ve eğlence stilinize göre yönetmek. Tadado’nun kategori sistemi bu esnekliği sağlar.</p>
+
+        <h2>Çiftler için en iyi oynama akışı</h2>
+        <h3>1) Kategori seçin</h3>
+        <p>İlk tur için Klasik veya Sinema, gece modu için Gece eğlencesi iyi başlangıçtır.</p>
+
+        <h3>2) Süreyi kısa tutun</h3>
+        <p>İlk turları kısa tutmak oyunu daha dinamik hale getirir. Isındıktan sonra tur süresini artırabilirsiniz.</p>
+
+        <h3>3) Pas limitini ayarlayın</h3>
+        <p>Pas hakkı ne kadar düşük olursa, tahmin baskısı ve eğlence o kadar artar.</p>
+
+        <h2>Çift oyunu arayanlar için neden iyi bir alternatif?</h2>
+        <p>Tadado, klasik <em>tabu oyunu</em> mantığını çift oyununa uygun hale getirir. Bu nedenle hem <strong>kelime oyunu</strong> hem de <strong>kart oyunu</strong> arayan kullanıcılar için güçlü bir alternatiftir.</p>
+        <p>İster kısa bir akşam oyunu, ister uzun bir oyun gecesi planlayın; doğru kategoriyle her tur daha eğlenceli hale gelir.</p>
+
+        <h2>Hemen deneyin</h2>
+        <p>Çift olarak hızlı bir oyun başlatmak için <a href="${APP_STORE_URLS.tr}" target="_blank" rel="noopener noreferrer">Tadado’yu App Store’dan indir</a>. Kategorinizi seçin, ilk turu başlatın, geceyi oyuna çevirin.</p>
+      `,
+      author: {
+        name: 'Tadado Ekibi',
+        role: 'Oyun Geliştiricileri'
+      },
+      publishedAt: '2026-04-06T10:00:00Z',
+      readingTime: 5,
+      tags: ['çiftler için eğlenceli oyunlar', 'çift oyunu', 'tabu oyunu', 'kelime oyunu', 'kart oyunu']
     }
   ].map((post) => ({
     ...post,

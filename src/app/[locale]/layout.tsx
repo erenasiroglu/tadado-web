@@ -21,7 +21,7 @@ function createOrganizationSchema() {
     '@type': 'Organization',
     name: 'Tadado',
     url: 'https://tadado.app',
-    logo: 'https://tadado.app/logo.png',
+    logo: 'https://tadado.app/tadado_launch.png',
     description:
       'Tadado is an AI party guessing game for iPhone: describe words without forbidden hints, play themed decks with friends, and keep game night fresh with AI-generated cards.',
     sameAs: [APP_STORE_URLS.en, APP_STORE_URLS.tr],
