@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "title": "Tadado: juego de palabras en fiesta con IA | App de palabras y cartas",
+    "description": "Tadado: juego tipo tabú con IA, cartas ilimitadas y mazos temáticos. Describe sin palabras prohibidas, adivina rápido con amigos. En el App Store.",
+    "keywords": "Tadado, juego fiesta IA, juego de palabras, tabú, juego de cartas, app noche de juegos, iPhone, juego móvil palabras, juego grupo",
+    "jsonLdApplicationName": "Tadado: juego de palabras en fiesta con IA",
+    "jsonLdFeatures": [
+      "Haz adivinar palabras sin pistas prohibidas en rondas rápidas con amigos.",
+      "Genera un mazo estilo tabú con IA a partir de tus temas y palabras clave."
+    ]
+  },
+  "nav": {
+    "home": "Inicio",
+    "blog": "Blog",
+    "languageEn": "Inglés",
+    "languageTr": "Turco",
+    "languageDe": "Alemán",
+    "languageFr": "Francés",
+    "languageEs": "Español",
+    "languageGroup": "Elegir idioma"
+  },
+  "hero": {
+    "badge": "Próximamente",
+    "title": "JUEGO DE PALABRAS IA",
+    "subtitle": "Dilo. Adivínalo. Ríe.",
+    "cta": "Descargar en el App Store",
+    "ctaPlayStore": "Próximamente en Google Play"
+  },
+  "languageShowcase": {
+    "title": "TU IDIOMA\nTU JUEGO",
+    "subtitle": "Juega en tu idioma con más de 10 opciones",
+    "langEn": "English",
+    "langFr": "Français",
+    "langDe": "Deutsch",
+    "langEs": "Español",
+    "langTr": "Türkçe"
+  },
+  "footer": {
+    "copyright": "© 2026 Tadado. Todos los derechos reservados.",
+    "privacy": "Política de privacidad",
+    "terms": "Términos de uso",
+    "support": "Soporte"
+  },
+  "privacy": {
+    "title": "Política de privacidad | Tadado",
+    "description": "Cómo Tadado recopila, usa y protege tu información personal.",
+    "heading": "Política de privacidad",
+    "lastUpdated": "Última actualización",
+    "backHome": "Volver al inicio",
+    "sections": {
+      "intro": {
+        "title": "Introducción",
+        "content": "Bienvenido a Tadado. Respetamos tu privacidad y protegemos tus datos. Esta política explica cómo tratamos tu información cuando usas nuestra aplicación móvil."
+      },
+      "dataCollection": {
+        "title": "Datos que recopilamos",
+        "content": "Recopilamos la información que nos facilitas (nombre de usuario, preferencias de juego) y datos automáticos (dispositivo, uso, estadísticas) para mejorar la experiencia."
+      },
+      "dataUsage": {
+        "title": "Uso de la información",
+        "content": "Usamos estos datos para ofrecer y mejorar el servicio, personalizar el juego con contenido generado por IA, informarte de novedades y mantener la plataforma segura."
+      },
+      "dataSharing": {
+        "title": "Compartición",
+        "content": "No vendemos tus datos personales. Podemos compartirlos con proveedores que nos ayudan a operar la app, cuando la ley lo exija o con tu consentimiento. Las estadísticas pueden ser anónimas para clasificaciones."
+      },
+      "security": {
+        "title": "Seguridad",
+        "content": "Aplicamos medidas técnicas y organizativas adecuadas. Ninguna transmisión por Internet es totalmente segura."
+      },
+      "inAppPurchases": {
+        "title": "Compras dentro de la app",
+        "content": "Los pagos se procesan a través del App Store de Apple. No almacenamos tus datos de pago. Apple gestiona las transacciones según su política de privacidad.",
+        "guidelines": "Más información en las",
+        "linkText": "directrices de Apple sobre compras in-app"
+      },
+      "contact": {
+        "title": "Contacto",
+        "content": "Consultas: privacy@tadado.app. Responderemos lo antes posible."
+      }
+    }
+  },
+  "terms": {
+    "title": "Términos de uso | Tadado",
+    "description": "Condiciones de uso de la aplicación Tadado.",
+    "heading": "Términos de uso",
+    "lastUpdated": "Última actualización",
+    "backHome": "Volver al inicio",
+    "sections": {
+      "acceptance": {
+        "title": "Aceptación",
+        "content": "Al descargar o usar Tadado aceptas estos términos. Si no estás de acuerdo, no uses la aplicación. Los términos aplican a todos los usuarios."
+      },
+      "license": {
+        "title": "Licencia de uso",
+        "content": "Licencia limitada, no exclusiva, intransferible y revocable para uso personal y no comercial. Sin derecho a modificar, distribuir o crear obras derivadas."
+      },
+      "userConduct": {
+        "title": "Conducta",
+        "content": "Usas Tadado de forma responsable, sin fines ilícitos, sin acosar a otros, sin acceso no autorizado a nuestros sistemas y sin perjudicar el funcionamiento de la app."
+      },
+      "intellectual": {
+        "title": "Propiedad intelectual",
+        "content": "Todo el contenido de Tadado pertenece a Tadado o a sus licenciantes y está protegido por derechos de autor."
+      },
+      "disclaimer": {
+        "title": "Exención de garantías",
+        "content": "Tadado se ofrece «tal cual» sin garantías. No garantizamos disponibilidad continua ni ausencia de errores. El uso es bajo tu responsabilidad."
+      },
+      "inAppPurchases": {
+        "title": "Compras dentro de la app",
+        "content": "Las compras in-app pueden desbloquear funciones o contenido. Los pagos se gestionan en el App Store de Apple según las condiciones de Apple.",
+        "guidelines": "Más información:",
+        "linkText": "directrices de compras in-app"
+      },
+      "changes": {
+        "title": "Cambios",
+        "content": "Podemos modificar estos términos. Los cambios importantes se comunicarán en la app o por correo. El uso continuado implica aceptación."
+      },
+      "contact": {
+        "title": "Contacto",
+        "content": "Consultas: legal@tadado.app."
+      }
+    }
+  },
+  "support": {
+    "title": "Soporte | Tadado",
+    "description": "Ayuda con Tadado: preguntas, incidencias o contacto por correo.",
+    "heading": "Soporte",
+    "lastUpdated": "Última actualización",
+    "backHome": "Volver al inicio",
+    "sections": {
+      "intro": {
+        "title": "Estamos para ayudarte",
+        "content": "Aquí puedes obtener soporte para Tadado: preguntas, informes o ayuda con la app. Respondemos a cada mensaje."
+      },
+      "getSupport": {
+        "title": "Cómo contactarnos",
+        "content": "Lo más sencillo es el correo indicado abajo. Incluye tu dispositivo y una breve descripción del problema para una respuesta más rápida."
+      },
+      "contact": {
+        "title": "Contacto",
+        "content": "Escríbenos a la dirección de abajo. Leemos todo y te contestamos en cuanto podamos.",
+        "emailLabel": "Correo de soporte",
+        "email": "support@tadado.app",
+        "responseTime": "Objetivo de respuesta en 24–48 h en días laborables."
+      }
+    },
+    "form": {
+      "title": "Enviar mensaje",
+      "description": "Cuéntanos tu consulta y te responderemos.",
+      "emailLabel": "Tu correo",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "messageLabel": "Tu mensaje",
+      "messagePlaceholder": "Pregunta o solicitud de soporte…",
+      "submit": "Enviar",
+      "sending": "Enviando…",
+      "successTitle": "Mensaje enviado",
+      "success": "¡Gracias! Suele responderse en 1–4 h en días laborables.",
+      "error": "Algo salió mal. Inténtalo de nuevo o escríbenos directamente."
+    }
+  },
+  "blog": {
+    "meta": {
+      "title": "Tadado – Blog",
+      "description": "Artículos sobre juegos de palabras, IA, móvil y consejos para sacar partido a Tadado."
+    },
+    "heading": "Blog",
+    "subtitle": "Consejos, ideas y novedades sobre Tadado y juegos de palabras",
+    "backHome": "Volver al inicio",
+    "backToBlog": "Volver al blog",
+    "empty": {
+      "title": "Aún no hay entradas",
+      "description": "Pronto: consejos, actualizaciones y más."
+    },
+    "breadcrumb": {
+      "home": "Inicio",
+      "blog": "Blog"
+    },
+    "card": {
+      "readArticle": "Leer más",
+      "minRead": "{count} min de lectura",
+      "teamName": "Tadado Game Development Team"
+    },
+    "indexCards": {
+      "how-to-play-tadado": {
+        "title": "Cómo jugar a Tadado",
+        "description": "Aprende a jugar a Tadado, el juego de palabras y cartas estilo tabú. Configuración, puntuación, pases, mazos con IA y enlace al App Store."
+      },
+      "tadado-card-decks-guide": {
+        "title": "Guía de mazos",
+        "description": "Todas las categorías de mazos (Classic, Cinema, Travel, Sport, Midnight Fun, Marvel) para tu próxima noche de juegos."
+      },
+      "en-iyi-grup-oyunlari": {
+        "title": "Mejores juegos en grupo",
+        "description": "Juegos populares con amigos: Taboo, Codenames, Charades, Heads Up y Tadado. Haz inolvidables tus noches de juegos de palabras y fiesta."
+      }
+    },
+    "faqTitle": "Preguntas frecuentes",
+    "relatedTitle": "Artículos relacionados",
+    "article": {
+      "updated": "Actualizado",
+      "tags": "Etiquetas"
+    }
+  }
+}

@@ -14,14 +14,26 @@
     "blog": "Blog",
     "languageEn": "İngilizce",
     "languageTr": "Türkçe",
+    "languageDe": "Almanca",
+    "languageFr": "Fransızca",
+    "languageEs": "İspanyolca",
     "languageGroup": "Dil seçin"
   },
   "hero": {
     "badge": "Yakında lansmanda",
-    "title": "Kelimeyi anlat.",
-    "titleHighlight": "Takımın tahmin etsin.",
-    "subtitle": "Sınırsız AI tabu tarzı kartlar ve temalı desteler. Yasaklı kelimeleri kullanmadan anlat, takımını hızlı tahmine zorla. Bir tur bitince yenisi hazır.",
-    "cta": "App Store'dan indir"
+    "title": "YAPAY ZEKA\nDESTEKLİ\nKELİME TAHMİN OYUNU",
+    "subtitle": "Anlat. Tahmin Et. Eğlen.",
+    "cta": "App Store'dan indir",
+    "ctaPlayStore": "Yakında Play Store'da"
+  },
+  "languageShowcase": {
+    "title": "İSTEDİĞİN DİLDE OYNA",
+    "subtitle": "Tek dokunuşla farklı dillerde oyna.",
+    "langEn": "İngilizce",
+    "langFr": "Fransızca",
+    "langDe": "Almanca",
+    "langEs": "İspanyolca",
+    "langTr": "Türkçe"
   },
   "footer": {
     "copyright": "© 2026 Tadado. Tüm hakları saklıdır.",
@@ -169,6 +181,23 @@
       "readArticle": "Devamını oku",
       "minRead": "{count} dk okuma",
       "teamName": "Tadado Game Development Team"
+    },
+    "indexCards": {
+      "tadado-nasil-oynanir": {
+        "title": "Tadado Nasıl Oynanır?"
+      },
+      "tadado-kart-desteleri-rehberi": {
+        "title": "Kart Desteleri Rehberi"
+      },
+      "en-iyi-grup-oyunlari": {
+        "title": "En İyi Grup Oyunları"
+      }
+    },
+    "faqTitle": "Sık Sorulan Sorular",
+    "relatedTitle": "Benzer Yazılar",
+    "article": {
+      "updated": "Güncellendi",
+      "tags": "Etiketler"
     }
   }
 }

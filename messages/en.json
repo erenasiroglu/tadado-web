@@ -14,14 +14,26 @@
     "blog": "Blog",
     "languageEn": "English",
     "languageTr": "Turkish",
+    "languageDe": "German",
+    "languageFr": "French",
+    "languageEs": "Spanish",
     "languageGroup": "Choose language"
   },
   "hero": {
     "badge": "Coming at launch",
-    "title": "Describe the word.",
-    "titleHighlight": "Your team guesses.",
-    "subtitle": "Unlimited AI taboo-style cards and themed decks. Describe without forbidden words. Push your team to guess fast. The next round is ready when you are.",
-    "cta": "Download on the App Store"
+    "title": "AI WORD GUESSING GAME",
+    "subtitle": "Say It. Guess It. Laugh.",
+    "cta": "Download on the App Store",
+    "ctaPlayStore": "Coming soon on Google Play"
+  },
+  "languageShowcase": {
+    "title": "YOUR LANGUAGE\nYOUR GAME",
+    "subtitle": "Play in your native language with 10+ options",
+    "langEn": "English",
+    "langFr": "Français",
+    "langDe": "Deutsch",
+    "langEs": "Español",
+    "langTr": "Türkçe"
   },
   "footer": {
     "copyright": "© 2026 Tadado. All rights reserved.",
@@ -169,6 +181,23 @@
       "readArticle": "Read more",
       "minRead": "{count} min read",
       "teamName": "Tadado Game Development Team"
+    },
+    "indexCards": {
+      "how-to-play-tadado": {
+        "title": "How to Play Tadado"
+      },
+      "tadado-card-decks-guide": {
+        "title": "Card Decks Guide"
+      },
+      "en-iyi-grup-oyunlari": {
+        "title": "Best Group Games"
+      }
+    },
+    "faqTitle": "Frequently Asked Questions",
+    "relatedTitle": "Related Posts",
+    "article": {
+      "updated": "Updated",
+      "tags": "Tags"
     }
   }
 }

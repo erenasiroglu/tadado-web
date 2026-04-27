@@ -38,13 +38,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   ])
 
-  // Blog posts
-  const blogPages: MetadataRoute.Sitemap = getAllBlogSlugs().map(({ slug, locale }) => ({
-    url: `${baseUrl}/${locale}/blog/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 0.7
-  }))
+  // Blog posts: EN slugs are available under every UI locale (content falls back via getBlogContentLocale).
+  // TR-only slugs are listed only for /tr to avoid 404s on de/fr/es.
+  const slugEntries = getAllBlogSlugs()
+  const enSlugs = new Set(slugEntries.filter((e) => e.locale === 'en').map((e) => e.slug))
+  const blogPages: MetadataRoute.Sitemap = [
+    ...[...enSlugs].flatMap((slug) =>
+      locales.map((locale) => ({
+        url: `${baseUrl}/${locale}/blog/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.7
+      }))
+    ),
+    ...slugEntries
+      .filter((e) => e.locale === 'tr' && !enSlugs.has(e.slug))
+      .map(({ slug }) => ({
+        url: `${baseUrl}/tr/blog/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.7
+      }))
+  ]
 
   return [...staticPages, ...blogPages]
 }

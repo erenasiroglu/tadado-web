@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "title": "Tadado: KI-Party-Ratespiel | Wort- und Karten-App",
+    "description": "Tadado: Tabu-artiges KI-Partyspiel mit unbegrenzten Karten und Themendecks. Erkläre ohne verbotene Wörter, rate schnell mit Freunden. Jetzt im App Store.",
+    "keywords": "Tadado, KI-Partyspiel, Wortratespiel, Tabu-Spiel, Kartenspiel, Spieleabend-App, iPhone Wortspiel, Tabu-App, Gruppenspiel",
+    "jsonLdApplicationName": "Tadado: KI-Party-Ratespiel",
+    "jsonLdFeatures": [
+      "Erkläre Wörter ohne verbotene Hinweise in schnellen Runden mit Freunden.",
+      "Erstelle mit KI ein eigenes Tabu-Deck aus deinen Themen und Stichwörtern."
+    ]
+  },
+  "nav": {
+    "home": "Startseite",
+    "blog": "Blog",
+    "languageEn": "Englisch",
+    "languageTr": "Türkisch",
+    "languageDe": "Deutsch",
+    "languageFr": "Französisch",
+    "languageEs": "Spanisch",
+    "languageGroup": "Sprache wählen"
+  },
+  "hero": {
+    "badge": "Demnächst im Launch",
+    "title": "KI WORT-RATESPIEL",
+    "subtitle": "Sag es. Rate es. Lach.",
+    "cta": "Im App Store laden",
+    "ctaPlayStore": "Demnächst bei Google Play"
+  },
+  "languageShowcase": {
+    "title": "DEINE SPRACHE\nDEIN SPIEL",
+    "subtitle": "Spiele in deiner Sprache – mit über 10 Optionen",
+    "langEn": "English",
+    "langFr": "Français",
+    "langDe": "Deutsch",
+    "langEs": "Español",
+    "langTr": "Türkçe"
+  },
+  "footer": {
+    "copyright": "© 2026 Tadado. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "support": "Support"
+  },
+  "privacy": {
+    "title": "Datenschutz | Tadado",
+    "description": "Erfahre, wie Tadado deine personenbezogenen Daten erhebt, nutzt und schützt.",
+    "heading": "Datenschutzerklärung",
+    "lastUpdated": "Zuletzt aktualisiert",
+    "backHome": "Zur Startseite",
+    "sections": {
+      "intro": {
+        "title": "Einleitung",
+        "content": "Willkommen bei Tadado. Wir nehmen den Schutz deiner Privatsphäre ernst. Diese Datenschutzerklärung erläutert, wie wir Informationen erheben, nutzen und schützen, wenn du unsere mobile App verwendest."
+      },
+      "dataCollection": {
+        "title": "Welche Daten wir erheben",
+        "content": "Wir erheben Daten, die du uns direkt mitteilst (z. B. Nutzername, Spieleinstellungen). Außerdem werden bei Nutzung der App automatisch Gerätedaten, Nutzungsdaten und Spielstatistiken erhoben, um die App zu verbessern."
+      },
+      "dataUsage": {
+        "title": "Wie wir deine Daten nutzen",
+        "content": "Wir nutzen die Daten, um unsere Dienste bereitzustellen und zu verbessern, dein Spielerlebnis mit KI-Inhalten zu personalisieren, dich über Updates zu informieren und die Sicherheit der Plattform zu gewährleisten."
+      },
+      "dataSharing": {
+        "title": "Weitergabe von Daten",
+        "content": "Wir verkaufen keine personenbezogenen Daten. Eine Weitergabe erfolgt an Dienstleister, die uns beim Betrieb unterstützen, wenn es gesetzlich vorgeschrieben ist oder du zustimmst. Spielstatistiken können anonym für Bestenlisten genutzt werden."
+      },
+      "security": {
+        "title": "Datensicherheit",
+        "content": "Wir setzen angemessene technische und organisatorische Maßnahmen zum Schutz deiner Daten ein. Die Übertragung im Internet ist jedoch nie völlig risikofrei."
+      },
+      "inAppPurchases": {
+        "title": "In-App-Käufe",
+        "content": "Zahlungen für In-App-Käufe werden über den Apple App Store abgewickelt. Wir speichern keine Zahlungsdaten. Apple verarbeitet Transaktionen gemäß seiner Datenschutzrichtlinie.",
+        "guidelines": "Weitere Informationen findest du in Apples",
+        "linkText": "Richtlinien zu In-App-Käufen im App Store"
+      },
+      "contact": {
+        "title": "Kontakt",
+        "content": "Fragen zu dieser Datenschutzerklärung: privacy@tadado.app. Wir melden uns schnellstmöglich."
+      }
+    }
+  },
+  "terms": {
+    "title": "Nutzungsbedingungen | Tadado",
+    "description": "Lies die Bedingungen für die Nutzung der Tadado-App.",
+    "heading": "Nutzungsbedingungen",
+    "lastUpdated": "Zuletzt aktualisiert",
+    "backHome": "Zur Startseite",
+    "sections": {
+      "acceptance": {
+        "title": "Annahme der Bedingungen",
+        "content": "Mit dem Herunterladen, Installieren oder Nutzen von Tadado stimmst du diesen Nutzungsbedingungen zu. Wenn du nicht einverstanden bist, nutze die App bitte nicht. Die Bedingungen gelten für alle Nutzer."
+      },
+      "license": {
+        "title": "Nutzungslizenz",
+        "content": "Wir gewähren dir eine beschränkte, nicht exklusive, nicht übertragbare, widerrufliche Lizenz zur persönlichen, nicht kommerziellen Nutzung. Kein Recht auf Änderung, Verbreitung oder Ableitung der App."
+      },
+      "userConduct": {
+        "title": "Verhalten der Nutzer",
+        "content": "Du nutzt Tadado verantwortungsvoll, nicht für rechtswidrige Zwecke, ohne andere zu belästigen, ohne unbefugten Zugriff auf unsere Systeme und ohne die Funktionsfähigkeit der App zu beeinträchtigen."
+      },
+      "intellectual": {
+        "title": "Geistiges Eigentum",
+        "content": "Alle Inhalte in Tadado (Texte, Grafiken, Logos, Symbole, Bilder, Audio, Software) gehören Tadado oder Lizenzgebern und sind urheberrechtlich geschützt."
+      },
+      "disclaimer": {
+        "title": "Haftungsausschluss",
+        "content": "Tadado wird „wie besehen“ ohne Gewährleistung bereitgestellt. Wir garantieren keine unterbrechungsfreie, sichere oder fehlerfreie Nutzung. Die Nutzung erfolgt auf eigenes Risiko."
+      },
+      "inAppPurchases": {
+        "title": "In-App-Käufe",
+        "content": "In-App-Käufe können zusätzliche Funktionen oder Inhalte freischalten. Abwicklung erfolgt über den Apple App Store gemäß Apples Bedingungen.",
+        "guidelines": "Weitere Infos bei Apple:",
+        "linkText": "Richtlinien zu In-App-Käufen im App Store"
+      },
+      "changes": {
+        "title": "Änderungen",
+        "content": "Wir können diese Bedingungen ändern. Wesentliche Änderungen kommunizieren wir in der App oder per E-Mail. Die weitere Nutzung gilt als Zustimmung."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "content": "Fragen zu diesen Bedingungen: legal@tadado.app."
+      }
+    }
+  },
+  "support": {
+    "title": "Support | Tadado",
+    "description": "Hilfe zu Tadado: Fragen stellen, Support anfragen oder uns per E-Mail erreichen.",
+    "heading": "Support",
+    "lastUpdated": "Zuletzt aktualisiert",
+    "backHome": "Zur Startseite",
+    "sections": {
+      "intro": {
+        "title": "Wir helfen dir",
+        "content": "Hier erhältst du Support für Tadado. Du kannst Fragen stellen, Probleme melden oder Hilfe zur App anfragen. Wir antworten auf jede Nachricht."
+      },
+      "getSupport": {
+        "title": "So erreichst du uns",
+        "content": "Am besten per E-Mail an die unten stehende Adresse. Bitte Gerätetyp und kurze Problembeschreibung angeben – so können wir schneller helfen."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "content": "Schreib uns an die E-Mail-Adresse unten. Wir lesen jede Nachricht und melden uns sobald möglich.",
+        "emailLabel": "Support-E-Mail",
+        "email": "support@tadado.app",
+        "responseTime": "Antwort in der Regel innerhalb von 24–48 Stunden an Werktagen."
+      }
+    },
+    "form": {
+      "title": "Nachricht senden",
+      "description": "Beschreibe dein Anliegen – wir melden uns bei dir.",
+      "emailLabel": "Deine E-Mail",
+      "emailPlaceholder": "du@beispiel.de",
+      "messageLabel": "Deine Nachricht",
+      "messagePlaceholder": "Frage oder Support-Anfrage…",
+      "submit": "Senden",
+      "sending": "Wird gesendet…",
+      "successTitle": "Gesendet",
+      "success": "Danke! Wir antworten werktags oft innerhalb von 1–4 Stunden.",
+      "error": "Etwas ist schiefgelaufen. Bitte erneut versuchen oder direkt per E-Mail schreiben."
+    }
+  },
+  "blog": {
+    "meta": {
+      "title": "Tadado – Blog",
+      "description": "Artikel zu Wortspielen, KI, Mobile Gaming und Tipps für Tadado."
+    },
+    "heading": "Blog",
+    "subtitle": "Tipps, Einblicke und Neuigkeiten zu Tadado und Wortspielen",
+    "backHome": "Zur Startseite",
+    "backToBlog": "Zum Blog",
+    "empty": {
+      "title": "Noch keine Beiträge",
+      "description": "Demnächst: Spieltipps, Updates und mehr!"
+    },
+    "breadcrumb": {
+      "home": "Startseite",
+      "blog": "Blog"
+    },
+    "card": {
+      "readArticle": "Weiterlesen",
+      "minRead": "{count} Min. Lesezeit",
+      "teamName": "Tadado Game Development Team"
+    },
+    "indexCards": {
+      "how-to-play-tadado": {
+        "title": "So spielt ihr Tadado",
+        "description": "Lernt Tadado kennen – das Tabu-artige Wort- und Kartenpartyspiel. Setup, Punkte, Pass-Limit, eigene KI-Decks und App-Store-Download."
+      },
+      "tadado-card-decks-guide": {
+        "title": "Kartendecks im Überblick",
+        "description": "Alle Tadado-Deck-Kategorien (Classic, Cinema, Travel, Sport, Midnight Fun, Marvel) – findet die beste Runde für euren Spieleabend."
+      },
+      "en-iyi-grup-oyunlari": {
+        "title": "Die besten Gruppenspiele",
+        "description": "Beliebte Gruppenspiele wie Tabu, Codenames, Charades, Heads Up und Tadado – für unvergessliche Spieleabende mit Wort- und Partyspielen."
+      }
+    },
+    "faqTitle": "Häufig gestellte Fragen",
+    "relatedTitle": "Ähnliche Artikel",
+    "article": {
+      "updated": "Aktualisiert",
+      "tags": "Schlagwörter"
+    }
+  }
+}

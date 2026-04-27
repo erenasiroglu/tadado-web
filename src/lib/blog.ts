@@ -467,6 +467,18 @@ export function getBlogPosts(locale: 'en' | 'tr'): BlogPost[] {
   return sortByPublishedDesc(localized)
 }
 
+/** Ana blog sayfasında gösterilen sabit yazı sırası (retention / odaklı kısa liste) */
+const BLOG_INDEX_SLUG_ORDER: Record<'en' | 'tr', readonly string[]> = {
+  en: ['how-to-play-tadado', 'tadado-card-decks-guide', 'en-iyi-grup-oyunlari'],
+  tr: ['tadado-nasil-oynanir', 'tadado-kart-desteleri-rehberi', 'en-iyi-grup-oyunlari']
+}
+
+export function getBlogPostsForIndex(locale: 'en' | 'tr'): BlogPost[] {
+  const order = BLOG_INDEX_SLUG_ORDER[locale]
+  const bySlug = new Map(getBlogPosts(locale).map((p) => [p.slug, p]))
+  return order.map((slug) => bySlug.get(slug)).filter((p): p is BlogPost => p !== undefined)
+}
+
 export function getBlogPost(slug: string, locale: 'en' | 'tr'): BlogPost | undefined {
   const post = blogPosts.find((item) => item.slug === slug && item.locale === locale)
   return post ? withSeoOverride(post) : undefined

@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "title": "Tadado : jeu de mots en soirée IA | App mots et cartes",
+    "description": "Tadado : jeu de société façon tabou avec cartes IA illimitées et thèmes. Décris sans mots interdits, fais deviner vite entre amis. Sur l’App Store.",
+    "keywords": "Tadado, jeu soirée IA, jeu de mots, tabou, jeu de cartes, appli soirée jeux, iPhone, jeu de mots mobile, jeu groupe",
+    "jsonLdApplicationName": "Tadado : jeu de mots en soirée IA",
+    "jsonLdFeatures": [
+      "Fais deviner des mots sans indices interdits lors de parties rapides entre amis.",
+      "Crée un jeu façon tabou avec l’IA à partir de tes thèmes et mots-clés."
+    ]
+  },
+  "nav": {
+    "home": "Accueil",
+    "blog": "Blog",
+    "languageEn": "Anglais",
+    "languageTr": "Turc",
+    "languageDe": "Allemand",
+    "languageFr": "Français",
+    "languageEs": "Espagnol",
+    "languageGroup": "Choisir la langue"
+  },
+  "hero": {
+    "badge": "Bientôt disponible",
+    "title": "JEU DE MOTS IA",
+    "subtitle": "Dis-le. Devine. Rigole.",
+    "cta": "Télécharger sur l’App Store",
+    "ctaPlayStore": "Bientôt sur Google Play"
+  },
+  "languageShowcase": {
+    "title": "TA LANGUE\nTON JEU",
+    "subtitle": "Joue dans ta langue — plus de 10 options",
+    "langEn": "Anglais",
+    "langFr": "Français",
+    "langDe": "Deutsch",
+    "langEs": "Español",
+    "langTr": "Türkçe"
+  },
+  "footer": {
+    "copyright": "© 2026 Tadado. Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d’utilisation",
+    "support": "Assistance"
+  },
+  "privacy": {
+    "title": "Politique de confidentialité | Tadado",
+    "description": "Découvrez comment Tadado collecte, utilise et protège vos données personnelles.",
+    "heading": "Politique de confidentialité",
+    "lastUpdated": "Dernière mise à jour",
+    "backHome": "Retour à l’accueil",
+    "sections": {
+      "intro": {
+        "title": "Introduction",
+        "content": "Bienvenue sur Tadado. Nous respectons votre vie privée et protégeons vos données. Cette politique explique comment nous traitons vos informations lorsque vous utilisez notre application mobile."
+      },
+      "dataCollection": {
+        "title": "Données collectées",
+        "content": "Nous collectons les informations que vous nous fournissez (pseudo, préférences de jeu) et des données automatiques (appareil, utilisation, statistiques de jeu) pour améliorer l’expérience."
+      },
+      "dataUsage": {
+        "title": "Utilisation des données",
+        "content": "Nous utilisons ces données pour fournir et améliorer le service, personnaliser le jeu avec du contenu généré par l’IA, vous informer des mises à jour et sécuriser la plateforme."
+      },
+      "dataSharing": {
+        "title": "Partage",
+        "content": "Nous ne vendons pas vos données personnelles. Un partage peut avoir lieu avec des prestataires, sur obligation légale ou avec votre consentement. Des statistiques anonymes peuvent servir aux classements."
+      },
+      "security": {
+        "title": "Sécurité",
+        "content": "Nous appliquons des mesures techniques et organisationnelles appropriées. Aucune transmission sur Internet n’est totalement sans risque."
+      },
+      "inAppPurchases": {
+        "title": "Achats intégrés",
+        "content": "Les paiements passent par l’App Store d’Apple. Nous ne stockons pas vos coordonnées bancaires. Apple traite les transactions selon sa politique de confidentialité.",
+        "guidelines": "Pour en savoir plus, voir les",
+        "linkText": "règles d’Apple sur les achats intégrés"
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "Questions : privacy@tadado.app. Nous répondons dès que possible."
+      }
+    }
+  },
+  "terms": {
+    "title": "Conditions d’utilisation | Tadado",
+    "description": "Conditions d’utilisation de l’application Tadado.",
+    "heading": "Conditions d’utilisation",
+    "lastUpdated": "Dernière mise à jour",
+    "backHome": "Retour à l’accueil",
+    "sections": {
+      "acceptance": {
+        "title": "Acceptation",
+        "content": "En téléchargeant ou en utilisant Tadado, vous acceptez ces conditions. Sinon, veuillez ne pas utiliser l’application. Les conditions s’appliquent à tous les utilisateurs."
+      },
+      "license": {
+        "title": "Licence d’utilisation",
+        "content": "Licence limitée, non exclusive, non transférable et révocable pour un usage personnel et non commercial. Pas de droit de modifier, distribuer ou créer des œuvres dérivées."
+      },
+      "userConduct": {
+        "title": "Comportement",
+        "content": "Vous utilisez Tadado de façon responsable, sans usage illégal, sans harcèlement, sans accès non autorisé à nos systèmes et sans nuire au fonctionnement de l’app."
+      },
+      "intellectual": {
+        "title": "Propriété intellectuelle",
+        "content": "Tout le contenu de Tadado appartient à Tadado ou à ses fournisseurs et est protégé par le droit d’auteur."
+      },
+      "disclaimer": {
+        "title": "Avertissement",
+        "content": "Tadado est fourni « tel quel » sans garantie. Nous ne garantissons ni disponibilité continue ni absence d’erreurs. Utilisation à vos risques."
+      },
+      "inAppPurchases": {
+        "title": "Achats intégrés",
+        "content": "Des achats intégrés peuvent débloquer des fonctions ou contenus. Paiements via l’App Store Apple selon les conditions d’Apple.",
+        "guidelines": "Voir chez Apple :",
+        "linkText": "règles sur les achats intégrés"
+      },
+      "changes": {
+        "title": "Modifications",
+        "content": "Nous pouvons modifier ces conditions. Les changements importants seront communiqués dans l’app ou par e-mail. L’utilisation continue vaut acceptation."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "Questions : legal@tadado.app."
+      }
+    }
+  },
+  "support": {
+    "title": "Assistance | Tadado",
+    "description": "Aide pour Tadado : questions, support ou contact par e-mail.",
+    "heading": "Assistance",
+    "lastUpdated": "Dernière mise à jour",
+    "backHome": "Retour à l’accueil",
+    "sections": {
+      "intro": {
+        "title": "Nous sommes là pour vous",
+        "content": "Cette page est votre point d’entrée pour l’assistance Tadado : questions, signalements ou aide à l’app. Nous répondons à chaque message."
+      },
+      "getSupport": {
+        "title": "Comment nous contacter",
+        "content": "Le plus simple est l’e-mail ci-dessous. Indiquez votre appareil et un court résumé du problème pour une réponse plus rapide."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "Écrivez-nous à l’adresse ci-dessous. Nous lisons tout et revenons vers vous dès que possible.",
+        "emailLabel": "E-mail support",
+        "email": "support@tadado.app",
+        "responseTime": "Réponse visée sous 24–48 h les jours ouvrés."
+      }
+    },
+    "form": {
+      "title": "Envoyer un message",
+      "description": "Décrivez votre question — nous vous répondrons.",
+      "emailLabel": "Votre e-mail",
+      "emailPlaceholder": "vous@exemple.com",
+      "messageLabel": "Votre message",
+      "messagePlaceholder": "Question ou demande d’assistance…",
+      "submit": "Envoyer",
+      "sending": "Envoi…",
+      "successTitle": "Message envoyé",
+      "success": "Merci ! Réponse souvent sous 1–4 h les jours ouvrés.",
+      "error": "Une erreur s’est produite. Réessayez ou écrivez-nous directement."
+    }
+  },
+  "blog": {
+    "meta": {
+      "title": "Tadado – Blog",
+      "description": "Articles sur les jeux de mots, l’IA, le mobile et des astuces Tadado."
+    },
+    "heading": "Blog",
+    "subtitle": "Conseils, idées et actus sur Tadado et les jeux de mots",
+    "backHome": "Retour à l’accueil",
+    "backToBlog": "Retour au blog",
+    "empty": {
+      "title": "Pas encore d’articles",
+      "description": "Bientôt : astuces, mises à jour et plus encore !"
+    },
+    "breadcrumb": {
+      "home": "Accueil",
+      "blog": "Blog"
+    },
+    "card": {
+      "readArticle": "Lire la suite",
+      "minRead": "{count} min de lecture",
+      "teamName": "Tadado Game Development Team"
+    },
+    "indexCards": {
+      "how-to-play-tadado": {
+        "title": "Comment jouer à Tadado",
+        "description": "Découvrez Tadado, le jeu de mots et de cartes façon tabou. Mise en place, score, passes, decks IA et lien App Store."
+      },
+      "tadado-card-decks-guide": {
+        "title": "Guide des decks",
+        "description": "Explorez toutes les catégories de decks Tadado (Classic, Cinema, Travel, Sport, Midnight Fun, Marvel) pour votre prochaine soirée jeux."
+      },
+      "en-iyi-grup-oyunlari": {
+        "title": "Meilleurs jeux de groupe",
+        "description": "Jeux populaires entre amis : Taboo, Codenames, Charades, Heads Up et Tadado. Animez vos soirées avec des jeux de mots et de société."
+      }
+    },
+    "faqTitle": "Questions fréquentes",
+    "relatedTitle": "Articles similaires",
+    "article": {
+      "updated": "Mis à jour",
+      "tags": "Mots-clés"
+    }
+  }
+}

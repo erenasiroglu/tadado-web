@@ -42,7 +42,7 @@ export function HomeJsonLd({ locale, name, description, featureList }: Props) {
     '@type': 'WebSite',
     name: 'Tadado',
     url: 'https://tadado.app',
-    inLanguage: locale === 'tr' ? 'tr' : 'en',
+    inLanguage: ['en', 'tr', 'de', 'fr', 'es'].includes(locale) ? locale : 'en',
     publisher: {
       '@type': 'Organization',
       name: 'Tadado',

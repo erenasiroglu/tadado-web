@@ -1,14 +1,13 @@
 /** Landing tokens: düzenli layout + mor/indigo oyun enerjisi + yumuşak gölgeler */
 
 /**
- * Hero dikey ritim: Fibonacci ölçeği (8, 21, 34 px ≈ φ zinciri; maskot–başlık 8px bilinçli sıkı).
- * Üstten: 21 (rozet–maskot) → 8 (maskot–h1) → 21 (h1–lead) → 34 (lead–CTA).
+ * Hero dikey ritim: rozet–maskot–başlık eşit ve sıkı (0.5rem).
  */
 export const heroRhythm = {
-  /** rozet ↔ maskot (21px) */
-  badgeToMascot: 'gap-[1.3125rem]',
-  /** maskot ↔ başlık: sıkı köprü (8px) */
-  mascotToTitle: 'mt-[0.5rem]',
+  /** rozet ↔ maskot */
+  badgeToMascot: 'gap-2',
+  /** maskot ↔ başlık (rozet–maskot ile aynı) */
+  mascotToTitle: 'mt-2',
   /** başlık ↔ lead: okunabilirlik (21px) */
   titleToLead: 'mt-[1.3125rem]',
   /** lead ↔ CTA (34px) */
@@ -20,9 +19,9 @@ export const landing = {
   band: 'border-t border-zinc-800/80 bg-zinc-900/25',
   inner: 'relative z-10 mx-auto max-w-3xl',
   innerWide: 'relative z-10 mx-auto max-w-5xl',
-  /** Mor çerçeve, hafif parlama */
+  /** Hero rozeti — ince çerçeve, hafif cam (üst border vurgusu yok) */
   badge:
-    'inline-flex items-center rounded-full border border-indigo-500/35 bg-indigo-500/[0.12] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-indigo-200 shadow-[0_0_24px_-4px_rgba(99,102,241,0.35)]',
+    'inline-flex items-center rounded-full border border-white/22 bg-white/[0.1] px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white/95 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.28)] backdrop-blur-xl backdrop-saturate-150',
   title: 'text-center text-3xl font-semibold tracking-tight text-zinc-50 sm:text-4xl md:text-[2.5rem]',
   /** Son kelime veya vurgu için (span içinde) */
   titleGradient: 'bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent',

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
 import { Hero } from '@/components/Hero'
+import { Language } from '@/components/Language'
 import { HomeJsonLd } from '@/components/HomeJsonLd'
 
 type Props = {
@@ -33,6 +34,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         en: `${baseUrl}/en`,
         tr: `${baseUrl}/tr`,
+        de: `${baseUrl}/de`,
+        fr: `${baseUrl}/fr`,
+        es: `${baseUrl}/es`,
         'x-default': `${baseUrl}/en`
       }
     },
@@ -71,6 +75,7 @@ export default async function HomePage({ params }: Props) {
         featureList={tMeta.raw('jsonLdFeatures') as string[]}
       />
       <Hero />
+      <Language />
     </main>
   )
 }

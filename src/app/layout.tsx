@@ -2,12 +2,13 @@ import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
+import { poppinsBlackItalic } from '@/lib/fonts'
 import './globals.css'
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: '--font-jakarta',
   weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
   display: 'swap'
 })
 
@@ -45,7 +46,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${plusJakartaSans.variable} antialiased`}>
+      <body
+        className={`${plusJakartaSans.variable} ${poppinsBlackItalic.variable} min-h-dvh bg-[var(--background)] text-[var(--foreground)] antialiased`}
+      >
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
