@@ -1,8 +1,15 @@
 import { getTranslations, getLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { APP_STORE_URLS } from '@/lib/constants'
+import { homeScreenGradientBackgroundImage } from '@/lib/home-screen-gradient'
 import { poppinsBlackItalic } from '@/lib/fonts'
 import { heroRhythm, landing } from '@/lib/landing-ui'
+import { HeroAccentShapes } from '@/components/HeroAccentShapes'
+
+/** Köşe dekor kartları — ortak oran, hafif eğim, simetrik köşe dönüşleri */
+const heroCornerCard =
+  'pointer-events-none absolute animate-float opacity-90 drop-shadow-[0_22px_44px_rgba(0,0,0,0.42)]'
+const heroCornerCardInner = 'relative h-full w-full brightness-[1.03] contrast-[1.04]'
 
 export async function Hero() {
   const t = await getTranslations('hero')
@@ -12,93 +19,62 @@ export async function Hero() {
 
   return (
     <section className={`${landing.section} relative flex min-h-screen items-center justify-center overflow-hidden`}>
-      {/* Base gradient — fotoğraf yüklenene kadar / kenarlarda yedek */}
       <div
-        className="absolute inset-0 z-0 bg-gradient-to-b from-[#3F3EDD] to-[#1B1A85]"
+        className="absolute inset-0 z-0"
+        style={{ backgroundImage: homeScreenGradientBackgroundImage() }}
         aria-hidden
       />
 
-      {/* Hafif üst derinlik — düz gradient üzerinde tipografi için */}
-      <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/[0.12] via-transparent to-black/[0.08]"
-        aria-hidden
-      />
-
-      {/* Arka plan şekilleri: mesh ışık, ızgara, halkalar — modern, düşük kontrast, CTA odaklı */}
-      <div
-        className="pointer-events-none absolute inset-0 z-[2] overflow-hidden"
-        aria-hidden
-      >
-        {/* Yumuşak ışık blob’ları */}
-        <div
-          className="animate-hero-mesh absolute -left-[18%] top-[5%] h-[min(92vw,560px)] w-[min(92vw,560px)] rounded-full bg-[radial-gradient(circle,rgba(167,139,250,0.42)_0%,rgba(99,102,241,0.12)_45%,transparent_70%)] blur-3xl sm:-left-[10%]"
-        />
-        <div
-          className="animate-hero-mesh-slow absolute -right-[12%] top-[28%] h-[min(78vw,480px)] w-[min(78vw,480px)] rounded-full bg-[radial-gradient(circle,rgba(129,140,248,0.38)_0%,rgba(63,62,221,0.1)_48%,transparent_72%)] blur-3xl"
-        />
-        <div
-          className="animate-hero-mesh absolute bottom-[-8%] left-[20%] h-[min(65vw,420px)] w-[min(65vw,420px)] rounded-full bg-[radial-gradient(circle,rgba(196,181,253,0.22)_0%,transparent_65%)] blur-3xl [animation-delay:-11s]"
-        />
-
-        {/* İnce konsantrik halkalar — merkezde hafif “sahne” */}
-        <div className="absolute left-1/2 top-[42%] h-[min(120vw,900px)] w-[min(120vw,900px)] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.055]" />
-        <div className="absolute left-1/2 top-[42%] h-[min(95vw,720px)] w-[min(95vw,720px)] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.04]" />
-        <div className="absolute left-1/2 top-[42%] h-[min(72vw,540px)] w-[min(72vw,540px)] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.03]" />
-
-        {/* Çok yavaş dönen ince halka parçası (üst yarı görünür) */}
-        <div className="absolute left-1/2 top-[42%] h-[min(88vw,640px)] w-[min(88vw,640px)] -translate-x-1/2 -translate-y-1/2">
-          <div
-            className="animate-hero-orbit absolute inset-0 rounded-full border-t border-r border-white/[0.07] border-b-transparent border-l-transparent"
-            style={{ borderWidth: '1px' }}
-          />
-        </div>
-
-        {/* Köşe “cam” paneller — premium his, düşük opaklık */}
-        <div className="absolute -left-16 top-[18%] hidden h-52 w-36 rotate-[14deg] rounded-[1.75rem] border border-white/[0.08] bg-gradient-to-br from-white/[0.06] to-transparent shadow-[0_24px_60px_-20px_rgba(0,0,0,0.35)] backdrop-blur-[1px] md:block lg:h-60 lg:w-44" />
-        <div className="absolute -right-12 top-[22%] hidden h-44 w-32 -rotate-[12deg] rounded-[1.75rem] border border-white/[0.07] bg-gradient-to-bl from-white/[0.05] to-transparent shadow-[0_20px_50px_-18px_rgba(0,0,0,0.3)] backdrop-blur-[1px] md:block lg:h-52 lg:w-40" />
-        <div className="absolute bottom-[12%] left-[8%] hidden h-24 w-[11rem] rotate-[-8deg] rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-[1px] lg:block" />
+      <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden" aria-hidden>
+        <HeroAccentShapes />
       </div>
 
-      {/* Dekor kartlar + sağ altta sosyal “baloncuk” */}
-      <div className="pointer-events-none absolute inset-0 z-[3] overflow-hidden">
+      <div
+        className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-b from-black/[0.12] via-transparent to-black/[0.08]"
+        aria-hidden
+      />
+
+      <div className="pointer-events-none absolute inset-0 z-[3] overflow-hidden" aria-hidden>
+        {/* Üç oyun kartı: aynı oran (~3:4), hafif — sol köşeler -3°, sağ köşeler +3° */}
         <div
-          className="absolute left-[4%] top-20 h-40 w-28 rotate-[-14deg] animate-float opacity-80 drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)] sm:left-[6%] sm:h-48 sm:w-36 sm:opacity-90 md:top-24 md:h-56 md:w-40 md:opacity-95 lg:h-64 lg:w-44"
-          style={{ animationDelay: '0.8s' }}
+          className={`${heroCornerCard} left-[4%] top-20 aspect-[3/4] w-[min(38vw,10.25rem)] -rotate-3 sm:left-[5%] sm:top-[5.25rem] sm:w-44 md:w-[11.25rem] lg:top-[5.75rem] lg:w-48`}
+          style={{ animationDelay: '0.85s' }}
         >
-          <div className="relative h-full w-full brightness-105 contrast-105">
-            <Image src="/basketball-card.png" alt="" fill className="object-contain" />
+          <div className={`${heroCornerCardInner} overflow-hidden rounded-xl`}>
+            <Image src="/basketball-card.png" alt="" fill className="object-contain" sizes="(max-width: 768px) 164px, 192px" />
           </div>
         </div>
         <div
-          className="absolute right-[4%] top-28 h-36 w-24 rotate-[10deg] animate-float opacity-80 drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)] sm:right-[6%] sm:h-44 sm:w-32 sm:opacity-90 md:top-32 md:h-52 md:w-36 md:opacity-95 lg:h-60 lg:w-40"
+          className={`${heroCornerCard} right-[4%] top-20 aspect-[3/4] w-[min(38vw,10.25rem)] rotate-3 sm:right-[5%] sm:top-[5.25rem] sm:w-44 md:w-[11.25rem] lg:top-[5.75rem] lg:w-48`}
           style={{ animationDelay: '1s' }}
         >
-          <div className="relative h-full w-full brightness-105 contrast-105">
-            <Image src="/midnight-fun-card.png" alt="" fill className="object-contain" />
+          <div className={`${heroCornerCardInner} overflow-hidden rounded-xl`}>
+            <Image src="/midnight-fun-card.png" alt="" fill className="object-contain" sizes="(max-width: 768px) 164px, 192px" />
           </div>
         </div>
         <div
-          className="absolute bottom-24 left-[6%] hidden h-40 w-28 rotate-[12deg] animate-float opacity-80 drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)] sm:bottom-28 md:block md:h-48 md:w-36 md:opacity-95 lg:bottom-32 lg:h-56 lg:w-40"
-          style={{ animationDelay: '1.2s' }}
+          className={`${heroCornerCard} bottom-[4.75rem] left-[4%] hidden aspect-[3/4] w-[min(38vw,10.25rem)] -rotate-3 sm:bottom-[5.25rem] sm:left-[5%] md:block md:w-44 lg:bottom-[5.75rem] lg:w-48`}
+          style={{ animationDelay: '1.15s' }}
         >
-          <div className="relative h-full w-full brightness-105 contrast-105">
-            <Image src="/eiffel-tower.png" alt="" fill className="object-contain" />
+          <div className={`${heroCornerCardInner} overflow-hidden rounded-xl`}>
+            <Image src="/eiffel-tower.png" alt="" fill className="object-contain" sizes="(max-width: 768px) 164px, 192px" />
           </div>
         </div>
+        {/* Sosyal baloncuk — kare gövde, organik border-radius */}
         <div
-          className="absolute bottom-16 right-[3%] h-28 w-28 rotate-[-6deg] animate-float opacity-90 drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] sm:bottom-20 sm:h-32 sm:w-32 sm:right-[4%] md:bottom-24 md:h-40 md:w-40 md:rotate-[-4deg] lg:bottom-28 lg:h-44 lg:w-44"
+          className={`${heroCornerCard} bottom-14 right-[3%] h-[8.25rem] w-[8.25rem] rotate-[-5deg] sm:bottom-16 sm:right-[4%] sm:h-[9.75rem] sm:w-[9.75rem] md:bottom-[5rem] md:h-40 md:w-40 lg:bottom-[5.75rem] lg:h-44 lg:w-44`}
           style={{
-            animationDelay: '1.35s',
+            animationDelay: '1.3s',
             borderRadius: '63% 37% 58% 42% / 48% 52% 48% 52%'
           }}
         >
-          <div className="relative h-full w-full overflow-hidden border-2 border-white/35 bg-[#1B1A85]/40 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.25)] ring-1 ring-white/15 [border-radius:inherit]">
+          <div className={`${heroCornerCardInner} h-full w-full overflow-hidden border-2 border-white/35 bg-[#2A0A3B]/40 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.25)] ring-1 ring-white/15 [border-radius:inherit]`}>
             <Image
               src="/tadado-play-people.png"
               alt=""
               fill
               className="object-cover object-[center_62%_65%] saturate-[1.08] contrast-[1.05]"
-              sizes="(max-width: 768px) 112px, 176px"
+              sizes="(max-width: 768px) 132px, 176px"
             />
           </div>
         </div>
@@ -112,7 +88,7 @@ export async function Hero() {
           <span className={`${landing.badge} normal-case tracking-wide`}>{t('badge')}</span>
           <div className="relative mx-auto h-48 w-48 shrink-0 sm:h-52 sm:w-52 md:h-60 md:w-60 lg:h-72 lg:w-72">
             <Image
-              src="/tadado-mascot.png"
+              src="/tadado-mascots.png"
               alt=""
               fill
               className="object-contain object-bottom drop-shadow-[0_12px_32px_rgba(0,0,0,0.35)]"
@@ -123,14 +99,14 @@ export async function Hero() {
         </div>
 
         <h1
-          className={`${poppinsBlackItalic.className} ${heroRhythm.mascotToTitle} mx-auto w-full max-w-[min(100%,36rem)] text-[clamp(2.125rem,6.2vw,5rem)] leading-[1.04] tracking-[-0.03em] text-white [text-shadow:0_2px_28px_rgba(27,26,133,0.9),0_1px_3px_rgba(0,0,0,0.35)] animate-in fade-in slide-in-from-bottom-5 duration-700 whitespace-pre-line sm:max-w-4xl md:max-w-5xl lg:max-w-[72rem] lg:text-[clamp(2.5rem,5.2vw,5.25rem)]`}
+          className={`${poppinsBlackItalic.className} ${heroRhythm.mascotToTitle} mx-auto w-full max-w-[min(100%,36rem)] text-[clamp(2.125rem,6.2vw,5rem)] leading-[1.04] tracking-[-0.03em] text-white [text-shadow:0_2px_28px_rgba(42,10,59,0.9),0_1px_3px_rgba(0,0,0,0.35)] animate-in fade-in slide-in-from-bottom-5 duration-700 whitespace-pre-line sm:max-w-4xl md:max-w-5xl lg:max-w-[72rem] lg:text-[clamp(2.5rem,5.2vw,5.25rem)]`}
           style={{ animationDelay: '180ms', animationFillMode: 'both' }}
         >
           {t('title')}
         </h1>
 
         <p
-          className={`mx-auto ${heroRhythm.titleToLead} w-full max-w-2xl text-pretty text-lg font-medium leading-relaxed text-white/95 [text-shadow:0_1px_20px_rgba(27,26,133,0.85),0_1px_2px_rgba(0,0,0,0.3)] md:max-w-3xl md:text-xl md:leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-500`}
+          className={`mx-auto ${heroRhythm.titleToLead} w-full max-w-2xl text-pretty text-lg font-medium leading-relaxed text-white/95 [text-shadow:0_1px_20px_rgba(42,10,59,0.85),0_1px_2px_rgba(0,0,0,0.3)] md:max-w-3xl md:text-xl md:leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-500`}
           style={{ animationDelay: '280ms', animationFillMode: 'both' }}
         >
           {t('subtitle')}
