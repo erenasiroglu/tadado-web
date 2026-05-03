@@ -20,9 +20,9 @@
     "languageGroup": "Dil seçin"
   },
   "hero": {
-    "badge": "Yakında lansmanda",
-    "title": "YAPAY ZEKA\nDESTEKLİ\nKELİME TAHMİN OYUNU",
-    "subtitle": "Anlat. Tahmin Et. Eğlen.",
+    "title": "Her Oyun Farklı.\nÇünkü kartları sen yaratıyorsun.",
+    "subtitle": "Yapay Zeka ile istediğin konuda kart oluştur, arkadaşlarınla anında oyna.",
+    "playerBadge": "Dünya genelinde 10.000+ oyuncu",
     "cta": "App Store'dan indir",
     "ctaPlayStore": "Yakında Play Store'da"
   },

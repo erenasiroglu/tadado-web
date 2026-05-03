@@ -6,8 +6,8 @@
 export const heroRhythm = {
   /** rozet ↔ maskot */
   badgeToMascot: 'gap-2',
-  /** maskot ↔ başlık (rozet–maskot ile aynı) */
-  mascotToTitle: 'mt-2',
+  /** maskot ↔ başlık (negatif margin ile görsel boşluk daraltılır) */
+  mascotToTitle: '-mt-2 sm:-mt-2.5 md:-mt-3 lg:-mt-3.5',
   /** başlık ↔ lead: okunabilirlik (21px) */
   titleToLead: 'mt-[1.3125rem]',
   /** lead ↔ CTA (34px) */

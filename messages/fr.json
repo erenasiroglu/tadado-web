@@ -20,9 +20,9 @@
     "languageGroup": "Choisir la langue"
   },
   "hero": {
-    "badge": "Bientôt disponible",
-    "title": "JEU DE MOTS IA",
-    "subtitle": "Dis-le. Devine. Rigole.",
+    "title": "Chaque partie est différente.\nParce que vous créez les cartes.",
+    "subtitle": "Créez des cartes sur n'importe quel sujet avec l'IA—jouez tout de suite entre amis.",
+    "playerBadge": "Plus de 10 000 joueurs dans le monde",
     "cta": "Télécharger sur l’App Store",
     "ctaPlayStore": "Bientôt sur Google Play"
   },

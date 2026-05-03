@@ -6,11 +6,6 @@ import { poppinsBlackItalic } from '@/lib/fonts'
 import { heroRhythm, landing } from '@/lib/landing-ui'
 import { HeroAccentShapes } from '@/components/HeroAccentShapes'
 
-/** Köşe dekor kartları — ortak oran, hafif eğim, simetrik köşe dönüşleri */
-const heroCornerCard =
-  'pointer-events-none absolute animate-float opacity-90 drop-shadow-[0_22px_44px_rgba(0,0,0,0.42)]'
-const heroCornerCardInner = 'relative h-full w-full brightness-[1.03] contrast-[1.04]'
-
 export async function Hero() {
   const t = await getTranslations('hero')
   const locale = await getLocale()
@@ -34,72 +29,25 @@ export async function Hero() {
         aria-hidden
       />
 
-      <div className="pointer-events-none absolute inset-0 z-[3] overflow-hidden" aria-hidden>
-        {/* Üç oyun kartı: aynı oran (~3:4), hafif — sol köşeler -3°, sağ köşeler +3° */}
-        <div
-          className={`${heroCornerCard} left-[4%] top-20 aspect-[3/4] w-[min(38vw,10.25rem)] -rotate-3 sm:left-[5%] sm:top-[5.25rem] sm:w-44 md:w-[11.25rem] lg:top-[5.75rem] lg:w-48`}
-          style={{ animationDelay: '0.85s' }}
-        >
-          <div className={`${heroCornerCardInner} overflow-hidden rounded-xl`}>
-            <Image src="/basketball-card.png" alt="" fill className="object-contain" sizes="(max-width: 768px) 164px, 192px" />
-          </div>
-        </div>
-        <div
-          className={`${heroCornerCard} right-[4%] top-20 aspect-[3/4] w-[min(38vw,10.25rem)] rotate-3 sm:right-[5%] sm:top-[5.25rem] sm:w-44 md:w-[11.25rem] lg:top-[5.75rem] lg:w-48`}
-          style={{ animationDelay: '1s' }}
-        >
-          <div className={`${heroCornerCardInner} overflow-hidden rounded-xl`}>
-            <Image src="/midnight-fun-card.png" alt="" fill className="object-contain" sizes="(max-width: 768px) 164px, 192px" />
-          </div>
-        </div>
-        <div
-          className={`${heroCornerCard} bottom-[4.75rem] left-[4%] hidden aspect-[3/4] w-[min(38vw,10.25rem)] -rotate-3 sm:bottom-[5.25rem] sm:left-[5%] md:block md:w-44 lg:bottom-[5.75rem] lg:w-48`}
-          style={{ animationDelay: '1.15s' }}
-        >
-          <div className={`${heroCornerCardInner} overflow-hidden rounded-xl`}>
-            <Image src="/eiffel-tower.png" alt="" fill className="object-contain" sizes="(max-width: 768px) 164px, 192px" />
-          </div>
-        </div>
-        {/* Sosyal baloncuk — kare gövde, organik border-radius */}
-        <div
-          className={`${heroCornerCard} bottom-14 right-[3%] h-[8.25rem] w-[8.25rem] rotate-[-5deg] sm:bottom-16 sm:right-[4%] sm:h-[9.75rem] sm:w-[9.75rem] md:bottom-[5rem] md:h-40 md:w-40 lg:bottom-[5.75rem] lg:h-44 lg:w-44`}
-          style={{
-            animationDelay: '1.3s',
-            borderRadius: '63% 37% 58% 42% / 48% 52% 48% 52%'
-          }}
-        >
-          <div className={`${heroCornerCardInner} h-full w-full overflow-hidden border-2 border-white/35 bg-[#2A0A3B]/40 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.25)] ring-1 ring-white/15 [border-radius:inherit]`}>
-            <Image
-              src="/tadado-play-people.png"
-              alt=""
-              fill
-              className="object-cover object-[center_62%_65%] saturate-[1.08] contrast-[1.05]"
-              sizes="(max-width: 768px) 132px, 176px"
-            />
-          </div>
-        </div>
-      </div>
-
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-4 text-center sm:max-w-7xl sm:px-6">
         <div
-          className={`flex w-full flex-col items-center ${heroRhythm.badgeToMascot} animate-in fade-in slide-in-from-bottom-4 duration-500`}
+          className="flex w-full flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-500"
           style={{ animationDelay: '100ms', animationFillMode: 'both' }}
         >
-          <span className={`${landing.badge} normal-case tracking-wide`}>{t('badge')}</span>
-          <div className="relative mx-auto h-48 w-48 shrink-0 sm:h-52 sm:w-52 md:h-60 md:w-60 lg:h-72 lg:w-72">
+          <div className="relative mx-auto h-[17.5rem] w-[17.5rem] shrink-0 sm:h-[19.5rem] sm:w-[19.5rem] md:h-[22rem] md:w-[22rem] lg:h-[25rem] lg:w-[25rem]">
             <Image
-              src="/tadado-mascots.png"
+              src="/tado-mascot.png"
               alt=""
               fill
               className="object-contain object-bottom drop-shadow-[0_12px_32px_rgba(0,0,0,0.35)]"
-              sizes="(max-width: 768px) 192px, (max-width: 1024px) 240px, 288px"
+              sizes="(max-width: 640px) 280px, (max-width: 768px) 312px, (max-width: 1024px) 352px, 400px"
               priority
             />
           </div>
         </div>
 
         <h1
-          className={`${poppinsBlackItalic.className} ${heroRhythm.mascotToTitle} mx-auto w-full max-w-[min(100%,36rem)] text-[clamp(2.125rem,6.2vw,5rem)] leading-[1.04] tracking-[-0.03em] text-white [text-shadow:0_2px_28px_rgba(42,10,59,0.9),0_1px_3px_rgba(0,0,0,0.35)] animate-in fade-in slide-in-from-bottom-5 duration-700 whitespace-pre-line sm:max-w-4xl md:max-w-5xl lg:max-w-[72rem] lg:text-[clamp(2.5rem,5.2vw,5.25rem)]`}
+          className={`${poppinsBlackItalic.className} ${heroRhythm.mascotToTitle} mx-auto w-full max-w-[min(100%,36rem)] text-[clamp(1.875rem,5.2vw,4rem)] leading-[1.06] tracking-[-0.03em] text-white [text-shadow:0_2px_28px_rgba(42,10,59,0.9),0_1px_3px_rgba(0,0,0,0.35)] animate-in fade-in slide-in-from-bottom-5 duration-700 whitespace-pre-line sm:max-w-4xl md:max-w-5xl lg:max-w-[72rem] lg:text-[clamp(2.125rem,4.4vw,4.25rem)]`}
           style={{ animationDelay: '180ms', animationFillMode: 'both' }}
         >
           {t('title')}
@@ -111,6 +59,27 @@ export async function Hero() {
         >
           {t('subtitle')}
         </p>
+
+        <div
+          className="mx-auto mt-6 flex animate-in fade-in slide-in-from-bottom-4 duration-500 items-center gap-2 rounded-full border border-white/[0.18] bg-white/[0.07] px-3.5 py-2 text-[13px] font-medium text-white/92 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.45)] backdrop-blur-xl backdrop-saturate-150 sm:px-4 sm:text-sm"
+          style={{ animationDelay: '320ms', animationFillMode: 'both' }}
+          role="status"
+        >
+          <svg
+            className="h-4 w-4 shrink-0 text-violet-200/95"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+          <span className="tracking-tight">{t('playerBadge')}</span>
+        </div>
 
         <div
           className={`${heroRhythm.leadToCta} flex w-full max-w-lg flex-col items-stretch justify-center gap-3 animate-in fade-in slide-in-from-bottom-4 duration-500 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center`}
