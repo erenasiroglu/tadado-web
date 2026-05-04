@@ -26,17 +26,30 @@
     "languageGroup": "Choose language"
   },
   "hero": {
+    "phoneScreenDecks": "Tadado — choose a deck",
+    "phoneScreenGame": "In-game round: guess the word, avoid taboo hints",
+    "phoneScreenAi": "Create a custom deck with AI",
     "title": "AI WORD GUESSING GAME",
     "subtitle": "Create cards on any topic with AI play instantly with friends.",
     "playerBadge": "10,000+ players worldwide",
     "trialCta": "Start free trial",
     "appStoreCta": "Download in App Store",
     "statUsers": "10K+",
-    "statUsersLabel": "Global users",
+    "statUsersLabel": "Global players",
     "statResponses": "250K+",
     "statResponsesLabel": "Games played",
+    "statAiDecks": "5K+",
+    "statAiDecksLabel": "AI-generated decks",
     "cta": "Download on the App Store",
     "ctaPlayStore": "Coming soon on Google Play"
+  },
+  "meetTado": {
+    "title": "MEET TADO, OUR HERO!",
+    "lead": "With Tadado, create game cards in any language, on any topic you want then play with friends in seconds.",
+    "body": "Tado offers fully personalized cards for every game. It learns as you play, so the next round feels even more like you.",
+    "mascotAlt": "Tado, the Tadado mascot",
+    "cardEiffelAlt": "Sample AI card: Eiffel Tower theme with taboo words",
+    "cardBasketballAlt": "Sample AI card: Basketball theme with taboo words"
   },
   "languageShowcase": {
     "title": "YOUR LANGUAGE\nYOUR GAME",

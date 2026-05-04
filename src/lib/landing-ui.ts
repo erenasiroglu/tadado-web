@@ -1,17 +1,17 @@
 /** Landing tokens: düzenli layout + mor/indigo oyun enerjisi + yumuşak gölgeler */
 
 /**
- * Hero dikey ritim: rozet–maskot–başlık eşit ve sıkı (0.5rem).
+ * Hero dikey ritim: ilk ekranda (100svh) sığacak şekilde sıkı; içerik ortalanır.
  */
 export const heroRhythm = {
   /** rozet ↔ maskot */
   badgeToMascot: 'gap-2',
-  /** maskot ↔ başlık (negatif margin ile görsel boşluk daraltılır) */
-  mascotToTitle: '-mt-2 sm:-mt-2.5 md:-mt-3 lg:-mt-3.5',
-  /** başlık ↔ lead: okunabilirlik (21px) */
-  titleToLead: 'mt-[1.3125rem]',
-  /** lead ↔ CTA (34px) */
-  leadToCta: 'mt-[2.125rem]'
+  /** maskot görseli altı → başlık */
+  mascotToTitle: 'mb-3 sm:mb-4 md:mb-4 lg:mb-5',
+  /** başlık ↔ lead */
+  titleToLead: 'mt-2 sm:mt-2.5 md:mt-3',
+  /** lead ↔ CTA */
+  leadToCta: 'mt-3.5 sm:mt-4 md:mt-5'
 } as const
 
 export const landing = {

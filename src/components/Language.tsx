@@ -26,7 +26,7 @@ export async function Language() {
 
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-b from-[#DDDDE9] to-[#CECED8] px-4 py-20 sm:px-6 md:py-28"
+      className="relative overflow-x-clip bg-gradient-to-b from-[#DDDDE9] to-[#CECED8] py-16 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(3rem,env(safe-area-inset-bottom,0px))] pt-16 sm:px-6 sm:py-20 md:py-28"
       aria-labelledby="language-showcase-heading"
     >
       <div
@@ -42,19 +42,19 @@ export async function Language() {
           >
             {t('title')}
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-pretty text-base leading-relaxed text-zinc-600 md:mt-6 md:text-lg md:leading-relaxed">
+          <p className="mx-auto mt-5 max-w-xl text-pretty text-[1.0625rem] leading-relaxed text-zinc-600 md:mt-6 md:text-lg md:leading-relaxed">
             {t('subtitle')}
           </p>
         </header>
 
-        <ul className="mx-auto mt-14 grid max-w-4xl grid-cols-2 place-items-center gap-x-8 gap-y-12 sm:mt-16 sm:grid-cols-3 md:mt-20 md:grid-cols-5 md:gap-x-5 md:gap-y-10">
+        <ul className="mx-auto mt-12 grid max-w-4xl grid-cols-2 place-items-stretch gap-x-6 gap-y-10 sm:mt-16 sm:grid-cols-3 sm:gap-x-8 sm:gap-y-12 md:mt-20 md:grid-cols-5 md:gap-x-5 md:gap-y-10">
           {FLAG_ASSETS.map(({ src, labelKey, locale }, i) => (
             <li key={src} className="flex w-full max-w-[10rem] justify-center sm:max-w-[11rem]">
               <Link
                 href="/"
                 locale={locale}
                 aria-label={t(labelKey)}
-                className="flex w-full flex-col items-center rounded-2xl outline-none transition hover:opacity-95 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-[#3F3EDD]/55 focus-visible:ring-offset-2 focus-visible:ring-offset-[#DDDDE9]"
+                className="flex min-h-[48px] w-full flex-col items-center justify-center rounded-2xl py-2 outline-none transition active:opacity-90 hover:opacity-95 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-[#3F3EDD]/55 focus-visible:ring-offset-2 focus-visible:ring-offset-[#DDDDE9] sm:min-h-0 sm:py-0"
               >
                 <div
                   className={`group relative aspect-square w-full max-w-[7.75rem] cursor-pointer drop-shadow-[0_16px_36px_-8px_rgba(15,23,42,0.28)] transition duration-300 hover:-translate-y-1 hover:drop-shadow-[0_22px_44px_-10px_rgba(15,23,42,0.32)] sm:max-w-[8.5rem] md:max-w-[9.25rem] ${i % 2 === 0 ? '-rotate-2' : 'rotate-2'} animate-float`}

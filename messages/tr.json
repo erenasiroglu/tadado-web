@@ -26,17 +26,30 @@
     "languageGroup": "Dil seçin"
   },
   "hero": {
+    "phoneScreenDecks": "Tadado deste seç",
+    "phoneScreenGame": "Oyunda: kelimeyi tahmin et, yasak ipuçlarına takılma",
+    "phoneScreenAi": "Yapay zeka ile özel deste oluştur",
     "title": "YAPAY ZEKA DESTEKLİ KELİME TAHMİN OYUNU",
     "subtitle": "Yapay Zeka ile istediğin konuda kart oluştur, arkadaşlarınla anında oyna.",
     "playerBadge": "Dünya genelinde 10.000+ oyuncu",
     "trialCta": "Ücretsiz denemeye başla",
     "appStoreCta": "App Store'dan ücretsiz indir",
     "statUsers": "10K+",
-    "statUsersLabel": "Global kullanıcı",
-    "statResponses": "250.000+",
+    "statUsersLabel": "Global oyuncular",
+    "statResponses": "250K+",
     "statResponsesLabel": "Oynanan oyun",
+    "statAiDecks": "5K+",
+    "statAiDecksLabel": "AI ile oluşturulan deste",
     "cta": "App Store'dan ücretsiz indir",
     "ctaPlayStore": "Yakında Play Store'da"
+  },
+  "meetTado": {
+    "title": "TADO İLE TANIŞ!",
+    "lead": "Tadado ile istediğin dilde, istediğin konuda oyun kartları üretebilirsin sonra arkadaşlarınla saniyeler içinde oyna.",
+    "body": "Tado, her oyunda tamamen kişiselleştirilmiş kartlar sunar. Oynadıkça seni anlar; bir sonraki tur daha da senlik olur.",
+    "mascotAlt": "Tadado maskotu Tado",
+    "cardEiffelAlt": "Örnek yapay zeka kartı: Eyfel teması ve yasak kelimeler",
+    "cardBasketballAlt": "Örnek yapay zeka kartı: Basketbol teması ve yasak kelimeler"
   },
   "languageShowcase": {
     "title": "İSTEDİĞİN DİLDE OYNA",

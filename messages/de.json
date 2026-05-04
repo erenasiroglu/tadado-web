@@ -26,17 +26,30 @@
     "languageGroup": "Sprache wählen"
   },
   "hero": {
+    "phoneScreenDecks": "Tadado Deck wählen",
+    "phoneScreenGame": "Runde: Wort erraten, Tabu-Hinweise vermeiden",
+    "phoneScreenAi": "Eigenes Deck mit KI erstellen",
     "title": "Jedes Spiel ist anders.\nWeil du die Karten selbst erstellst.",
     "subtitle": "Erstelle Karten zu jedem Thema mit KI—spiele sofort mit Freunden.",
     "playerBadge": "Über 10.000 Spieler weltweit",
     "trialCta": "Kostenlos testen",
     "appStoreCta": "Im App Store laden",
     "statUsers": "10K+",
-    "statUsersLabel": "Nutzer weltweit",
+    "statUsersLabel": "Spieler weltweit",
     "statResponses": "250K+",
     "statResponsesLabel": "Gespielte Spiele",
+    "statAiDecks": "5K+",
+    "statAiDecksLabel": "Mit KI erstellte Decks",
     "cta": "Im App Store laden",
     "ctaPlayStore": "Demnächst bei Google Play"
+  },
+  "meetTado": {
+    "title": "LERN TADO KENNEN – DEIN HELD!",
+    "lead": "Mit Tadado erstellst du Spielkarten in jeder Sprache und zu jedem Thema—und spielst sofort mit Freunden.",
+    "body": "Tado liefert voll personalisierte Karten für jede Runde. Er lernt mit: je öfter du spielst, desto mehr fühlt sich alles nach dir an.",
+    "mascotAlt": "Tado, das Tadado-Maskottchen",
+    "cardEiffelAlt": "Beispielkarte: Eiffelturm-Thema mit Tabu-Wörtern",
+    "cardBasketballAlt": "Beispielkarte: Basketball-Thema mit Tabu-Wörtern"
   },
   "languageShowcase": {
     "title": "DEINE SPRACHE\nDEIN SPIEL",

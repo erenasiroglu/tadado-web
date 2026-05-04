@@ -26,17 +26,30 @@
     "languageGroup": "Elegir idioma"
   },
   "hero": {
+    "phoneScreenDecks": "Tadado elegir mazo",
+    "phoneScreenGame": "En partida: adivina la palabra, evita pistas tabú",
+    "phoneScreenAi": "Crea un mazo personalizado con IA",
     "title": "Cada partida es distinta.\nPorque tú creas las cartas.",
     "subtitle": "Crea cartas sobre cualquier tema con IA y juega al momento con tus amigos.",
     "playerBadge": "Más de 10.000 jugadores en todo el mundo",
     "trialCta": "Comienza prueba gratis",
     "appStoreCta": "Descargar en App Store",
     "statUsers": "10K+",
-    "statUsersLabel": "Usuarios globales",
+    "statUsersLabel": "Jugadores en el mundo",
     "statResponses": "250K+",
     "statResponsesLabel": "Partidas jugadas",
+    "statAiDecks": "5K+",
+    "statAiDecksLabel": "Mazos creados con IA",
     "cta": "Descargar en el App Store",
     "ctaPlayStore": "Próximamente en Google Play"
+  },
+  "meetTado": {
+    "title": "¡CONOCE A TADO, NUESTRO HÉROE!",
+    "lead": "Con Tadado crea cartas de juego en el idioma y el tema que quieras—y juega con amigos al instante.",
+    "body": "Tado te ofrece cartas totalmente personalizadas en cada partida. Aprende mientras juega: la siguiente ronda se siente aún más tuya.",
+    "mascotAlt": "Tado, la mascota de Tadado",
+    "cardEiffelAlt": "Carta de ejemplo: tema Torre Eiffel y palabras tabú",
+    "cardBasketballAlt": "Carta de ejemplo: tema baloncesto y palabras tabú"
   },
   "languageShowcase": {
     "title": "TU IDIOMA\nTU JUEGO",

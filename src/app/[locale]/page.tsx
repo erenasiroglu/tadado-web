@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
 import { Hero } from '@/components/Hero'
+import { MeetTado } from '@/components/MeetTado'
 import { Language } from '@/components/Language'
 import { HomeJsonLd } from '@/components/HomeJsonLd'
 
@@ -67,7 +68,7 @@ export default async function HomePage({ params }: Props) {
   const tMeta = await getTranslations({ locale, namespace: 'metadata' })
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-zinc-950">
+    <main className="relative flex min-h-screen flex-col overflow-x-clip bg-zinc-950 pb-[env(safe-area-inset-bottom,0px)]">
       <HomeJsonLd
         locale={locale}
         name={tMeta('jsonLdApplicationName')}
@@ -76,6 +77,7 @@ export default async function HomePage({ params }: Props) {
       />
       <Hero />
       <Language />
+      <MeetTado />
     </main>
   )
 }

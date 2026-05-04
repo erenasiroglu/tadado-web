@@ -26,17 +26,30 @@
     "languageGroup": "Choisir la langue"
   },
   "hero": {
+    "phoneScreenDecks": "Tadado choisir un deck",
+    "phoneScreenGame": "Partie : devinez le mot, évitez les indices tabous",
+    "phoneScreenAi": "Créez un deck sur mesure avec l’IA",
     "title": "Chaque partie est différente.\nParce que vous créez les cartes.",
     "subtitle": "Créez des cartes sur n'importe quel sujet avec l'IA—jouez tout de suite entre amis.",
     "playerBadge": "Plus de 10 000 joueurs dans le monde",
     "trialCta": "Démarrer l'essai gratuit",
     "appStoreCta": "Télécharger sur l'App Store",
     "statUsers": "10K+",
-    "statUsersLabel": "Utilisateurs globaux",
+    "statUsersLabel": "Joueurs dans le monde",
     "statResponses": "250K+",
     "statResponsesLabel": "Parties jouées",
+    "statAiDecks": "5K+",
+    "statAiDecksLabel": "Decks créés avec l’IA",
     "cta": "Télécharger sur l’App Store",
     "ctaPlayStore": "Bientôt sur Google Play"
+  },
+  "meetTado": {
+    "title": "FAIS CONNAISSANCE AVEC TADO !",
+    "lead": "Avec Tadado, crée des cartes de jeu dans la langue et le thème de ton choix—et joue avec tes amis en quelques instants.",
+    "body": "Tado génère des cartes vraiment personnalisées pour chaque partie. Il apprend en jouant : la prochaine manche te ressemble encore plus.",
+    "mascotAlt": "Tado, la mascotte Tadado",
+    "cardEiffelAlt": "Exemple de carte : thème Tour Eiffel et mots tabous",
+    "cardBasketballAlt": "Exemple de carte : thème basketball et mots tabous"
   },
   "languageShowcase": {
     "title": "TA LANGUE\nTON JEU",
