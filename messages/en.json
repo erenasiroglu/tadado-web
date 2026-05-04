@@ -12,6 +12,12 @@
   "nav": {
     "home": "Home",
     "blog": "Blog",
+    "discover": "Discover",
+    "resources": "Resources",
+    "support": "Support",
+    "homeDesc": "Main landing page.",
+    "blogDesc": "Product stories and updates.",
+    "supportDesc": "Contact and help center.",
     "languageEn": "English",
     "languageTr": "Turkish",
     "languageDe": "German",
@@ -20,9 +26,15 @@
     "languageGroup": "Choose language"
   },
   "hero": {
-    "title": "Every game is different.\nBecause you're creating the cards.",
+    "title": "AI WORD GUESSING GAME",
     "subtitle": "Create cards on any topic with AI play instantly with friends.",
     "playerBadge": "10,000+ players worldwide",
+    "trialCta": "Start free trial",
+    "appStoreCta": "Download in App Store",
+    "statUsers": "10K+",
+    "statUsersLabel": "Global users",
+    "statResponses": "250K+",
+    "statResponsesLabel": "Games played",
     "cta": "Download on the App Store",
     "ctaPlayStore": "Coming soon on Google Play"
   },

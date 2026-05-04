@@ -12,6 +12,12 @@
   "nav": {
     "home": "Ana Sayfa",
     "blog": "Blog",
+    "discover": "Keşfet",
+    "resources": "Kaynaklar",
+    "support": "Destek",
+    "homeDesc": "Ana landing sayfası.",
+    "blogDesc": "Ürün hikayeleri ve güncellemeler.",
+    "supportDesc": "İletişim ve yardım merkezi.",
     "languageEn": "İngilizce",
     "languageTr": "Türkçe",
     "languageDe": "Almanca",
@@ -20,10 +26,16 @@
     "languageGroup": "Dil seçin"
   },
   "hero": {
-    "title": "Her Oyun Farklı.\nÇünkü kartları sen yaratıyorsun.",
+    "title": "YAPAY ZEKA DESTEKLİ KELİME TAHMİN OYUNU",
     "subtitle": "Yapay Zeka ile istediğin konuda kart oluştur, arkadaşlarınla anında oyna.",
     "playerBadge": "Dünya genelinde 10.000+ oyuncu",
-    "cta": "App Store'dan indir",
+    "trialCta": "Ücretsiz denemeye başla",
+    "appStoreCta": "App Store'dan ücretsiz indir",
+    "statUsers": "10K+",
+    "statUsersLabel": "Global kullanıcı",
+    "statResponses": "250.000+",
+    "statResponsesLabel": "Oynanan oyun",
+    "cta": "App Store'dan ücretsiz indir",
     "ctaPlayStore": "Yakında Play Store'da"
   },
   "languageShowcase": {

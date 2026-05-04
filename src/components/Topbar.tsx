@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import { LanguageSwitcher } from './LanguageSwitcher'
 
 export function Topbar() {
   const t = useTranslations('nav')
@@ -57,23 +56,19 @@ export function Topbar() {
           </Link>
         </div>
 
-        <div className="flex items-center gap-3 sm:gap-3.5">
-          <LanguageSwitcher />
-
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden rounded-full p-2 text-white/95 [text-shadow:0_1px_3px_rgba(0,0,0,0.35)] transition-colors hover:bg-white/20 hover:text-white"
-            aria-label="Toggle menu"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isMobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden rounded-full p-2 text-white/95 [text-shadow:0_1px_3px_rgba(0,0,0,0.35)] transition-colors hover:bg-white/20 hover:text-white"
+          aria-label="Toggle menu"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {isMobileMenuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
         </motion.nav>
 
         <AnimatePresence>
