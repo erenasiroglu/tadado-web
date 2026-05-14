@@ -1,10 +1,12 @@
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { APP_STORE_URLS } from '@/lib/constants'
+import { APP_STORE_URLS, PRODUCT_HUNT_URL } from '@/lib/constants'
 import { locales, type Locale } from '@/i18n/config'
 import { Topbar } from '@/components/Topbar'
 import { Footer } from '@/components/Footer'
+import { ProductHuntBanner } from '@/components/ProductHuntBanner'
+import { MobileStickyCta } from '@/components/MobileStickyCta'
 
 type Props = {
   children: React.ReactNode
@@ -24,7 +26,7 @@ function createOrganizationSchema() {
     logo: 'https://tadado.app/tadado_launch.png',
     description:
       'Tadado is an AI party guessing game for iPhone: describe words without forbidden hints, play themed decks with friends, and keep game night fresh with AI-generated cards.',
-    sameAs: [APP_STORE_URLS.en, APP_STORE_URLS.tr],
+    sameAs: [APP_STORE_URLS.en, APP_STORE_URLS.tr, PRODUCT_HUNT_URL],
     contactPoint: [
       {
         '@type': 'ContactPoint',
@@ -59,9 +61,11 @@ export default async function LocaleLayout({ children, params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
+      <ProductHuntBanner />
       <Topbar />
       {children}
       <Footer />
+      <MobileStickyCta />
     </NextIntlClientProvider>
   )
 }

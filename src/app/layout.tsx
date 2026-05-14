@@ -17,6 +17,13 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: 'swap'
 })
 
+const OG_IMAGE = {
+  url: '/tadado_launch.png',
+  width: 1200,
+  height: 630,
+  alt: 'Tadado — AI Word Guessing Party Game'
+} as const
+
 export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
@@ -34,13 +41,15 @@ export const metadata: Metadata = {
     description:
       'AI taboo-style party game with unlimited cards and themed decks. Describe without forbidden words, guess fast with friends.',
     type: 'website',
-    siteName: 'Tadado'
+    siteName: 'Tadado',
+    images: [OG_IMAGE]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Tadado: AI Party Guessing Game',
     description:
-      'AI taboo-style party game with unlimited cards and themed decks. Describe without forbidden words, guess fast with friends.'
+      'AI taboo-style party game with unlimited cards and themed decks. Describe without forbidden words, guess fast with friends.',
+    images: [OG_IMAGE]
   }
 }
 

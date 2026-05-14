@@ -21,8 +21,8 @@ export function Topbar() {
   }, [])
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50">
-      <div className="flex justify-center px-4 pt-3 sm:px-5 sm:pt-4">
+    <header className="fixed left-0 right-0 z-50 top-[var(--ph-banner-h,0px)] transition-[top] duration-300 ease-out">
+      <div className="flex justify-center px-[var(--space-4)] pt-[var(--space-3)] sm:pt-[var(--space-4)]">
         <div className="relative inline-flex max-w-full flex-col items-center">
           <motion.nav
             initial={{ y: -100, opacity: 0 }}

@@ -41,7 +41,23 @@
     "statAiDecks": "5K+",
     "statAiDecksLabel": "AI-generated decks",
     "cta": "Download on the App Store",
-    "ctaPlayStore": "Coming soon on Google Play"
+    "ctaPlayStore": "Coming soon on Google Play",
+    "rating": "4.9",
+    "ratingLabel": "on App Store",
+    "trustLine": "Free · No signup · iPhone",
+    "livePlayersFmt": "{count}+ playing right now",
+    "secondaryCta": "Hunt on Product Hunt"
+  },
+  "productHunt": {
+    "live": "We're live on Product Hunt today",
+    "subline": "Help us hit #1 — back our launch in one tap",
+    "badgeAlt": "Tadado on Product Hunt",
+    "dismiss": "Dismiss launch banner",
+    "huntCta": "Hunt Tadado"
+  },
+  "mobileSticky": {
+    "cta": "Download Tadado — Free",
+    "subline": "Free · 4.9★ App Store"
   },
   "meetTado": {
     "title": "MEET TADO, OUR HERO!",
@@ -64,7 +80,11 @@
     "copyright": "© 2026 Tadado. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
-    "support": "Support"
+    "support": "Support",
+    "lovedBy": "Loved by 10,000+ players worldwide",
+    "ratingLabel": "4.9 on App Store",
+    "phLabel": "Featured on Product Hunt",
+    "contactEmail": "support@tadado.app"
   },
   "privacy": {
     "title": "Privacy Policy | Tadado",

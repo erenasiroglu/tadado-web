@@ -41,7 +41,23 @@
     "statAiDecks": "5K+",
     "statAiDecksLabel": "AI ile oluşturulan deste",
     "cta": "App Store'dan ücretsiz indir",
-    "ctaPlayStore": "Yakında Play Store'da"
+    "ctaPlayStore": "Yakında Play Store'da",
+    "rating": "4,9",
+    "ratingLabel": "App Store'da",
+    "trustLine": "Ücretsiz · Üyelik yok · iPhone",
+    "livePlayersFmt": "Şu an {count}+ kişi oynuyor",
+    "secondaryCta": "Product Hunt'ta destekle"
+  },
+  "productHunt": {
+    "live": "Bugün Product Hunt'tayız",
+    "subline": "1 numara olmamıza yardım et, tek dokunuşla destekle",
+    "badgeAlt": "Tadado Product Hunt'ta",
+    "dismiss": "Banner'ı kapat",
+    "huntCta": "Tadado'yu destekle"
+  },
+  "mobileSticky": {
+    "cta": "Tadado'yu indir — Ücretsiz",
+    "subline": "Ücretsiz · 4,9★ App Store"
   },
   "meetTado": {
     "title": "TADO İLE TANIŞ!",
@@ -64,7 +80,11 @@
     "copyright": "© 2026 Tadado. Tüm hakları saklıdır.",
     "privacy": "Gizlilik Politikası",
     "terms": "Kullanım Koşulları",
-    "support": "Destek"
+    "support": "Destek",
+    "lovedBy": "Dünya genelinde 10.000+ oyuncu seviyor",
+    "ratingLabel": "App Store'da 4,9",
+    "phLabel": "Product Hunt'ta öne çıktı",
+    "contactEmail": "support@tadado.app"
   },
   "privacy": {
     "title": "Gizlilik Politikası | Tadado",

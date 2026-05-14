@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { Link } from '@/i18n/routing'
 import type { Locale } from '@/i18n/config'
 import { poppinsBlackItalic } from '@/lib/fonts'
+import { Reveal } from '@/components/motion/Reveal'
+import { RevealStagger, RevealItem } from '@/components/motion/RevealStagger'
 
 const FLAG_ASSETS = [
   { src: '/england-flag.png', labelKey: 'langEn' as const, locale: 'en' as const satisfies Locale },
@@ -12,7 +14,6 @@ const FLAG_ASSETS = [
   { src: '/turkish-flag.png', labelKey: 'langTr' as const, locale: 'tr' as const satisfies Locale }
 ] as const
 
-/** Hero’daki people baloncuğu ile aynı mantık — hafif varyasyon */
 const BLOB_RADIUS = [
   '63% 37% 58% 42% / 48% 52% 48% 52%',
   '58% 42% 55% 45% / 52% 48% 50% 50%',
@@ -26,7 +27,7 @@ export async function Language() {
 
   return (
     <section
-      className="relative overflow-x-clip bg-gradient-to-b from-[#DDDDE9] to-[#CECED8] py-16 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(3rem,env(safe-area-inset-bottom,0px))] pt-16 sm:px-6 sm:py-20 md:py-28"
+      className="relative overflow-x-clip bg-gradient-to-b from-[#DDDDE9] to-[#CECED8] py-[var(--space-section)] pl-[max(var(--space-container),env(safe-area-inset-left,0px))] pr-[max(var(--space-container),env(safe-area-inset-right,0px))]"
       aria-labelledby="language-showcase-heading"
     >
       <div
@@ -35,26 +36,32 @@ export async function Language() {
       />
 
       <div className="relative z-10 mx-auto max-w-5xl">
-        <header className="mx-auto max-w-3xl text-center">
+        <Reveal as="header" className="mx-auto max-w-3xl text-center">
           <h2
             id="language-showcase-heading"
-            className={`${poppinsBlackItalic.className} text-[clamp(1.75rem,5vw,3.25rem)] leading-[1.08] tracking-[-0.03em] text-zinc-900 whitespace-pre-line`}
+            className={`${poppinsBlackItalic.className} whitespace-pre-line text-[length:var(--text-display)] leading-[var(--leading-display)] tracking-[var(--tracking-display)] text-zinc-900`}
           >
             {t('title')}
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-pretty text-[1.0625rem] leading-relaxed text-zinc-600 md:mt-6 md:text-lg md:leading-relaxed">
+          <p className="mx-auto mt-[var(--space-4)] max-w-xl text-pretty text-[length:var(--text-lg)] leading-[var(--leading-snug)] font-[var(--weight-body)] text-zinc-600">
             {t('subtitle')}
           </p>
-        </header>
+        </Reveal>
 
-        <ul className="mx-auto mt-12 grid max-w-4xl grid-cols-2 place-items-stretch gap-x-6 gap-y-10 sm:mt-16 sm:grid-cols-3 sm:gap-x-8 sm:gap-y-12 md:mt-20 md:grid-cols-5 md:gap-x-5 md:gap-y-10">
+        <RevealStagger
+          as="ul"
+          stagger={0.09}
+          y={20}
+          delayChildren={0.05}
+          className="mx-auto mt-[var(--space-9)] grid max-w-4xl grid-cols-2 place-items-stretch gap-x-[var(--space-6)] gap-y-[var(--space-7)] sm:grid-cols-3 sm:gap-x-[var(--space-7)] md:grid-cols-5 md:gap-x-[var(--space-5)]"
+        >
           {FLAG_ASSETS.map(({ src, labelKey, locale }, i) => (
-            <li key={src} className="flex w-full max-w-[10rem] justify-center sm:max-w-[11rem]">
+            <RevealItem key={src} as="li" className="flex w-full max-w-[10rem] justify-center sm:max-w-[11rem]">
               <Link
                 href="/"
                 locale={locale}
                 aria-label={t(labelKey)}
-                className="flex min-h-[48px] w-full flex-col items-center justify-center rounded-2xl py-2 outline-none transition active:opacity-90 hover:opacity-95 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-[#3F3EDD]/55 focus-visible:ring-offset-2 focus-visible:ring-offset-[#DDDDE9] sm:min-h-0 sm:py-0"
+                className="flex min-h-[48px] w-full flex-col items-center justify-center rounded-[var(--radius-md)] py-[var(--space-2)] outline-none transition active:opacity-90 hover:opacity-95 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-[#3F3EDD]/55 focus-visible:ring-offset-2 focus-visible:ring-offset-[#DDDDE9] sm:py-0"
               >
                 <div
                   className={`group relative aspect-square w-full max-w-[7.75rem] cursor-pointer drop-shadow-[0_16px_36px_-8px_rgba(15,23,42,0.28)] transition duration-300 hover:-translate-y-1 hover:drop-shadow-[0_22px_44px_-10px_rgba(15,23,42,0.32)] sm:max-w-[8.5rem] md:max-w-[9.25rem] ${i % 2 === 0 ? '-rotate-2' : 'rotate-2'} animate-float`}
@@ -73,13 +80,13 @@ export async function Language() {
                     />
                   </div>
                 </div>
-                <span className="mt-3.5 text-center text-xs font-semibold uppercase tracking-[0.12em] text-zinc-500 md:text-[0.7rem]">
+                <span className="mt-[var(--space-3)] text-center text-[length:var(--text-2xs)] font-[var(--weight-emphasis)] uppercase tracking-[var(--tracking-caps)] text-zinc-500">
                   {t(labelKey)}
                 </span>
               </Link>
-            </li>
+            </RevealItem>
           ))}
-        </ul>
+        </RevealStagger>
       </div>
     </section>
   )

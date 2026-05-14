@@ -47,12 +47,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${baseUrl}/${locale}`,
       siteName: 'Tadado',
       locale,
-      type: 'website'
+      type: 'website',
+      images: [
+        {
+          url: '/tadado_launch.png',
+          width: 1200,
+          height: 630,
+          alt: title
+        }
+      ]
     },
     twitter: {
       card: 'summary_large_image',
       title,
-      description
+      description,
+      images: ['/tadado_launch.png']
     },
     robots: {
       index: true,

@@ -5,6 +5,71 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* ── Type scale ── Major Third (1.25), fluid clamp(min, fluid, max) ── mobile→desktop */
+  --text-2xs:     clamp(0.6875rem, 0.66rem + 0.14vw, 0.75rem);    /* 11 → 12 */
+  --text-xs:      clamp(0.75rem,   0.71rem + 0.18vw, 0.8125rem);  /* 12 → 13 */
+  --text-sm:      clamp(0.8125rem, 0.77rem + 0.22vw, 0.9375rem);  /* 13 → 15 */
+  --text-base:    clamp(0.9375rem, 0.88rem + 0.28vw, 1rem);       /* 15 → 16 */
+  --text-md:      clamp(1rem,      0.94rem + 0.30vw, 1.125rem);   /* 16 → 18 */
+  --text-lg:      clamp(1.0625rem, 0.97rem + 0.45vw, 1.25rem);    /* 17 → 20 */
+  --text-xl:      clamp(1.1875rem, 1.05rem + 0.70vw, 1.5rem);     /* 19 → 24 */
+  --text-2xl:     clamp(1.375rem,  1.15rem + 1.10vw, 1.875rem);   /* 22 → 30 */
+  --text-3xl:     clamp(1.625rem,  1.30rem + 1.60vw, 2.25rem);    /* 26 → 36 */
+  --text-4xl:     clamp(1.875rem,  1.40rem + 2.40vw, 3rem);       /* 30 → 48 */
+  --text-display: clamp(2.25rem,   1.50rem + 3.80vw, 3.75rem);    /* 36 → 60 */
+  --text-hero:    clamp(2.5rem,    1.50rem + 5.00vw, 4.5rem);     /* 40 → 72 */
+
+  /* ── Line-height ── */
+  --leading-display: 1.04;
+  --leading-heading: 1.15;
+  --leading-snug:    1.35;
+  --leading-body:    1.6;
+  --leading-loose:   1.75;
+
+  /* ── Letter spacing ── */
+  --tracking-display: -0.03em;
+  --tracking-heading: -0.02em;
+  --tracking-body:    0em;
+  --tracking-caps:    0.08em;
+
+  /* ── Font weight semantic ── */
+  --weight-body:     400;
+  --weight-medium:   500;
+  --weight-emphasis: 600;
+  --weight-bold:     700;
+  --weight-display:  900;
+
+  /* ── Spacing scale ── 4px base, fluid at section level ── */
+  --space-0:    0;
+  --space-1:    0.25rem;   /* 4   tight inline */
+  --space-2:    0.5rem;    /* 8   icon gap */
+  --space-3:    0.75rem;   /* 12  tight pairs */
+  --space-4:    1rem;      /* 16  text → text */
+  --space-5:    1.5rem;    /* 24  block → block */
+  --space-6:    2rem;      /* 32  block group */
+  --space-7:    2.5rem;    /* 40  sub-section */
+  --space-8:    clamp(3rem,   4vw, 4rem);   /* 48 → 64 */
+  --space-9:    clamp(4rem,   6vw, 6rem);   /* 64 → 96 */
+  --space-section:     clamp(4rem, 8vw, 8rem);   /* 64 → 128 — section Y */
+  --space-section-gap: clamp(2rem, 4vw, 4rem);   /* 32 → 64  — heading → body */
+  --space-container:   clamp(1rem, 4vw, 1.5rem); /* 16 → 24  — page edge */
+
+  /* ── Radius ── */
+  --radius-pill: 9999px;
+  --radius-sm:   0.625rem;
+  --radius-md:   1rem;
+  --radius-lg:   1.5rem;
+  --radius-xl:   2rem;
+
+  /* ── Elevation ── */
+  --shadow-soft:    0 8px 24px -12px rgb(0 0 0 / 0.25);
+  --shadow-card:    0 16px 44px -18px rgb(0 0 0 / 0.45), inset 0 1px 0 rgb(255 255 255 / 0.35);
+  --shadow-elevate: 0 32px 72px -18px rgb(0 0 0 / 0.58);
+  --shadow-glow:    0 0 48px -12px rgb(139 92 246 / 0.22);
+
+  /* ── Launch banner reservation ── set by ProductHuntBanner via JS when mounted ── */
+  --ph-banner-h: 0px;
+
   --muted: oklch(0.96 0.002 17.2);
   --accent-primary: #3f3edd;
   --accent-secondary: #6366f1;
@@ -45,6 +110,20 @@
 }
 
 @theme inline {
+  /* ── Fluid type utilities (text-*) ── matches CSS vars in :root ── */
+  --text-2xs:     var(--text-2xs);
+  --text-xs:      var(--text-xs);
+  --text-sm:      var(--text-sm);
+  --text-base:    var(--text-base);
+  --text-md:      var(--text-md);
+  --text-lg:      var(--text-lg);
+  --text-xl:      var(--text-xl);
+  --text-2xl:     var(--text-2xl);
+  --text-3xl:     var(--text-3xl);
+  --text-4xl:     var(--text-4xl);
+  --text-display: var(--text-display);
+  --text-hero:    var(--text-hero);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
