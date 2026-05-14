@@ -1,12 +1,12 @@
 import { getTranslations, getLocale } from 'next-intl/server'
 import { APP_STORE_URLS } from '@/lib/constants'
 import { homeScreenGradientBackgroundImage } from '@/lib/home-screen-gradient'
-import { poppinsBlackItalic } from '@/lib/fonts'
 import { text } from '@/lib/design-tokens'
 import { HeroAccentShapes } from '@/components/HeroAccentShapes'
 import { HeroAnimatedStats } from '@/components/HeroAnimatedStats'
 import { HeroDeviceShowcase } from '@/components/HeroDeviceShowcase'
 import { HeroLivePulse } from '@/components/HeroLivePulse'
+import { HeroTitle, HeroButton } from '@/components/gsap'
 
 export async function Hero() {
   const t = await getTranslations('hero')
@@ -14,7 +14,7 @@ export async function Hero() {
   const appStoreUrl = APP_STORE_URLS[locale as keyof typeof APP_STORE_URLS] ?? APP_STORE_URLS.en
 
   return (
-    <section className="relative flex min-h-[100svh] flex-col overflow-x-clip pl-[max(var(--space-container),env(safe-area-inset-left,0px))] pr-[max(var(--space-container),env(safe-area-inset-right,0px))] pt-[calc(var(--ph-banner-h,0px)+max(3.5rem,calc(env(safe-area-inset-top,0px)+3.1rem)))] pb-[max(var(--space-3),env(safe-area-inset-bottom,0px))] sm:pt-[calc(var(--ph-banner-h,0px)+max(3.75rem,calc(env(safe-area-inset-top,0px)+3.25rem)))] lg:h-[100svh] lg:min-h-0 lg:max-h-[100dvh] lg:overflow-hidden lg:pb-2">
+    <section className="relative flex min-h-[100svh] flex-col overflow-x-clip pl-[max(var(--space-container),env(safe-area-inset-left,0px))] pr-[max(var(--space-container),env(safe-area-inset-right,0px))] pt-[max(6.5rem,calc(env(safe-area-inset-top,0px)+3.75rem))] pb-[max(var(--space-3),env(safe-area-inset-bottom,0px))] sm:pt-[max(6.75rem,calc(env(safe-area-inset-top,0px)+3.25rem))] lg:h-[100svh] lg:min-h-0 lg:max-h-[100dvh] lg:overflow-hidden lg:pb-2">
       <div
         className="absolute inset-0 z-0"
         style={{ backgroundImage: homeScreenGradientBackgroundImage() }}
@@ -46,12 +46,7 @@ export async function Hero() {
               </div>
             </div>
 
-            <h1
-              className={`${poppinsBlackItalic.className} mt-[var(--space-4)] whitespace-pre-line text-[length:var(--text-hero)] leading-[var(--leading-display)] tracking-[var(--tracking-display)] text-white [text-shadow:0_2px_28px_rgba(42,10,59,0.92),0_1px_3px_rgba(0,0,0,0.38)] animate-in fade-in slide-in-from-bottom-5 duration-700`}
-              style={{ animationDelay: '80ms', animationFillMode: 'both' }}
-            >
-              {t('title')}
-            </h1>
+            <HeroTitle text={t('title')} />
 
             <p
               className={`mt-[var(--space-3)] mx-auto max-w-xl text-pretty text-[length:var(--text-lg)] leading-[var(--leading-snug)] font-[var(--weight-body)] text-white/95 [text-shadow:0_1px_16px_rgba(42,10,59,0.85),0_1px_2px_rgba(0,0,0,0.3)] animate-in fade-in slide-in-from-bottom-4 duration-500 lg:mx-0`}
@@ -65,17 +60,12 @@ export async function Hero() {
               style={{ animationDelay: '320ms', animationFillMode: 'both' }}
             >
               <div className="flex justify-center lg:justify-start">
-                <a
-                  href={appStoreUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[2.75rem] w-full max-w-sm touch-manipulation items-center justify-center gap-[var(--space-2)] rounded-[var(--radius-pill)] bg-white px-[var(--space-6)] text-[length:var(--text-sm)] font-[var(--weight-emphasis)] text-zinc-950 shadow-[0_14px_30px_-16px_rgba(0,0,0,0.55)] transition hover:bg-zinc-100 active:scale-[0.99] sm:min-h-[2.85rem] sm:w-auto sm:max-w-none"
-                >
+                <HeroButton href={appStoreUrl}>
                   <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
                   </svg>
                   {t('appStoreCta')}
-                </a>
+                </HeroButton>
               </div>
 
               <div className="flex flex-col items-center gap-[var(--space-3)] lg:items-start">

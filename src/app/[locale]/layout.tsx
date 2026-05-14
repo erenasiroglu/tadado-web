@@ -5,7 +5,6 @@ import { APP_STORE_URLS, PRODUCT_HUNT_URL } from '@/lib/constants'
 import { locales, type Locale } from '@/i18n/config'
 import { Topbar } from '@/components/Topbar'
 import { Footer } from '@/components/Footer'
-import { ProductHuntBanner } from '@/components/ProductHuntBanner'
 import { MobileStickyCta } from '@/components/MobileStickyCta'
 
 type Props = {
@@ -61,7 +60,6 @@ export default async function LocaleLayout({ children, params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      <ProductHuntBanner />
       <Topbar />
       {children}
       <Footer />

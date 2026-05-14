@@ -67,9 +67,6 @@
   --shadow-elevate: 0 32px 72px -18px rgb(0 0 0 / 0.58);
   --shadow-glow:    0 0 48px -12px rgb(139 92 246 / 0.22);
 
-  /* ── Launch banner reservation ── set by ProductHuntBanner via JS when mounted ── */
-  --ph-banner-h: 0px;
-
   --muted: oklch(0.96 0.002 17.2);
   --accent-primary: #3f3edd;
   --accent-secondary: #6366f1;

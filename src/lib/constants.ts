@@ -14,8 +14,5 @@ export const PRODUCT_HUNT_URL =
 export const PRODUCT_HUNT_BADGE_SRC =
   'https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1146730&theme=dark'
 
-/** ISO date of the launch — used as the dismissal key suffix. */
-export const PRODUCT_HUNT_LAUNCH_DATE = '2026-05-15'
-
-/** Master switch — set to `false` once the launch window ends. */
-export const PRODUCT_HUNT_BANNER_ENABLED = true
+/** Master switch — featured badge under the top pill nav; set `false` after the launch window. */
+export const PRODUCT_HUNT_EMBED_ENABLED = true

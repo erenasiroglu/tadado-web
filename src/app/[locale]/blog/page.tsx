@@ -47,7 +47,7 @@ export default async function BlogPage({ params }: Props) {
   const posts = getBlogPostsForIndex(contentLocale)
 
   return (
-    <main className="relative min-h-screen bg-gradient-to-b from-[#f8f8fc] via-white to-[#ececf4] px-6 pb-20 pt-28">
+    <main className="relative min-h-screen bg-gradient-to-b from-[#f8f8fc] via-white to-[#ececf4] px-6 pb-20 pt-32">
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
         <div className="absolute left-1/4 top-0 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-gradient-to-br from-[#3F3EDD]/12 to-transparent blur-3xl" />
         <div className="absolute bottom-0 right-0 h-[360px] w-[360px] translate-x-1/4 rounded-full bg-gradient-to-tl from-[#6366f1]/10 to-transparent blur-3xl" />
