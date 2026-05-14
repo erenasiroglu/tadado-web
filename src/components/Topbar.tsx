@@ -4,9 +4,11 @@ import { useState, useEffect } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import { PRODUCT_HUNT_URL, PRODUCT_HUNT_BANNER_ENABLED } from '@/lib/constants'
 
 export function Topbar() {
   const t = useTranslations('nav')
+  const tPh = useTranslations('productHunt')
   const locale = useLocale()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -98,6 +100,18 @@ export function Topbar() {
                   >
                     {t('blog')}
                   </Link>
+                  {PRODUCT_HUNT_BANNER_ENABLED ? (
+                    <a
+                      href={PRODUCT_HUNT_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium text-white/95 [text-shadow:0_1px_2px_rgba(0,0,0,0.4)] transition-colors hover:bg-white/15 hover:text-white"
+                    >
+                      <ProductHuntMenuGlyph className="h-4 w-4 shrink-0 text-white/70" aria-hidden />
+                      {tPh('huntCta')}
+                    </a>
+                  ) : null}
                 </div>
               </motion.div>
             )}
@@ -105,5 +119,13 @@ export function Topbar() {
         </div>
       </div>
     </header>
+  )
+}
+
+function ProductHuntMenuGlyph({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 40 40" className={className} fill="currentColor">
+      <path d="M20 0C8.954 0 0 8.954 0 20s8.954 20 20 20 20-8.954 20-20S31.046 0 20 0Zm2.5 22.5h-5V30h-3.75V10h8.75c3.452 0 6.25 2.798 6.25 6.25s-2.798 6.25-6.25 6.25Zm0-8.75h-5v5h5c1.38 0 2.5-1.12 2.5-2.5s-1.12-2.5-2.5-2.5Z" />
+    </svg>
   )
 }

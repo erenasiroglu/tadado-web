@@ -35,8 +35,22 @@ export function ProductHuntBanner() {
   const dismissed = useSyncExternalStore(subscribeToStorage, readDismissedClient, readDismissedServer)
   const visible = PRODUCT_HUNT_BANNER_ENABLED && !dismissed
 
+  /** Banner only reserves top space on `md+`; mobile uses Topbar menu instead (no double chrome). */
   useEffect(() => {
-    document.documentElement.style.setProperty('--ph-banner-h', visible ? BANNER_H : '0px')
+    if (!visible) {
+      document.documentElement.style.setProperty('--ph-banner-h', '0px')
+      return
+    }
+    const mq = window.matchMedia('(min-width: 768px)')
+    const apply = () => {
+      document.documentElement.style.setProperty('--ph-banner-h', mq.matches ? BANNER_H : '0px')
+    }
+    apply()
+    mq.addEventListener('change', apply)
+    return () => {
+      mq.removeEventListener('change', apply)
+      document.documentElement.style.setProperty('--ph-banner-h', '0px')
+    }
   }, [visible])
 
   if (!visible) return null
@@ -54,7 +68,7 @@ export function ProductHuntBanner() {
     <div
       role="region"
       aria-label="Product Hunt launch"
-      className="fixed inset-x-0 top-0 z-[60] h-[var(--ph-banner-h)] animate-in fade-in slide-in-from-top-2 duration-500"
+      className="fixed inset-x-0 top-0 z-[60] hidden h-[var(--ph-banner-h)] animate-in fade-in slide-in-from-top-2 duration-500 md:block"
     >
       <div className="relative flex h-full w-full items-center border-b border-white/[0.08] bg-zinc-950/75 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-zinc-950/55">
         <div
